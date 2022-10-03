@@ -1,0 +1,51 @@
+.JobList__container {
+  background: #fff 0 0 no-repeat padding-box;
+  border-radius: 3px;
+  padding: 20px 0;
+}
+
+.JobList__header {
+  border-bottom: 1px solid #eee;
+  padding: 0 16px 20px;
+}
+
+.JobList__text-highlight {
+  color: #00b14f;
+}
+
+.JobList__job-body {
+  padding: 16px 16px 0;
+}
+
+.JobList__pagination {
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.JobList__pagination li:first-child,
+.JobList__pagination li:last-child {
+  background: #eee 0 0 no-repeat padding-box;
+}
+
+.JobList__pagination li {
+  align-items: center;
+  border-radius: 3px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  margin: 0 5px;
+  text-align: center;
+  width: 32px;
+}
+
+.JobList__pagination-active {
+  background: #00b14f 0 0 no-repeat padding-box !important;
+}
+
+.JobList__pagination > li > a,
+.JobList__pagination > li > span {
+  color: #000;
+  text-decoration: none;
+}

@@ -1,0 +1,22 @@
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.Header__layout{
+  padding: 8px 48px;
+}
+
+.Header__layout-text{
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media screen and (width < 768px) {
+  .Header__layout{
+    padding: 8px 4px;
+  }
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}

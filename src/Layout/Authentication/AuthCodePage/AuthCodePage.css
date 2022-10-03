@@ -1,0 +1,67 @@
+.AuthCode__account-pages {
+  font-family: "Public Sans", sans-serif !important;
+  background-color: var(--bs-body-bg);
+}
+
+.AuthCode__title {
+  font-size: calc(1.25625rem + 0.075vw);
+  font-weight: 600;
+}
+
+.AuthCode__card {
+  border: none !important;
+  background-color: var(--bs-card-bg) !important;
+}
+
+.AuthCode__input-text {
+  background-color: var(--bs-input-group-addon-bg) !important;
+  padding: 5px 15px !important;
+  color: var(--bs-text-muted) !important;
+}
+
+.AuthCode__form-control {
+  min-height: calc(1.5em + calc(1rem + 6px)) !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  border-radius: 0.4rem !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  color: #000 !important;
+  background-color: var(--bs-input-card-bg) !important;
+}
+
+.AuthCode__form-label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--bs-input-placeholder-color);
+}
+
+.AuthCode__text-primary {
+  font-weight: 500 !important;
+  text-decoration: none;
+}
+
+.authCode-text-color {
+  font-weight: 400;
+  color: var(--bs-body-color) !important;
+  background-color: var(--bs-input-bg) !important;
+  line-height: 2 !important;
+}
+
+.authCode-text-color::placeholder {
+  color: var(--bs-body-color) !important;
+}
+
+.authCode-text-color:focus {
+  box-shadow: none !important;
+}
+
+.authCode__button {
+  background-color: var(--bs-sidebar-menu-item-active-color) !important;
+  border-color: var(--bs-sidebar-menu-item-active-color) !important;
+}
+
+.authCode__textSignIn {
+  color: var(--bs-sidebar-menu-item-active-color) !important;
+  text-decoration: none;
+}

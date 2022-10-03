@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
+:root {
+  --bs-sidebar-bg: #ffffff;
+  --bs-sidebar-menu-item-color: #878a92;
+  --bs-sidebar-menu-item-active-color: #7269ef;
+  --bs-sidebar-menu-item-active-bg: #f7f7ff;
+  --bs-sidebar-sub-bg: #f5f7fb;
+  --bs-chat-primary-bg: #7269ef;
+  --bs-chat-secondary-bg: #f5f7fb;
+  --bs-body-bg: #f7f7ff;
+  --bs-body-color: #495057;
+  --bs-body-color-rgb: 73, 80, 87;
+  --bs-footer-bg: #fff;
+  --bs-footer-color: #98a6ad;
+  --bs-light: #e6ebf5;
+  --bs-light-rgb: 230, 235, 245;
+  --bs-dark: #212529;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-text-muted: #7a7f9a;
+  --bs-link-color: #7269ef;
+  --bs-link-hover-color: #7269ef;
+  --bs-border-color: #f0eff5;
+  --bs-dropdown-bg: #fff;
+  --bs-dropdown-link-color: #212529;
+  --bs-dropdown-link-hover-color: #1f2327;
+  --bs-dropdown-link-hover-bg: #f8f9fa;
+  --bs-dropdown-border-width: 0px;
+  --bs-card-bg: #fff;
+  --bs-card-cap-bg: #fff;
+  --bs-card-logo-dark: block;
+  --bs-card-logo-light: none;
+  --bs-modal-bg: #fff;
+  --bs-modal-content-bg: #fff;
+  --bs-modal-content-border-color: #f0eff5;
+  --bs-nav-tabs-link-active-color: #495057;
+  --bs-nav-tabs-link-active-bg: #f7f7ff;
+  --bs-accordion-button-active-color: #675fd7;
+  --bs-accordion-bg: #fff;
+  --bs-accordion-button-bg: #f5f7fb;
+  --bs-progress-bg: #f5f7fb;
+  --bs-toast-background-color: rgba(255, 255, 255, 0.85);
+  --bs-toast-border-color: rgba(0, 0, 0, 0.1);
+  --bs-toast-header-border-color: rgba(0, 0, 0, 0.05);
+  --bs-list-group-hover-bg: #f8f9fa;
+  --bs-popover-bg: #fff;
+  --bs-pagination-hover-bg: #f5f7fb;
+  --bs-input-bg: #fff;
+  --bs-input-group-addon-border-color: #e6ebf5;
+  --bs-input-border: #e6ebf5;
+  --bs-input-border-color: #e6ebf5;
+  --bs-input-focus-border: #b9b4f7;
+  --bs-input-disabled-bg: #f5f7fb;
+  --bs-input-placeholder-color: #7a7f9a;
+  --bs-input-group-addon-bg: #f5f7fb;
+  --bs-input-check-border: var(--bs-input-border);
+  --bs-theme-mode-icon: "";
+  --bs-input-card-bg: rgba(230, 235, 245, 0.25);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+*{
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fz-8 {
+  font-size: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.fz-9 {
+  font-size: 9px;
 }
 
-.App-link {
-  color: #61dafb;
+.fz-10 {
+  font-size: 10px;
 }
 
-@keyframes App-logo-spin {
+.fz-11 {
+  font-size: 11px;
+}
+
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-13 {
+  font-size: 13px;
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+
+.fz-15 {
+  font-size: 15px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.fz-17 {
+  font-size: 17px;
+}
+
+.fz-18 {
+  font-size: 18px;
+}
+
+.fz-19 {
+  font-size: 19px;
+}
+
+.fz-20 {
+  font-size: 20px;
+}
+
+.fz-21 {
+  font-size: 21px;
+}
+
+.fz-22 {
+  font-size: 22px;
+}
+
+.fz-23 {
+  font-size: 23px;
+}
+
+.fz-24 {
+  font-size: 24px;
+}
+
+.fz-25 {
+  font-size: 25px;
+}
+
+.fz-26 {
+  font-size: 26px;
+}
+
+.fz-27 {
+  font-size: 27px;
+}
+
+.fz-28 {
+  font-size: 28px;
+}
+
+.fz-29 {
+  font-size: 29px;
+}
+
+.fz-30 {
+  font-size: 30px;
+}
+
+.cur-pointer {
+  cursor: pointer;
+}
+
+.border-light {
+  border-color: var(--bs-light) !important;
+}
+
+.bottom_border {
+  border-bottom: 1px solid var(--bs-border-color) !important;
+}
+
+.top_border {
+  border-top: 1px solid var(--bs-border-color) !important;
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.text-muted-bg {
+  --bs-text-opacity: 1;
+  color: var(--bs-text-muted) !important;
+}
+
+.fix_scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.fix_scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.fix_scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--bs-sidebar-menu-item-color);
+}
+
+
+.lh-2 {
+  line-height: 2 !important;
+}
+
+.rotate {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.bg-app-dark{
+  background-color: #222831 !important;
 }
