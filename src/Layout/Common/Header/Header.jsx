@@ -8,16 +8,18 @@ import "./Header.css";
 import { Logo } from "..";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeCurrentPage } from "Config/Redux/Slice/CurrentPageSlice";
 import { LogOut } from "Config/Redux/Slice/UserSlice";
 import { changeToken } from "Config/Redux/Slice/HeaderRequestSlice";
+import { memo } from "react";
 
 const Header = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { t } = useTranslation();
-
+    const userInfo = useSelector((state) => state.User.sessionInfo);
+    console.log(userInfo)
     const onLogout = () => {
         dispatch(changeToken(""));
         dispatch(LogOut())
@@ -90,16 +92,13 @@ const Header = (props) => {
                                             className="d-inline-block rounded-circle"
                                         />
                                         <p className="mb-0 ms-2 Header__layout-text">
-                                            {t("Your Profile")}
+                                            {(userInfo && userInfo.fullname) || t("Your Profile")}
                                         </p>
                                     </div>
                                 }
                                 id="basic-nav-dropdown"
                                 menuVariant="dark"
                             >
-                                <NavDropdown.Item href="#action">
-                                    {t("Edit Your Infomation")}
-                                </NavDropdown.Item>
                                 <NavDropdown.Item onClick={onLogout}>
                                     {t("Logout")}
                                 </NavDropdown.Item>
@@ -115,4 +114,4 @@ const Header = (props) => {
     );
 };
 
-export default Header;
+export default memo(Header);

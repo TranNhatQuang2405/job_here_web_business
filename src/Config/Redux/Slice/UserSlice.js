@@ -13,7 +13,7 @@ export const UserSlice = createSlice({
       state.pending = false
     },
     LogOut: (state) => {
-      state.user = null;
+      state.sessionInfo = null;
       state.pending = false;
     },
     SetIsPending: (state) => {

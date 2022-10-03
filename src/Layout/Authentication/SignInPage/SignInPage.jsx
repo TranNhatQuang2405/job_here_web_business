@@ -10,6 +10,7 @@ import {
 	FormCheck,
 	FormGroup,
 	Button,
+	Spinner
 } from "react-bootstrap";
 import "./SignInPage.css";
 import { useNavigate } from "react-router-dom";
@@ -28,11 +29,14 @@ const SignInPage = () => {
 		email: "",
 		password: "",
 	});
+	const [loading, setLoading] = useState(false)
 	const modalRef = useRef();
 
 	const onSignIn = async (e) => {
 		e.preventDefault();
+		setLoading(true)
 		let signIn = await authBusiness.SignIn(account.email, account.password);
+		setLoading(false)
 		if (signIn.data.httpCode === 200) {
 			if (signIn.data.token) {
 				dispatch(changeToken(signIn.data.token));
@@ -120,7 +124,7 @@ const SignInPage = () => {
 									type="submit"
 									className="SignIn__btn-signin w-100"
 								>
-									{t("Sign In")}
+									{loading ? <Spinner animation="border" variant="light" /> : t("Sign In")}
 								</Button>
 							</Form>
 						</Card.Body>

@@ -1,5 +1,5 @@
 .Footer__layout {
-  background: #efefef;
+  background: #222831 !important;
   padding: 8px 48px;
   margin-top: auto;
 }
@@ -17,11 +17,12 @@
 
 .Footer__group-text {
   font-size: 15px;
+  color: white;
 }
 
 .Footer__item-text {
   font-size: 14px;
-  color: #222831;
+  color: #999999;
   margin-bottom: 5px
 }
 
