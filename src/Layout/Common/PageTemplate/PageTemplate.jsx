@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Footer, Header } from "..";
+import { Footer, Header } from "../";
 import "./PageTenplate.css";
 
 const PageTemplate = ({ children }) => {

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  sessionInfo: false,
+  sessionInfo: null,
+  pending: false
 };
 
 export const UserSlice = createSlice({
@@ -9,10 +10,18 @@ export const UserSlice = createSlice({
   reducers: {
     changeSession: (state, action) => {
       state.sessionInfo = action.payload;
+      state.pending = false
+    },
+    LogOut: (state) => {
+      state.user = null;
+      state.pending = false;
+    },
+    SetIsPending: (state) => {
+      state.pending = true;
     },
   },
 });
 
-export const { changeSession } = UserSlice.actions;
+export const { changeSession, LogOut, SetIsPending } = UserSlice.actions;
 
 export default UserSlice.reducer;
