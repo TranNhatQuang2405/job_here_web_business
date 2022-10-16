@@ -12,9 +12,10 @@ function AuthProvider({ children }) {
     const isLoading = useSelector((state) => state.User.pending);
 
     useLayoutEffect(() => {
+        let isSubscribed = true;
         const unsubscribed = async () => {
             let session = await authBusiness.GetSession();
-            if (session.data && session.data.httpCode !== 401 && session.data.objectData) {
+            if (session.data && session.data.httpCode !== 401 && session.data.objectData && session.data.objectData.email) {
                 dispatch(changeSession(session.data.objectData));
                 navigate("/Home");
             } else {
@@ -23,8 +24,11 @@ function AuthProvider({ children }) {
                 else navigate("/SignIn");
             }
         };
-        return () => {
+        if (isSubscribed) {
             unsubscribed();
+        }
+        return () => {
+            isSubscribed = false;
         };
     }, [currentPage, dispatch, navigate]);
     if (isLoading === true) return <LoadingPage />;
