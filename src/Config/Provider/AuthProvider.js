@@ -14,8 +14,8 @@ function AuthProvider({ children }) {
     useLayoutEffect(() => {
         const unsubscribed = async () => {
             let session = await authBusiness.GetSession();
-            if (session.data && session.data.httpCode !== 401 && session.data.email) {
-                dispatch(changeSession(session.data));
+            if (session.data && session.data.httpCode !== 401 && session.data.objectData) {
+                dispatch(changeSession(session.data.objectData));
                 navigate("/Home");
             } else {
                 dispatch(LogOut());
