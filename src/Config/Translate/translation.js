@@ -65,6 +65,9 @@ export const en = {
   "Didn't receiver authentication code?":
     "Didn't receiver authentication code?",
   Resend: "Resend",
+  "admin.nav.company": "Manage Company",
+  "admin.nav.job": "Manage Job",
+  "admin.nav.user": "Manage User",
 };
 
 export const vn = {
@@ -133,4 +136,7 @@ export const vn = {
   Submit: "Xác Nhận",
   "Didn't receiver authentication code?": "Bạn không nhận được mã xác thực?",
   Resend: "Gửi lại",
+  "admin.nav.company": "Quản lý công ty",
+  "admin.nav.job": "Quản lý các công việc",
+  "admin.nav.user": "Quản lý người dùng",
 };

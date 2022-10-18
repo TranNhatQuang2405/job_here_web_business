@@ -3,7 +3,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "./Config/Translate/i18n.js";
 import PageTemplate from "Layout/Common/PageTemplate/PageTemplate";
 import { SignInPage } from "Layout/Authentication";
-import MainPage from "Layout/MainPage/MainPage.jsx";
+import { MainPage, ManageCompany, ManageJob, ManageUser } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
 
@@ -15,6 +15,9 @@ function App() {
           <Routes>
             <Route path="/SignIn" element={<SignInPage />}></Route>
             <Route path="/Home" element={<MainPage />}></Route>
+            <Route path="/manageCompany" element={<ManageCompany />}></Route>
+            <Route path="/manageJob" element={<ManageJob />}></Route>
+            <Route path="/manageUser" element={<ManageUser />}></Route>
             <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>
         </PageTemplate>

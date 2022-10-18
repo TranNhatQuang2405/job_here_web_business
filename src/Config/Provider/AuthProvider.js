@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authBusiness } from "Business";
-import { changeSession, LogOut } from "Config/Redux/Slice/UserSlice";
+import { changeSession, LogOut, SetIsPending } from "Config/Redux/Slice/UserSlice";
 import { LoadingPage } from "Layout/Common";
 
 function AuthProvider({ children }) {
@@ -15,9 +15,10 @@ function AuthProvider({ children }) {
         let isSubscribed = true;
         const unsubscribed = async () => {
             let session = await authBusiness.GetSession();
+            dispatch(SetIsPending(false))
             if (session.data && session.data.httpCode !== 401 && session.data.objectData && session.data.objectData.email) {
                 dispatch(changeSession(session.data.objectData));
-                navigate("/Home");
+                // navigate("/Home");
             } else {
                 dispatch(LogOut());
                 if (currentPage === 1) navigate("/SignIn");
@@ -25,12 +26,13 @@ function AuthProvider({ children }) {
             }
         };
         if (isSubscribed) {
+            dispatch(SetIsPending(true))
             unsubscribed();
         }
         return () => {
             isSubscribed = false;
         };
-    }, [currentPage, dispatch, navigate]);
+    }, [currentPage, navigate]);
     if (isLoading === true) return <LoadingPage />;
     return <>{children}</>;
 }

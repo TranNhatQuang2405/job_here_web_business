@@ -13,13 +13,12 @@ import { changeCurrentPage } from "Config/Redux/Slice/CurrentPageSlice";
 import { LogOut } from "Config/Redux/Slice/UserSlice";
 import { changeToken } from "Config/Redux/Slice/HeaderRequestSlice";
 import { memo } from "react";
-
+import { Link } from "react-router-dom";
 const Header = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { t } = useTranslation();
     const userInfo = useSelector((state) => state.User.sessionInfo);
-    console.log(userInfo)
     const onLogout = () => {
         dispatch(changeToken(""));
         dispatch(LogOut())
@@ -32,81 +31,48 @@ const Header = (props) => {
             <Col className="bg-app-dark">
                 <Navbar expand="lg" variant="dark" className="Header__layout">
                     <Navbar.Brand
-                        href="#home"
+                        href="/"
                         className="d-flex flex-row align-items-center"
                     >
                         <Logo isDark />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar.Collapse>
                         <Nav className="me-auto">
-                            <NavDropdown
-                                title={t("Jobs")}
-                                id="basic-nav-dropdown"
-                                menuVariant="dark"
-                            >
-                                <NavDropdown.Item href="#action">
-                                    {t("Applied Jobs")}
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action">
-                                    {t("Saved Jobs")}
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action">
-                                    {t("Matched Jobs")}
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                            <NavDropdown
-                                title={t("Profile & CV")}
-                                id="basic-nav-dropdown"
-                                menuVariant="dark"
-                            >
-                                <NavDropdown.Item href="#action">
-                                    {t("CV Manage")}
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action">
-                                    {t("CV Template")}
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                            <NavDropdown
-                                title={t("Companies")}
-                                id="basic-nav-dropdown"
-                                menuVariant="dark"
-                            >
-                                <NavDropdown.Item href="#action">
-                                    {t("Company List")}
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action">
-                                    {t("Top Company")}
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                            <Link className="nav-link" to="/manageCompany">{t("admin.nav.company")}</Link>
+                            <Link className="nav-link" to="/manageJob">{t("admin.nav.job")}</Link>
+                            <Link className="nav-link" to="/manageUser">{t("admin.nav.user")}</Link>
                         </Nav>
                         <Nav className="justify-content-end">
-                            <NavDropdown
-                                title={
-                                    <div className="d-flex flex-row align-items-center">
-                                        <img
-                                            alt=""
-                                            src={user_img}
-                                            width="40"
-                                            height="40"
-                                            className="d-inline-block rounded-circle"
-                                        />
-                                        <p className="mb-0 ms-2 Header__layout-text">
-                                            {(userInfo && userInfo.fullname) || t("Your Profile")}
-                                        </p>
-                                    </div>
-                                }
-                                id="basic-nav-dropdown"
-                                menuVariant="dark"
-                            >
-                                <NavDropdown.Item onClick={onLogout}>
-                                    {t("Logout")}
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                            {userInfo ?
+                                <NavDropdown
+                                    title={
+                                        <div className="d-flex flex-row align-items-center">
+                                            <img
+                                                alt=""
+                                                src={user_img}
+                                                width="40"
+                                                height="40"
+                                                className="d-inline-block rounded-circle"
+                                            />
+                                            <p className="mb-0 ms-2 Header__layout-text">
+                                                {(userInfo && userInfo.fullname) || t("Your Profile")}
+                                            </p>
+                                        </div>
+                                    }
+                                    id="basic-nav-dropdown"
+                                    menuVariant="dark"
+                                >
+                                    <NavDropdown.Item onClick={onLogout}>
+                                        {t("Logout")}
+                                    </NavDropdown.Item>
+                                </NavDropdown> : <></>
+                            }
                             <Nav className="justify-content-end">
                                 <ChangeLanguageButton />
                             </Nav>
                         </Nav>
+
                     </Navbar.Collapse>
                 </Navbar>
             </Col>
