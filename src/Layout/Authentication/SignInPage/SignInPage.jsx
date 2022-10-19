@@ -62,7 +62,7 @@ const SignInPage = () => {
 			<Row className="justify-content-center">
 				<Col lg={4} xs={11}>
 					<div className="text-center mb-1">
-						<h4 className="SignIn__title">{t("Sign In")}</h4>
+						<h4 className="SignIn__title">{t("auth.signin.title")}</h4>
 						<p className="text-muted">{t("Sign in to continue.")}</p>
 					</div>
 
