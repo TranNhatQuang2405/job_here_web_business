@@ -25,7 +25,7 @@ export const en = {
   "Write CV Guide": "Write CV Guide",
   Community: "Community",
   "Wrong email or password!": "Wrong email or password!",
-  "auth.signin.title": "Jobhere Cho Doanh Nghiệp",
+  "auth.signin.title": "Jobhere For Business",
   "Sign In": "Sign In",
   "Sign in to continue.": "Sign in to continue.",
   "Enter Email": "Enter Email",
@@ -66,9 +66,9 @@ export const en = {
   "Didn't receiver authentication code?":
     "Didn't receiver authentication code?",
   Resend: "Resend",
-  "admin.nav.company": "Manage Company",
-  "admin.nav.job": "Manage Job",
-  "admin.nav.user": "Manage User",
+  "business.nav.company": "Manage Company",
+  "business.nav.job": "Manage Job",
+  "business.nav.report": "Report",
 };
 
 export const vn = {
@@ -138,7 +138,7 @@ export const vn = {
   Submit: "Xác Nhận",
   "Didn't receiver authentication code?": "Bạn không nhận được mã xác thực?",
   Resend: "Gửi lại",
-  "admin.nav.company": "Quản lý công ty",
-  "admin.nav.job": "Quản lý các công việc",
-  "admin.nav.user": "Quản lý người dùng",
+  "business.nav.company": "Quản lý công ty",
+  "business.nav.job": "Quản lý các công việc",
+  "business.nav.report": "Báo cáo",
 };

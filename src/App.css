@@ -212,3 +212,31 @@
 .bg-app-dark{
   background-color: #222831 !important;
 }
+
+
+/* Table */
+.table-custom{
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-custom  tr{
+  border: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 0;
+  padding: 0;
+}
+
+.table-custom  tr th{
+  height: 100%;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-custom  tr  th:last-child{
+  border-right: 1px solid;
+}
