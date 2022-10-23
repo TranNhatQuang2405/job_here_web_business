@@ -27,7 +27,7 @@ const ChangeLanguageButton = (props) => {
       <img
         alt={i18n.language === "en" ? "Tiếng Việt" : "English"}
         src={i18n.language === "en" ? vi_icon : en_icon}
-        className="d-inline-block"
+        className="d-inline-block cur-pointer"
         style={{ height: "100%", width: "100%" }}
       />
     </div>

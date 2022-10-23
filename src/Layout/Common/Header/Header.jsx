@@ -13,7 +13,7 @@ import { changeCurrentPage } from "Config/Redux/Slice/CurrentPageSlice";
 import { LogOut } from "Config/Redux/Slice/UserSlice";
 import { changeToken } from "Config/Redux/Slice/HeaderRequestSlice";
 import { memo } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { BellFill } from "react-bootstrap-icons";
 const Header = (props) => {
     const navigate = useNavigate();
@@ -40,9 +40,9 @@ const Header = (props) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav className="me-auto">
-                            <Link className="nav-link" to="/manageCompany">{t("business.nav.company")}</Link>
-                            <Link className="nav-link" to="/manageJob">{t("business.nav.job")}</Link>
-                            <Link className="nav-link" to="/report">{t("business.nav.report")}</Link>
+                            <NavLink className="nav-link" to="/manageCompany">{t("business.nav.company")}</NavLink>
+                            <NavLink className="nav-link" to="/manageJob">{t("business.nav.job")}</NavLink>
+                            <NavLink className="nav-link" to="/report">{t("business.nav.report")}</NavLink>
                         </Nav>
                         {userInfo ?
                             <Nav className="justify-content-end">

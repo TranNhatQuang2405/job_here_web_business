@@ -1,0 +1,21 @@
+.manageCompany__container{
+    padding: 8px 48px;;
+}
+
+.manageCompany__buttonAdd-layout{
+    flex-grow: 1;
+    text-align: right;
+}
+.manageCompany__buttonAdd-content{
+    font-weight: 600;
+    color: aliceblue;
+    margin-left: 10px;
+    height: 100%;
+    line-height: 1;
+}
+
+.manageCompany__header-layout{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

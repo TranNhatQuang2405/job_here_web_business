@@ -67,8 +67,19 @@ export const en = {
     "Didn't receiver authentication code?",
   Resend: "Resend",
   "business.nav.company": "Manage Company",
+  "manageCompany": "Manage Company",
+  "companyInfo": "Company Info",
   "business.nav.job": "Manage Job",
   "business.nav.report": "Report",
+  "business.manage.company.title": "Your List Company",
+  "business.manage.company.table.name": "Company Name",
+  "business.manage.company.table.status": "Status",
+  "business.manage.company.table.totalJob": "TotalJob",
+  "business.manage.company.table.size": "Size",
+  "business.manage.company.table.createdDate": "Created Date",
+  "business.manage.company.table.avatar": "Avatar",
+  "business.manage.company.table.nothing": "No data",
+  "business.manage.company.add": "Add Company"
 };
 
 export const vn = {
@@ -139,6 +150,17 @@ export const vn = {
   "Didn't receiver authentication code?": "Bạn không nhận được mã xác thực?",
   Resend: "Gửi lại",
   "business.nav.company": "Quản lý công ty",
+  "manageCompany": "Quản lý công ty",
+  "companyInfo": "Thông tin công ty",
   "business.nav.job": "Quản lý các công việc",
   "business.nav.report": "Báo cáo",
+  "business.manage.company.title": "Danh sách công ty của bạn",
+  "business.manage.company.table.name": "Tên công ty",
+  "business.manage.company.table.status": "Trạng thái",
+  "business.manage.company.table.totalJob": "Tổng công việc",
+  "business.manage.company.table.size": "Kích thước",
+  "business.manage.company.table.createdDate": "Ngày tạo",
+  "business.manage.company.table.avatar": "Ảnh đại diện",
+  "business.manage.company.table.nothing": "Không có dữ liệu",
+  "business.manage.company.add": "Thêm công ty"
 };

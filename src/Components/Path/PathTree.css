@@ -1,0 +1,10 @@
+.path__link-style{
+    font-size: larger;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--bs-body-color);
+}
+
+.path__link-style:hover{
+    color: #E34C31;
+}
