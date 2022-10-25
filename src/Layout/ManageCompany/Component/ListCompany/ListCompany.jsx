@@ -3,7 +3,7 @@ import { Table, FormCheck, Spinner } from "react-bootstrap";
 import { companyBusiness } from "Business";
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
-import Avatar from "Components/Image/Avatar";
+import Avatar from "Components/Image/Avatar/Avatar";
 import "./ListCompany.css";
 import Moment from 'moment';
 
@@ -65,7 +65,7 @@ function ListCompany() {
                             <div>{index + 1}</div>
                         </td>
                         <td className="text-center listCompany__item-center">
-                            <Avatar src={ele.avatarUrl} width="80px" />
+                            <Avatar src={ele.avatarUrl} width="80px" className="mx-auto" />
                         </td>
                         <td className="listCompany__item-center">
                             <Link to={createUrl(ele.companyId)} className="listCompany__item-link">{ele.companyName}</Link>

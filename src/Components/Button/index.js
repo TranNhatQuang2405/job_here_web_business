@@ -1,1 +1,1 @@
-export { default as ChangeLanguageButton } from "./ChangeLanguageButton";
+export { default as ChangeLanguageButton } from "./ChangeLanguageButton/ChangeLanguageButton";
