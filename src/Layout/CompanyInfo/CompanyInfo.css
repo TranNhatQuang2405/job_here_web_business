@@ -12,6 +12,7 @@
     min-height: 100px;
     margin-left: 16px;
     margin-bottom: 16px;
+    width: 100%;
     z-index: 1;
 }
 .companyInfo__header-avatar{
@@ -53,8 +54,30 @@
 .companyInfo__body-left{
     border: 1px solid black;
     border-radius: 10px;
-    padding-left: 0;
+    padding-left: 24px;
+    padding-right: 24px;
 }
+
+.companyInfo__body-title {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.companyInfo__body-title-line{
+    height: 30px;
+    width: 8px;
+    margin-right: 8px;
+    background-color: #E34C31;
+}
+
+.companyInfo__body-content{
+    text-align: justify;
+}
+
 .companyInfo__body-right-bound{
     padding-left: 25px !important;
 }
@@ -62,10 +85,11 @@
 .companyInfo__body-right{
     border: 1px solid black;
     border-radius: 10px;
-    padding-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
-@media screen and (width < 768px) {
+@media screen and (width < 992px) {
     .companyInfo__header {
         min-height: 150px;
         height: auto;
@@ -83,5 +107,9 @@
     .companyInfo__header-content{
         background-color: rgba(220, 220, 220, 0.2);
         margin: 0;
+    }
+    .companyInfo__body-right-bound{
+        margin-top: 16px;
+        padding-left: calc(var(--bs-gutter-x) * .5) !important;
     }
 }

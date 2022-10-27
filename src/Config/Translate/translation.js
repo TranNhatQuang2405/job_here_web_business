@@ -79,7 +79,18 @@ export const en = {
   "business.manage.company.table.createdDate": "Created Date",
   "business.manage.company.table.avatar": "Avatar",
   "business.manage.company.table.nothing": "No data",
-  "business.manage.company.add": "Add Company"
+  "business.manage.company.add": "Add Company",
+  "business.company.info.about": "About company",
+  "business.company.info.job": "List job",
+  "business.company.info.noAddress": "No data",
+  "business.company.info.noSize": "No data",
+  "business.company.info.noUrl": "No data",
+  "business.company.info.noDescription": "No data",
+  "business.company.info.jobDate": "Days remain",
+  "business.job.unit.min": "Minimun",
+  "business.job.unit.max": "Maximun",
+  "business.job.unit.not": "Negotiate"
+
 };
 
 export const vn = {
@@ -162,5 +173,15 @@ export const vn = {
   "business.manage.company.table.createdDate": "Ngày tạo",
   "business.manage.company.table.avatar": "Ảnh đại diện",
   "business.manage.company.table.nothing": "Không có dữ liệu",
-  "business.manage.company.add": "Thêm công ty"
+  "business.manage.company.add": "Thêm công ty",
+  "business.company.info.about": "Giới thiệu công ty",
+  "business.company.info.job": "Danh sách công việc",
+  "business.company.info.noAddress": "Không có dữ liệu",
+  "business.company.info.noSize": "Không có dữ liệu",
+  "business.company.info.noUrl": "Không có dữ liệu",
+  "business.company.info.noDescription": "Không có dữ liệu",
+  "business.company.info.jobDate": "Ngày còn lại",
+  "business.job.unit.min": "Từ",
+  "business.job.unit.max": "Lên đến",
+  "business.job.unit.not": "Thương lượng"
 };

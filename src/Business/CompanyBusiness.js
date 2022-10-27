@@ -1,6 +1,8 @@
 import Service from "Config/Api/Service";
 import {
-    getListCompanyOwner
+    getListCompanyOwner,
+    getCompanyInfo,
+    getAllJobOfCompany
 } from "Config/Api/ConfigURL";
 
 class CompanyBusiness extends Service {
@@ -9,6 +11,15 @@ class CompanyBusiness extends Service {
         return result;
     };
 
+    GetCompanyInfo = async (id) => {
+        let result = await this.get(`${getCompanyInfo}/${id}`);
+        return result;
+    };
+
+    GetAllJobOfCompany = async (id) => {
+        let result = await this.get(`${getAllJobOfCompany}/${id}`);
+        return result;
+    };
 
 }
 
