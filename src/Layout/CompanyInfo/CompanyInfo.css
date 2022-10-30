@@ -114,6 +114,7 @@
     }
     .companyInfo__header-content-bound{
         flex-direction: column;
+        margin-top: 0;
     }
     .companyInfo__header-content{
         background-color: rgba(220, 220, 220, 0.2);

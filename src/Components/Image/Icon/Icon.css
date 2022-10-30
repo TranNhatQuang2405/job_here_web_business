@@ -1,0 +1,12 @@
+.icon__bound{
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.icon__image{
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}

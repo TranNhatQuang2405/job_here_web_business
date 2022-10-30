@@ -11,15 +11,15 @@
 }
 .jobInfo__header-content{
     padding: 8px 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
 }
 
 .jobInfo__header-content-jobName{
     font-size: 22px;
     font-weight: 700;
-    line-height: 29px;
-    margin-bottom: 12px;
     color: var(--jh-primary-color)!important;
-    text-decoration: none;
 }
 
 .jobInfo__header-content-companyName{
@@ -28,4 +28,81 @@
 }
 .jobInfo__header-content-date{
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.jobInfo__body{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.jobInfo__body-title-line{
+    height: 30px;
+    width: 8px;
+    margin-right: 8px;
+    background-color: #E34C31;
+}
+
+.jobInfo__body-info-common{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+}
+.jobInfo__body-info-common-title{
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+}
+.jobInfo__common-item{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.jobInfo__common-item-title{
+    font-size: 16px;
+    font-weight: 700;
+}
+.jobInfo__common-item-content{
+    font-size: 16px;
+}
+
+.jobInfo__body-info-common-body{
+    display: flex;
+    margin-top: 16px;
+}
+
+.jobInfo__body-info-text-border{
+    background-color: #cccccc;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 13px;
+    width: max-content;
+}
+.jobInfo__common-item-skill{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jobInfo__body-detail{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.jobInfo__body-detail-text{
+    text-align: justify;
+}
+
+
+@media screen and (width < 992px) {
+    .jobInfo__body-info-common-body{
+        flex-direction: column;
+    } 
 }

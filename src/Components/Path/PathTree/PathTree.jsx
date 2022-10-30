@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, Link } from 'react-router-dom';
+import { ChevronRight } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 import "./PathTree.css"
 function PathTree({ className, lastPath }) {
@@ -40,9 +41,13 @@ function PathTree({ className, lastPath }) {
     }
 
     return (
-        <div className={className}>
+        <div className={`path__bound ${className || ''}`}>
             {paths.map((ele, index) =>
-                <Link to={creatUrl(ele)} className="path__link-style" key={index}>/ {t(ele.pathName)}</Link>)}
+                <div key={index}>
+                    {index !== 0 ? <ChevronRight className="path__sign"></ChevronRight> : <></>}
+                    <Link to={creatUrl(ele)} className="path__link-style">{t(ele.pathName)}</Link>
+                </div>)
+            }
         </div>
     )
 }

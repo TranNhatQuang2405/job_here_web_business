@@ -8,3 +8,17 @@
 .path__link-style:hover{
     color: #E34C31;
 }
+
+.path__sign{
+    display: inline-block;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 20px;
+    padding-bottom: 4px;
+}
+
+.path__bound{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
