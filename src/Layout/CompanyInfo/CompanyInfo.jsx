@@ -43,22 +43,25 @@ function CompanyInfo() {
             <div className="companyInfo__header">
                 <img src={companyInfo.backgroundUrl || `${background}`} alt="BACKGROUND" className="companyInfo__header-background">
                 </img>
-                <Avatar width="150px" src={companyInfo.avatarUrl} className="companyInfo__header-avatar" />
-                <Row className="companyInfo__header-content">
-                    <Col lg={12} className="companyInfo__header-companyName">{companyInfo.companyName}</Col>
-                    <Col lg={4} xs={12} className="companyInfo__header-text">
-                        <Link45deg size={20} className="me-2" />
-                        <span>{companyInfo.urlCompany || t("business.company.info.noUrl")}</span>
-                    </Col>
-                    <Col lg={4} xs={12} className="companyInfo__header-text">
-                        <Building size={20} className="me-2" />
-                        <span>{companyInfo.size || t("business.company.info.noSize")}</span>
-                    </Col>
-                    <Col lg={4} xs={12} className="companyInfo__header-text">
-                        <GeoAltFill size={20} className="me-2" />
-                        <span>{companyInfo.address || t("business.company.info.noAddress")}</span>
-                    </Col>
-                </Row>
+                <div className="companyInfo__header-content-bound">
+                    <Avatar width="150px" src={companyInfo.avatarUrl} className="companyInfo__header-avatar" />
+                    <Row className="companyInfo__header-content">
+                        <Col lg={12} className="companyInfo__header-companyName">{companyInfo.companyName}</Col>
+                        <Col lg={4} xs={12} className="companyInfo__header-text">
+                            <Link45deg size={20} className="me-2" />
+                            <span>{companyInfo.urlCompany || t("business.company.info.noUrl")}</span>
+                        </Col>
+                        <Col lg={4} xs={12} className="companyInfo__header-text">
+                            <Building size={20} className="me-2" />
+                            <span>{companyInfo.size || t("business.company.info.noSize")}</span>
+                        </Col>
+                        <Col lg={12} xs={12} className="companyInfo__header-text">
+                            <GeoAltFill size={20} className="me-2" />
+                            <span>{companyInfo.address || t("business.company.info.noAddress")}</span>
+                        </Col>
+                    </Row>
+                </div>
+
             </div>
             <Container className="companyInfo__body mb-3" fluid>
                 <Row >
