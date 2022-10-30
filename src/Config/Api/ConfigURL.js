@@ -9,6 +9,7 @@ export const authCodeURL = "/auth/authenticateCode";
 export const getListCompanyOwner = "/user/company/getListCompanyOwner";
 export const getCompanyInfo = "/user/company/getCompanyInfo";
 export const getAllJobOfCompany = "/user/company/getAllJobOfCompany";
+export const createCompany = "/user/company/createCompany";
 
 //Job
 export const getJobInfo = "/job/getJobInfo";

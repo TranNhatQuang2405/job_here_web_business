@@ -1,0 +1,12 @@
+.WarningModal__header{
+    background-color: wheat;
+}
+
+.WarningModal__body{
+    background-color: wheat;
+}
+
+.WarningModal__body-text{
+    font-size: 16px;
+    font-weight: 500;
+}

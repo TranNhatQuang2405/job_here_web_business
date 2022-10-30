@@ -2,7 +2,8 @@ import Service from "Config/Api/Service";
 import {
     getListCompanyOwner,
     getCompanyInfo,
-    getAllJobOfCompany
+    getAllJobOfCompany,
+    createCompany
 } from "Config/Api/ConfigURL";
 
 class CompanyBusiness extends Service {
@@ -20,6 +21,14 @@ class CompanyBusiness extends Service {
         let result = await this.get(`${getAllJobOfCompany}/${id}`);
         return result;
     };
+
+    CreateCompany = async (companyInfo) => {
+        let params = {
+            ...companyInfo
+        };
+        let result = await this.post(createCompany, params);
+        return result;
+    }
 
 }
 
