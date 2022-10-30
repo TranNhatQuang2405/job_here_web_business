@@ -94,7 +94,7 @@ function ListCompany() {
                         </tr>
                 }
             </tbody>
-        </Table >
+        </Table>
     );
 }
 

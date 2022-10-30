@@ -3,7 +3,7 @@ import { Image } from 'react-bootstrap'
 import image from "Assets/Images/avatar_default.png";
 import "./Avatar.css"
 function Avatar(props) {
-    const { width, url, className } = props;
+    const { width, url, className, children } = props;
     return (
         <div className={`image-square ${className || ''}`} style={{ width: `${width}`, }}>
             <Image
@@ -11,9 +11,13 @@ function Avatar(props) {
                 alt="Avatar"
                 roundedCircle
                 style={{
-                    width: `${width}`,
+                    width: "100%",
+                    height: "100%"
                 }}
             ></Image>
+            <div>
+                {children}
+            </div>
         </div>
     )
 }

@@ -1,0 +1,20 @@
+.editCompany__lableBackGround{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.editCompany__lableAvatar{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 4px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
