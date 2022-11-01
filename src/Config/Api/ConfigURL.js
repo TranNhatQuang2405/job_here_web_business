@@ -25,3 +25,7 @@ export const jobtypeDropdown = "/dropdown/jobtype";
 export const cityDropdown = "/dropdown/city";
 export const unitDropdown = "/dropdown/unit";
 
+
+//Upload
+export const uploadImage = "/user/upload/uploadImage";
+export const uploadCV = "/user/upload/uploadCV";

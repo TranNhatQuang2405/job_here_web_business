@@ -10,10 +10,7 @@ function Avatar(props) {
                 src={url ? url : image}
                 alt="Avatar"
                 roundedCircle
-                style={{
-                    width: "100%",
-                    height: "100%"
-                }}
+                className="avatar__img"
             ></Image>
             <div>
                 {children}

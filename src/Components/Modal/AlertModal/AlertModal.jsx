@@ -28,8 +28,6 @@ const AlertModal = ({ data, onHide }) => {
     ]
 
     const className = listHttpCode.find(x => x.httpCode === data.httpCode).className
-    console.log(data)
-
     return (
         <Modal centered show={data.show} onHide={onHide} dialogClassName="modal-90w">
             <Modal.Header closeButton className={`AlertModal__header-${className}`}>

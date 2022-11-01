@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authBusiness } from "Business";
 import { changeSession, LogOut, SetIsPending } from "Config/Redux/Slice/UserSlice";
@@ -8,9 +8,10 @@ import { LoadingPage } from "Layout/Common";
 function AuthProvider({ children }) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const location = useLocation();
     const currentPage = useSelector((state) => state.CurrentPage.page);
     const isLoading = useSelector((state) => state.User.pending);
-
+    const listAuthPath = ["/SignIn", "/SignUp"]
     useLayoutEffect(() => {
         let isSubscribed = true;
         const unsubscribed = async () => {
@@ -18,7 +19,9 @@ function AuthProvider({ children }) {
             dispatch(SetIsPending(false))
             if (session.data && session.data.httpCode !== 401 && session.data.objectData && session.data.objectData.email) {
                 dispatch(changeSession(session.data.objectData));
-                // navigate("/Home");
+                let path = location.pathname
+                if (listAuthPath.find(x => x === path))
+                    navigate("/Home");
             } else {
                 dispatch(LogOut());
                 if (currentPage === 1) navigate("/SignIn");

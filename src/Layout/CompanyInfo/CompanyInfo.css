@@ -17,11 +17,12 @@
     min-height: 100px;
     margin-left: 16px;
     margin-bottom: 16px;
+    padding-top: 25px ;
     width: 100%;
     z-index: 1;
 }
 .companyInfo__header-avatar{
-    align-self: flex-end;
+    align-self: flex-start;
     margin-left: 16px;
     margin-bottom: 16px;
     z-index: 1;

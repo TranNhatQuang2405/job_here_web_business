@@ -18,3 +18,50 @@
     border-radius: 50%;
     border: 1px solid black;
 }
+
+.editCompany__loadingAvatar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editCompany__loadingAvatar-child{
+    width: 50%;
+    height: 50%;
+}
+
+.editCompany__content-bound{
+    position: relative;
+}
+
+.editCompany__editHeader{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 4px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.editCompany__editContent{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.editCompany__button-bound{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
