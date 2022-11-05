@@ -54,7 +54,7 @@ function CompanyInfo() {
                 <img src={companyInfo.backgroundUrl || `${background}`} alt="BACKGROUND" className="companyInfo__header-background">
                 </img>
                 <div className="companyInfo__header-content-bound">
-                    <Avatar width="150px" src={companyInfo.avatarUrl} className="companyInfo__header-avatar" />
+                    <Avatar width="150px" url={companyInfo.avatarUrl} className="companyInfo__header-avatar" />
                     <Row className="companyInfo__header-content">
                         <Col lg={12} className="companyInfo__header-companyName">{companyInfo.companyName}</Col>
                         <Col lg={4} xs={12} className="companyInfo__header-text">

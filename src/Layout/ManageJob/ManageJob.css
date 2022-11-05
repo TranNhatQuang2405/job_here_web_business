@@ -1,0 +1,29 @@
+
+.manageJob__header-layout{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.manageJob__buttonAdd-layout{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+
+}
+.manageJob__buttonAdd-content{
+    font-weight: 600;
+    color: aliceblue;
+    margin-left: 10px;
+    height: 100%;
+    line-height: 1;
+}
+
+.manageJob__dropdownCompany{
+    margin-right: 16px;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

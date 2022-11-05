@@ -90,7 +90,7 @@ function JobInfo() {
         <div>
             <PathTree lastPath={jobInfo.jobName} />
             <div className="jobInfo__header">
-                <Avatar width="120px" src={jobInfo.avatar} />
+                <Avatar width="120px" url={jobInfo.avatar} />
                 <div className="jobInfo__header-content">
                     <div className="jobInfo__header-content-jobName">{jobInfo.jobName}</div>
                     <div className="jobInfo__header-content-companyName">{jobInfo.companyName}</div>

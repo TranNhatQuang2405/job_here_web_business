@@ -10,9 +10,11 @@ export const getListCompanyOwner = "/user/company/getListCompanyOwner";
 export const getCompanyInfo = "/user/company/getCompanyInfo";
 export const getAllJobOfCompany = "/user/company/getAllJobOfCompany";
 export const createCompany = "/user/company/createCompany";
+export const updateCompany = "/user/company/updateCompany";
 
 //Job
 export const getJobInfo = "/job/getJobInfo";
+export const getListJobManageByCompanyId = "/job/getListJobManageByCompanyId";
 
 
 //Dropdown

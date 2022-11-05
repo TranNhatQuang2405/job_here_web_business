@@ -118,8 +118,10 @@ export const en = {
   "business.company.edit.maxSize": "Max size",
   "business.company.edit.people": "Employee",
   "business.company.edit.email": "Email",
+  "business.company.edit.urlCompany": "Url company",
   "business.company.edit.close": "Close",
   "business.company.edit.save": "Save",
+  "business.company.edit.content.title": "Edit description",
   "business.company.edit.btnSave": "Save",
   "business.company.edit.btnCancel": "Cancel",
   "business.manage.company.edit": "Edit company",
@@ -144,7 +146,16 @@ export const en = {
   "business.job.info.noDescription": "No data",
   "business.job.info.noBenefit": "No data",
   "business.job.info.noRequire": "No data",
-
+  "business.manage.job.add": "Add job",
+  "business.manage.job.title": "List of Job",
+  "business.manage.job.table.name": "Job Name",
+  "business.manage.job.table.status": "Status",
+  "business.manage.job.table.totalAplly": "Total Applicant",
+  "business.manage.job.table.size": "Size",
+  "business.manage.job.table.createdDate": "Created Date",
+  "business.manage.job.table.avatar": "Avatar",
+  "business.manage.job.table.nothing": "No data",
+  "business.manage.job.table.endDate": "End Date"
 };
 
 export const vn = {
@@ -250,6 +261,7 @@ export const vn = {
   "business.company.add.maxSize": "Lớn nhất",
   "business.company.add.people": "Nhân viên",
   "business.company.add.email": "Email",
+  "business.company.edit.urlCompany": "Website company",
   "business.company.add.email.error": "Email không đúng",
   "business.company.add.size.error": "Quy mô chưa đúng",
   "business.company.add.other.error": "Không được để trống các trường",
@@ -269,6 +281,7 @@ export const vn = {
   "business.company.edit.save": "Lưu",
   "business.company.edit.btnSave": "Lưu",
   "business.company.edit.btnCancel": "Huỷ",
+  "business.company.edit.content.title": "Chỉnh sửa mô tả",
   "business.manage.company.edit": "Chỉnh sửa công ty",
   "business.job.unit.min": "Từ",
   "business.job.unit.max": "Lên đến",
@@ -290,5 +303,15 @@ export const vn = {
   "business.job.info.benefit": "Quyền lợi",
   "business.job.info.noDescription": "Không có dữ liệu",
   "business.job.info.noBenefit": "Không có dữ liệu",
-  "business.job.info.noRequire": "Không có dữ liệu"
+  "business.job.info.noRequire": "Không có dữ liệu",
+  "business.manage.job.add": "Thêm công việc",
+  "business.manage.job.title": "Danh sách công việc",
+  "business.manage.job.table.name": "Tên công việc",
+  "business.manage.job.table.status": "Trạng thái",
+  "business.manage.job.table.totalAplly": "Tổng số người ứng tuyển",
+  "business.manage.job.table.size": "Kích thước",
+  "business.manage.job.table.createdDate": "Ngày tạo",
+  "business.manage.job.table.avatar": "Ảnh đại diện",
+  "business.manage.job.table.nothing": "Không có dữ liệu",
+  "business.manage.job.table.endDate": "Ngày hết hạn"
 };

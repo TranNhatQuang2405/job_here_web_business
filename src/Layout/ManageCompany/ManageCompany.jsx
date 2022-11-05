@@ -20,7 +20,6 @@ function ManageCompany() {
                         <span className="manageCompany__buttonAdd-content">{t("business.manage.company.add")}</span>
                     </Button>
                 </div>
-
             </div>
             <h1 className='text-center mt-3 mb-3'>{t("business.manage.company.title")}</h1>
             <ListCompany />

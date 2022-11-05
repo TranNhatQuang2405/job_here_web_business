@@ -141,6 +141,15 @@ function EditHeaderModal({ companyInfoParent, show, handleClose }) {
                             value={companyInfo.email}
                         />
                     </InputGroup>
+                    <Form.Label htmlFor="urlCompany">{t("business.company.edit.urlCompany")}</Form.Label>
+                    <InputGroup className="mb-3">
+                        <Form.Control
+                            onChange={handleChange}
+                            id="urlCompany"
+                            placeholder={t("business.company.edit.urlCompany")}
+                            value={companyInfo.urlCompany}
+                        />
+                    </InputGroup>
                 </Form>
             </Modal.Body>
             <Modal.Footer>

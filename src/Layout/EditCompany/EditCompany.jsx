@@ -7,21 +7,55 @@ import "./EditCompany.css"
 import { Link45deg, Building, GeoAltFill, PencilSquare, Envelope, Check2, X } from "react-bootstrap-icons";
 import { useTranslation } from "react-i18next";
 import { companyBusiness, uploadBusiness } from "Business";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { LoadingPage } from "Layout/Common";
 import { EditHeaderModal } from "./Component";
+import { InputTextModal, AlertModal } from "Components/Modal";
 function EditCompany() {
 
     const { t } = useTranslation();
     const location = useLocation();
+    const navigate = useNavigate();
     const [companyInfo, setCompanyInfo] = useState({})
     const [showEditHeader, setShowEditHeader] = useState(false)
+    const [showEditContent, setShowEditContent] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [loadingSave, setLoadingSave] = useState(false)
+
     const [uploadPending, setUploadPending] = useState({
         avatar: false,
         background: false
     })
+    const [showAlert, setShowAlert] = useState({
+        show: false,
+        message: "",
+        title: t("business.company.editCompanyTitle"),
+        httpCode: 200
+    })
 
+
+    const handleResult = () => {
+        setShowAlert({
+            show: false,
+            message: "",
+            title: t("business.company.editCompanyTitle"),
+            httpCode: 200
+        })
+    }
+
+    const handleClose = () => {
+        navigate(`/manageCompany/companyInfo/${companyInfo.companyId}`)
+    }
+
+    const handleChangeDescription = (data) => {
+        setCompanyInfo(prev => {
+            return {
+                ...prev,
+                description: data
+            }
+        })
+        setShowEditContent(false)
+    }
 
     const handleCloseModalEditHeader = (data) => {
         setCompanyInfo(prev => {
@@ -64,7 +98,6 @@ function EditCompany() {
         }
     };
 
-
     const handleChangeBackground = async (e) => {
         if (e.target.files.length > 0) {
             setUploadPending(prev => {
@@ -96,6 +129,18 @@ function EditCompany() {
         }
     };
 
+    const handleSave = async () => {
+        setLoadingSave(true)
+        let result = await companyBusiness.UpdateCompany(companyInfo)
+        setLoadingSave(false)
+        setShowAlert({
+            show: true,
+            message: result.data.message,
+            title: t("business.company.editCompanyTitle"),
+            httpCode: result.data.httpCode
+        })
+    }
+
     useEffect(() => {
         let isSubscribed = true;
         const first = async () => {
@@ -120,15 +165,23 @@ function EditCompany() {
         return <LoadingPage />
     return (
         <Form>
+            <AlertModal data={showAlert} onHide={handleResult} />
             <PathTree lastPath={companyInfo.companyName} />
             <div className="editCompany__button-bound">
-                <Button className="me-3" variant="danger">
+                <Button className="me-3" variant="danger" onClick={handleClose}>
                     <X color="white" size="25" />
                     <span className="manageCompany__buttonAdd-content">{t("business.company.edit.btnCancel")}</span>
                 </Button>
-                <Button>
-                    <Check2 color="white" size="25" />
-                    <span className="manageCompany__buttonAdd-content">{t("business.company.edit.btnSave")}</span>
+
+                <Button onClick={handleSave} disabled={loadingSave}>
+                    {
+                        loadingSave ?
+                            <Spinner animation="border" /> :
+                            <>
+                                <Check2 color="white" size="25" />
+                                <span className="manageCompany__buttonAdd-content">{t("business.company.edit.btnSave")}</span>
+                            </>
+                    }
                 </Button>
             </div>
             <EditHeaderModal companyInfoParent={companyInfo} show={showEditHeader} handleClose={handleCloseModalEditHeader} />
@@ -183,6 +236,12 @@ function EditCompany() {
                 </div>
 
             </div>
+            <InputTextModal
+                content={companyInfo.description}
+                title={t("business.company.edit.content.title")}
+                show={showEditContent}
+                handleDone={handleChangeDescription}
+                handleClose={() => setShowEditContent(false)} />
             <div className="editCompany__content-bound">
                 <Container className="companyInfo__body mb-3" fluid>
                     <Row>
@@ -194,7 +253,7 @@ function EditCompany() {
                                 </div>
                                 <div className="companyInfo__body-content" dangerouslySetInnerHTML={{ __html: companyInfo.description || t("business.company.info.noDescription") }} >
                                 </div>
-                                <div className="editCompany__editContent">
+                                <div className="editCompany__editContent" onClick={() => setShowEditContent(true)}>
                                     <PencilSquare size="25" color="black" />
                                 </div>
                             </div>
@@ -202,7 +261,6 @@ function EditCompany() {
                     </Row>
                 </Container>
             </div>
-
         </Form>
     );
 }
