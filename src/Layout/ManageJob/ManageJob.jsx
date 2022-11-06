@@ -7,14 +7,20 @@ import "./ManageJob.css"
 import { useTranslation } from 'react-i18next'
 import { ListJob } from './Component'
 import { LoadingPage } from 'Layout/Common'
+import { useNavigate } from 'react-router-dom'
 function ManageJob() {
     const [loading, setLoading] = useState(true)
+    const navigate = useNavigate()
     const [listCompany, setListCompany] = useState([{ companyId: 0, companyName: "All" }])
     const { t } = useTranslation()
     const [currentCompany, setCurrentCompany] = useState(0)
     const changeCompany = (e) => {
         let id = e.target.value
         setCurrentCompany(id)
+    }
+
+    const handleAddJob = () => {
+        navigate("/manageJob/addJob")
     }
 
     useEffect(() => {
@@ -52,7 +58,7 @@ function ManageJob() {
                             }
                         </Form.Select>
                     </div>
-                    <Button>
+                    <Button onClick={handleAddJob}>
                         <PlusCircleFill size="25" color="aliceblue" />
                         <span className="manageJob__buttonAdd-content">{t("business.manage.job.add")}</span>
                     </Button>

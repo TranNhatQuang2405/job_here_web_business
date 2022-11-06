@@ -3,7 +3,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "./Config/Translate/i18n.js";
 import PageTemplate from "Layout/Common/PageTemplate/PageTemplate";
 import { SignInPage } from "Layout/Authentication";
-import { MainPage, ManageCompany, ManageJob, Report, CompanyInfo, JobInfo, EditCompany } from "Layout";
+import { MainPage, ManageCompany, ManageJob, Report, CompanyInfo, JobInfo, EditCompany, EditJob, AddJob } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
 
@@ -19,7 +19,9 @@ function App() {
             <Route path="/manageCompany/editCompany/:id" element={<EditCompany />}></Route>
             <Route path="/manageCompany/companyInfo/:id" element={<CompanyInfo />}></Route>
             <Route path="/manageJob" element={<ManageJob />}></Route>
+            <Route path="/manageJob/editJob/:id" element={<EditJob />}></Route>
             <Route path="/manageJob/jobInfo/:id" element={<JobInfo />}></Route>
+            <Route path="/manageJob/addJob" element={<AddJob />}></Route>
             <Route path="/report" element={<Report />}></Route>
             <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>

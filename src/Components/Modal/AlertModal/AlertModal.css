@@ -22,3 +22,13 @@
     font-size: 16px;
     font-weight: 500;
 }
+
+.AlertModal__bound{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

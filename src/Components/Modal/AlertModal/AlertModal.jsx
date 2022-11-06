@@ -1,4 +1,5 @@
 import React from "react";
+import { Alert } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import "./AlertModal.css"
 
@@ -7,35 +8,38 @@ const AlertModal = ({ data, onHide }) => {
     const listHttpCode = [
         {
             httpCode: 200,
-            className: "success"
+            className: "success",
+            variant: "primary",
         },
         {
             httpCode: 400,
-            className: "fail"
+            className: "fail",
+            variant: "danger",
         },
         {
             httpCode: 401,
-            className: "warn"
+            className: "warn",
+            variant: "warning",
         },
         {
             httpCode: 403,
-            className: "warn"
+            className: "warn",
+            variant: "warning",
         },
         {
             httpCode: 406,
-            className: "fail"
+            className: "fail",
+            variant: "danger",
         },
     ]
 
-    const className = listHttpCode.find(x => x.httpCode === data.httpCode).className
+    const { variant } = listHttpCode.find(x => x.httpCode === data.httpCode)
     return (
         <Modal centered show={data.show} onHide={onHide} dialogClassName="modal-90w">
-            <Modal.Header closeButton className={`AlertModal__header-${className}`}>
-                <Modal.Title>{data.title}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body className={`AlertModal__body-${className}`}>
-                <p className="AlertModal__body-text">{data.message}</p>
-            </Modal.Body>
+            <Alert key={variant} variant={variant} onClose={onHide} className="AlertModal__bound" dismissible>
+                <Alert.Heading>{data.title}</Alert.Heading>
+                {data.message}
+            </Alert>
         </Modal>
     );
 };

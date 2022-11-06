@@ -1,0 +1,18 @@
+.addJob__listSkill-bound{
+    border: 1px solid #999;
+    border-radius: 10px;
+    min-height: 32px;
+    padding: 8px;
+    display: flex;
+    width: 100%;
+    column-gap: 16px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+}
+
+.addJob__listSkill-item{
+    background: #cccccc;
+    padding: 3px 6px;
+    border-radius: 10px;
+    cursor: pointer;
+}

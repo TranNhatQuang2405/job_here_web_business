@@ -84,12 +84,13 @@ function AddCompany({ show, onHide }) {
         else {
             setLoading(true)
             let params = companyInfo
-            params.size = (companyInfo.minSize > 0 && companyInfo.maxSize > companyInfo.minSize) ? `${companyInfo.minSize} - ${companyInfo.maxSize}` : companyInfo.maxSize
+            params.size = (companyInfo.minSize > 0 && companyInfo.maxSize > companyInfo.minSize) ? `${companyInfo.minSize * 1} - ${companyInfo.maxSize * 1}` : companyInfo.maxSize * 1
             let result = await companyBusiness.CreateCompany(companyInfo)
             setLoading(false)
             setShowAlert((prev) => {
                 return {
                     ...prev,
+                    title: t("business.company.addCompanyTitle"),
                     show: true,
                     httpCode: result.data.httpCode,
                     message: result.data.message

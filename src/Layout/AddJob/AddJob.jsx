@@ -1,0 +1,308 @@
+import { PathTree } from 'Components/Path'
+import React, { useState, useEffect } from 'react'
+import { Col, Form, InputGroup, Row, Spinner, Dropdown } from 'react-bootstrap'
+import { dropdownBusiness, companyBusiness } from 'Business'
+import { LoadingPage } from 'Layout/Common'
+import { useTranslation } from 'react-i18next'
+import "./AddJob.css"
+function AddJob() {
+    const { t } = useTranslation()
+    const [listCompany, setListCompany] = useState([])
+    const [master, setMaster] = useState({})
+    const [jobInfo, setJobInfo] = useState({
+        title: 0,
+        companyId: 0,
+        cityId: 0,
+        gender: 0,
+        industry: 0,
+        skill: 0,
+        amount: 1
+    })
+    const [loading, setLoading] = useState(true)
+    const [loadSkill, setLoadSkill] = useState(false)
+    const [listSkill, setListSkill] = useState([])
+    const [listSkillSave, setListSkillSave] = useState([])
+    const handleChange = (event) => {
+        const { id, value } = event.target;
+        setJobInfo((prev) => {
+            return {
+                ...prev,
+                [id]: value
+            }
+        })
+    }
+    const handleCheck = (e, skill) => {
+        e.stopPropagation()
+        let skillTmp = listSkillSave.find(x => x.skillId === skill.skillId)
+        if (!skillTmp) {
+            setListSkillSave(prev => [...prev, skill])
+        }
+    }
+
+    const handleRemove = (skillId) => {
+        let listSkillTmp = listSkillSave ? listSkillSave.filter(x => x.skillId !== skillId) : []
+        setListSkillSave([...listSkillTmp])
+    }
+
+    const handleChangeIndustry = async (event) => {
+        const { value } = event.target;
+        handleChange(event)
+        setLoadSkill(true)
+        const result = await dropdownBusiness.SkillDropdown(value)
+        if (result && result.data && result.data.httpCode === 200) {
+            let listTmp = result.data.objectData
+            setListSkill(listTmp)
+            setLoadSkill(false)
+        }
+    }
+
+    useEffect(() => {
+        let isSubscribed = true;
+        const first = async () => {
+            let prepare = []
+            prepare.push(dropdownBusiness.UnitDropdown());
+            prepare.push(dropdownBusiness.ExperienceDropdown());
+            prepare.push(dropdownBusiness.JobtypeDropdown());
+            prepare.push(dropdownBusiness.TitleDropdown());
+            prepare.push(dropdownBusiness.CityDropdown());
+            prepare.push(dropdownBusiness.GenderDropdown());
+            prepare.push(dropdownBusiness.IndustryDropdown());
+            prepare.push(companyBusiness.GetListCompanyOwner())
+            let results = await Promise.all(prepare)
+            if (!results.find(x => x.data.httpCode !== 200)) {
+                let unit = results[0].data.objectData
+                let experience = results[1].data.objectData
+                let jobType = results[2].data.objectData
+                let title = results[3].data.objectData
+                let city = results[4].data.objectData
+                let gender = results[5].data.objectData
+                let industry = results[6].data.objectData
+                let companyTmp = results[7].data.objectData
+                setMaster({
+                    unit: unit,
+                    experience: experience,
+                    jobType: jobType,
+                    title: title,
+                    city: city,
+                    gender: gender,
+                    industry: industry
+                })
+                setListCompany(companyTmp)
+            }
+            setLoading(false)
+
+        };
+        if (isSubscribed) first();
+        return () => {
+            isSubscribed = false;
+        };
+    }, [])
+
+    if (loading)
+        return <LoadingPage />
+    return (
+        <div>
+            <PathTree />
+            <div>
+                <h4 className="text-center">{t("business.manage.addJob.title")}</h4>
+            </div>
+            <Form>
+                <Row>
+                    <Col className="mb-2">
+                        <Form.Label htmlFor="companyId">{t("business.company.add.companyName")}</Form.Label>
+                        <Form.Select onChange={handleChange} id="companyId" value={jobInfo.companyId}>
+                            <option disabled value={0}>{t("business.manage.addJob.companyName")}</option>
+                            {
+                                listCompany.map((x, index) => <option key={index} value={x.companyId}>{x.companyName}</option>)
+                            }
+                        </Form.Select>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={8} className="mb-2">
+                        <Form.Label htmlFor="companyName">{t("business.manage.addJob.jobName.label")}</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                onChange={handleChange}
+                                id="companyName"
+                                placeholder={t("business.manage.addJob.jobName")}
+                                value={jobInfo.jobName}
+                                required
+                            />
+                        </InputGroup>
+                    </Col>
+                    <Col lg={4} className="mb-2">
+                        <Form.Label htmlFor="title">{t("business.manage.addJob.titleInput.label")}</Form.Label>
+                        <Form.Select onChange={handleChange} id="title" value={jobInfo.title}>
+                            <option disabled value={0}>{t("business.manage.addJob.titleInput")}</option>
+                            {
+                                master && master.title && master.title.map((x, index) => <option key={index} value={x.title}>{x.titleName}</option>)
+                            }
+                        </Form.Select>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={8} className="mb-2">
+                        <Form.Label htmlFor="companyName">{t("business.manage.addJob.address.label")}</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                onChange={handleChange}
+                                id="companyName"
+                                placeholder={t("business.manage.addJob.address")}
+                                value={jobInfo.jobName}
+                                required
+                            />
+                        </InputGroup>
+                    </Col>
+                    <Col lg={4} className="mb-2">
+                        <Form.Label htmlFor="cityId">{t("business.manage.addJob.city.label")}</Form.Label>
+                        <Form.Select onChange={handleChange} id="cityId" value={jobInfo.cityId}>
+                            <option disabled value={0}>{t("business.manage.addJob.city")}</option>
+                            {
+                                master && master.city && master.city.map((x, index) => <option key={index} value={x.cityId}>{x.cityName}</option>)
+                            }
+                        </Form.Select>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={8} className="mb-2">
+                        <Form.Label htmlFor="experiences">{t("business.manage.addJob.experiences.label")}</Form.Label>
+                        <Row>
+                            {
+                                master && master.experience && master.experience.map((x, k) =>
+                                    <Col lg={4} xs={6} key={k}>
+                                        <Form.Check
+                                            type="checkbox"
+                                            label={x.experienceName}
+                                            value={x.experience}
+                                            name="experiences"
+                                        />
+                                    </Col>
+                                )
+                            }
+                        </Row>
+                    </Col>
+                    <Col lg={4} className="mb-2">
+                        <Form.Label htmlFor="gender">{t("business.manage.addJob.gender.label")}</Form.Label>
+                        <Form.Select onChange={handleChange} id="gender" value={jobInfo.gender}>
+                            <option disabled value={0}>{t("business.manage.addJob.gender")}</option>
+                            {
+                                master && master.gender && master.gender.map((x, index) => <option key={index} value={x.gender}>{x.genderName}</option>)
+                            }
+                        </Form.Select>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={6} className="mb-2">
+                        <Form.Label htmlFor="industry">{t("business.manage.addJob.industry.label")}</Form.Label>
+                        <Form.Select onChange={handleChangeIndustry} id="industry" value={jobInfo.industry}>
+                            <option disabled value={0}>{t("business.manage.addJob.industry")}</option>
+                            {
+                                master && master.industry && master.industry.map((x, index) => <option key={index} value={x.industryId}>{x.industryName}</option>)
+                            }
+                        </Form.Select>
+                    </Col>
+                    <Col lg={6} className="mb-2">
+                        <Form.Label htmlFor="skill">{t("business.manage.addJob.skill.label")}</Form.Label>
+                        <Dropdown id="skill">
+                            <Dropdown.Toggle className="w-100">
+                                {loadSkill ? <Spinner animation="border" /> : t("business.manage.addJob.skill")}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {
+                                    listSkill && listSkill.map((x) =>
+                                        <Dropdown.Item key={x.skillId} onClick={(e) => handleCheck(e, x)}>
+                                            <Form.Label>{x.skillName}</Form.Label>
+                                        </Dropdown.Item>
+                                    )
+                                }
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Col>
+                    <Col className="mb-2">
+                        <Form.Label htmlFor="listSkill">{t("business.manage.addJob.listSkill.label")}</Form.Label>
+                        <div className="addJob__listSkill-bound">
+                            {listSkillSave ?
+                                listSkillSave.map((x, key) =>
+                                    <div key={key} className="addJob__listSkill-item" onClick={() => handleRemove(x.skillId)}>
+                                        {x.skillName}
+                                    </div>
+                                ) : <></>
+                            }
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={4} className="mb-2">
+                        <Form.Label htmlFor="companyName">{t("business.manage.addJob.amount.label")}</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                onChange={handleChange}
+                                id="amount"
+                                type="number"
+                                min={1}
+                                placeholder={t("business.manage.addJob.amount")}
+                                value={jobInfo.amount}
+                                required
+                            />
+                        </InputGroup>
+                    </Col>
+                    <Col lg={8} className="mb-2">
+                        <Form.Label htmlFor="jobTypes">{t("business.manage.addJob.jobTypes.label")}</Form.Label>
+                        <Row>
+                            {
+                                master && master.jobType && master.jobType.map((x, k) =>
+                                    <Col lg={4} xs={6} key={k}>
+                                        <Form.Check
+                                            type="checkbox"
+                                            label={x.jobTypeName}
+                                            value={x.jobType}
+                                            name="jobTypes"
+                                        />
+                                    </Col>
+                                )
+                            }
+                        </Row>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={8} className="mb-2">
+                        <Form.Label htmlFor="salaryMin">{t("business.manage.addJob.salary.label")}</Form.Label>
+                        <InputGroup>
+                            <InputGroup.Text>{t("business.manage.addJob.salaryMin.label")}</InputGroup.Text>
+                            <Form.Control
+                                onChange={handleChange}
+                                type="number"
+                                min={0}
+                                id="salaryMin"
+                                placeholder={t("business.manage.addJob.salaryMin")}
+                                value={jobInfo.salaryMin}
+                            />
+                            <InputGroup.Text>{t("business.manage.addJob.salaryMin.label")}</InputGroup.Text>
+                            <Form.Control
+                                onChange={handleChange}
+                                type="number"
+                                min={0}
+                                id="salaryMax"
+                                placeholder={t("business.manage.addJob.salaryMin")}
+                                value={jobInfo.salaryMax}
+                            />
+                        </InputGroup>
+                    </Col>
+                    <Col md={4} className="mb-2">
+                        <Form.Label htmlFor="industry">{t("business.manage.addJob.unit.label")}</Form.Label>
+                        <Form.Select onChange={handleChangeIndustry} id="unit" value={jobInfo.industry}>
+                            <option disabled value={0}>{t("business.manage.addJob.unit")}</option>
+                            {
+                                master && master.unit && master.unit.map((x, index) => <option key={index} value={x.unit}>{x.unitName}</option>)
+                            }
+                        </Form.Select>
+                    </Col>
+
+                </Row>
+            </Form>
+        </div>
+    )
+}
+
+export default AddJob
