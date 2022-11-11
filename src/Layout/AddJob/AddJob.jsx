@@ -7,8 +7,10 @@ import { AlertModal, InputTextModal } from 'Components/Modal'
 import Moment from 'moment';
 import { useTranslation } from 'react-i18next'
 import "./AddJob.css"
+import { useNavigate } from 'react-router-dom'
 function AddJob() {
     const { t } = useTranslation()
+    const navigate = useNavigate()
     const [listCompany, setListCompany] = useState([])
     const [master, setMaster] = useState({})
     const [showEditContent, setShowEditContent] = useState(0)
@@ -511,7 +513,7 @@ function AddJob() {
                 </Row>
                 <hr />
                 <div className="d-flex justify-content-end">
-                    <Button variant="danger">{t("business.manage.addJob.cancel")}</Button>
+                    <Button variant="danger" onClick={() => navigate("/manageJob")}>{t("business.manage.addJob.cancel")}</Button>
                     <Button type="submit" className="ms-2">{t("business.manage.addJob.create")}</Button>
                 </div>
             </Form>
