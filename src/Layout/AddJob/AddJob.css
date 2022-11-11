@@ -16,3 +16,14 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.addJob__inputContent{
+    background-color: white;
+    padding: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.addJob__inputContent.custom_placeholder{
+   color: #999; 
+}

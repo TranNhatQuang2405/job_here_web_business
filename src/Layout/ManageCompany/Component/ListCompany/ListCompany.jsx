@@ -65,7 +65,7 @@ function ListCompany() {
                             <div>{index + 1}</div>
                         </td>
                         <td className="text-center listCompany__item-center">
-                            <Avatar src={ele.avatarUrl} width="80px" className="mx-auto" />
+                            <Avatar url={ele.avatarUrl} width="80px" className="mx-auto" />
                         </td>
                         <td className="listCompany__item-center">
                             <Link to={createUrl(ele.companyId)} className="listCompany__item-link">{ele.companyName}</Link>

@@ -32,6 +32,9 @@ class Service {
 		var headerStorage = localStorage.getItem("header");
 		headerStorage = headerStorage ? JSON.parse(headerStorage) : {};
 		let result = await axios.get(url, {
+			params: {
+				...params
+			},
 			headers: {
 				...headerStorage,
 			},

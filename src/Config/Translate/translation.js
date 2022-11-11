@@ -190,7 +190,20 @@ export const en = {
   "business.manage.addJob.salaryMin": "Salary min",
   "business.manage.addJob.salaryMax": "Salary max",
   "business.manage.addJob.unit": "Choose unit of salary",
-  "business.manage.addJob.unit.label": "Unit of salary"
+  "business.manage.addJob.unit.label": "Unit of salary",
+  "business.manage.addJob.cancel": "Cancel",
+  "business.manage.addJob.create": "Create",
+  "business.manage.addJob.date.label": "Select date for recruitment",
+  "business.manage.addJob.startDate.label": "Start date",
+  "business.manage.addJob.endDate.label": "End date",
+  "business.manage.addJob.error.experience": "There is no any exprience",
+  "business.manage.addJob.error.jobType": "There is no any job type",
+  "business.manage.addJob.error.skill": "There is no any skill",
+  "business.manage.addJob.error.experience.title": "Experience Error",
+  "business.manage.addJob.error.jobType.title": "Job type Error",
+  "business.manage.addJob.error.skill.title": "Skill Error",
+  "business.manage.addJob.create.title": "Create job"
+
 };
 
 export const vn = {
@@ -381,6 +394,18 @@ export const vn = {
   "business.manage.addJob.salaryMin": "Lương thấp nhất",
   "business.manage.addJob.salaryMax": "Lương cao nhất",
   "business.manage.addJob.unit": "Chọn đơn vị tính lương",
-  "business.manage.addJob.unit.label": "Đơn vị tính lương"
+  "business.manage.addJob.unit.label": "Đơn vị tính lương",
+  "business.manage.addJob.cancel": "Huỷ",
+  "business.manage.addJob.create": "Tạo công việc",
+  "business.manage.addJob.date.label": "Chọn ngày tuyển dụng",
+  "business.manage.addJob.startDate.label": "Ngày bắt đầu tuyển",
+  "business.manage.addJob.endDate.label": "Ngày kết thúc tuyển dụng",
+  "business.manage.addJob.error.experience": "Chưa chọn kinh nghiệm tuyển dụng",
+  "business.manage.addJob.error.jobType": "Chưa chọn loại hình tuyển dụng",
+  "business.manage.addJob.error.skill": "Chưa chọn kỹ năng tuyển dụng",
+  "business.manage.addJob.error.experience.title": "Lỗi chọn kinh nghiệm",
+  "business.manage.addJob.error.jobType.title": "Lỗi chọn loại công việc",
+  "business.manage.addJob.error.skill.title": "Lỗi chọn kỹ năng",
+  "business.manage.addJob.create.title": "Tạo công việc"
 
 };
