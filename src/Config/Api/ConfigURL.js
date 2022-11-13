@@ -17,6 +17,7 @@ export const deleteCompany = "/user/company/delete";
 export const getJobInfo = "/job/getJobInfo";
 export const getListJobManageByCompanyId = "/job/getListJobManageByCompanyId";
 export const createJob = "/job/create";
+export const deleteJob = "/job/delete";
 
 //Dropdown
 export const genderDropdown = "/dropdown/gender";

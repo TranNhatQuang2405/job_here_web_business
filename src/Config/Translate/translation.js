@@ -157,6 +157,8 @@ export const en = {
   "business.manage.job.table.avatar": "Avatar",
   "business.manage.job.table.nothing": "No data",
   "business.manage.job.table.endDate": "End Date",
+  "business.manage.job.table.delete": "Delete Job",
+  "business.manage.job.delete": "Delete Job",
   "business.manage.addJob.title": "Fill Information",
   "business.manage.addJob.companyName": "Select one company",
   "business.manage.addJob.jobName": "Fill your job name",
@@ -210,8 +212,7 @@ export const en = {
   "business.manage.company.delete.title": "Delete company",
   "business.manage.company.delete": "Delete company",
   "business.manage.company.delete.fail": "Delete fail",
-  "business.page.developing.title": "Sorry! We are developing this feature"
-
+  "business.page.developing.title": "Sorry! We are developing this feature",
 };
 
 export const vn = {
@@ -371,6 +372,8 @@ export const vn = {
   "business.manage.job.table.avatar": "Ảnh đại diện",
   "business.manage.job.table.nothing": "Không có dữ liệu",
   "business.manage.job.table.endDate": "Ngày hết hạn",
+  "business.manage.job.table.delete": "Xoá",
+  "business.manage.job.delete": "Xoá công việc",
   "business.manage.addJob.title": "Nhập thông tin",
   "business.manage.addJob.companyName": "Select one company",
   "business.manage.addJob.jobName": "Điền tên công việc",
@@ -422,5 +425,5 @@ export const vn = {
   "business.manage.company.delete.title": "Xoá công ty",
   "business.manage.company.delete": "Xoá công ty",
   "business.manage.company.delete.fail": "Xoá không thành công",
-  "business.page.developing.title": "Xin lỗi! Tính năng này đang được phát triển"
+  "business.page.developing.title": "Xin lỗi! Tính năng này đang được phát triển",
 };

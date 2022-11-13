@@ -2,7 +2,8 @@ import Service from "Config/Api/Service";
 import {
     getJobInfo,
     getListJobManageByCompanyId,
-    createJob
+    createJob,
+    deleteJob
 } from "Config/Api/ConfigURL";
 
 class JobBusiness extends Service {
@@ -20,6 +21,10 @@ class JobBusiness extends Service {
             ...jobInfo
         };
         let result = await this.post(createJob, params);
+        return result;
+    };
+    DeleteJob = async (id) => {
+        let result = await this.post(`${deleteJob}/${id}`);
         return result;
     };
 }

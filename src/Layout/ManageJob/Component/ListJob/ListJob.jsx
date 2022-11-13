@@ -4,15 +4,62 @@ import { Avatar } from 'Components/Image'
 import { jobBusiness } from 'Business'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { TrashFill } from 'react-bootstrap-icons'
+import { AlertModal, ConfirmModal } from 'Components/Modal'
 import Moment from 'moment';
 import "./ListJob.css"
 function ListJob({ companyId }) {
     const { t } = useTranslation()
     const [loading, setLoading] = useState(true)
     const [listJob, setListJob] = useState([])
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [reRender, setReRender] = useState(0)
+    const [jobId, setJobId] = useState(0)
+    const [showAlert, setShowAlert] = useState({
+        show: false,
+        message: "",
+        title: t("business.manage.job.delete"),
+        httpCode: 200
+    })
+
+    const handleCloseAlert = () => {
+        setShowAlert({
+            show: false,
+            message: "",
+            title: t("business.manage.job.delete"),
+            httpCode: 200
+        })
+    }
+
     const createUrl = (id) => {
         return `/manageJob/jobInfo/${id}`
     }
+
+    const handleDelete = async () => {
+        let result = await jobBusiness.DeleteJob(jobId)
+        if (result) {
+            setShowAlert({
+                show: true,
+                message: result.data.message,
+                title: t("business.manage.company.delete"),
+                httpCode: result.data.httpCode
+            })
+        } else {
+            setShowAlert({
+                show: true,
+                message: t("business.manage.company.delete.fail"),
+                title: t("business.manage.company.delete"),
+                httpCode: 400
+            })
+        }
+        setShowConfirm(false)
+        setReRender(prev => prev + 1)
+    }
+    const handleShowConfirm = (id) => {
+        setJobId(id)
+        setShowConfirm(true)
+    }
+
     useEffect(() => {
         let isSubscribed = true;
         const first = async () => {
@@ -32,9 +79,19 @@ function ListJob({ companyId }) {
         return () => {
             isSubscribed = false;
         };
-    }, [companyId]);
+    }, [companyId, reRender]);
     return (
         <div className="listJob__parent fix_scroll">
+            <ConfirmModal
+                show={showConfirm}
+                title={t("business.manage.company.delete.title")}
+                content={t("business.manage.company.delete.content")}
+                handleClose={() => setShowConfirm(false)}
+                handleSuccess={handleDelete}
+            />
+            <AlertModal
+                data={showAlert}
+                onHide={handleCloseAlert} />
             <Table striped bordered hover size="lg" responsive="sm">
                 <thead>
                     <tr>
@@ -56,6 +113,9 @@ function ListJob({ companyId }) {
                         </th>
                         <th className="text-center listJob__item-center">
                             {t("business.manage.job.table.status")}
+                        </th>
+                        <th className="text-center listCompany__item-center">
+                            {t("business.manage.job.table.delete")}
                         </th>
                     </tr>
                 </thead>
@@ -82,6 +142,9 @@ function ListJob({ companyId }) {
                             </td>
                             <td className="text-center listJob__item-center">
                                 <FormCheck type="switch" checked={ele.isActive} disabled />
+                            </td>
+                            <td className="text-center listCompany__item-center">
+                                <TrashFill size={30} className="cur-pointer" onClick={() => handleShowConfirm(ele.jobId)} />
                             </td>
                         </tr>
                     )) :
