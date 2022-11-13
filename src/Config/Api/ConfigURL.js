@@ -11,6 +11,7 @@ export const getCompanyInfo = "/user/company/getCompanyInfo";
 export const getAllJobOfCompany = "/user/company/getAllJobOfCompany";
 export const createCompany = "/user/company/createCompany";
 export const updateCompany = "/user/company/updateCompany";
+export const deleteCompany = "/user/company/delete";
 
 //Job
 export const getJobInfo = "/job/getJobInfo";

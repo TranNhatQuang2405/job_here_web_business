@@ -4,7 +4,8 @@ import {
     getCompanyInfo,
     getAllJobOfCompany,
     createCompany,
-    updateCompany
+    updateCompany,
+    deleteCompany
 } from "Config/Api/ConfigURL";
 
 class CompanyBusiness extends Service {
@@ -38,6 +39,11 @@ class CompanyBusiness extends Service {
         let result = await this.post(updateCompany, params);
         return result;
     }
+
+    DeleteCompany = async (id) => {
+        let result = await this.post(`${deleteCompany}/${id}`);
+        return result;
+    };
 
 }
 

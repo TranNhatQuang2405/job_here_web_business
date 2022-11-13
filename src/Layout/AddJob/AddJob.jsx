@@ -12,6 +12,7 @@ function AddJob() {
     const { t } = useTranslation()
     const navigate = useNavigate()
     const [listCompany, setListCompany] = useState([])
+    const [saving, setSaving] = useState(false)
     const [master, setMaster] = useState({})
     const [showEditContent, setShowEditContent] = useState(0)
     const [jobInfo, setJobInfo] = useState({
@@ -88,6 +89,7 @@ function AddJob() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setSaving(true);
         let experienceSave = []
         master.experience.forEach(x => {
             if (x.checked === true)
@@ -141,6 +143,7 @@ function AddJob() {
                 })
             }
         }
+        setSaving(false)
     }
 
     const hideAlert = () => {
@@ -514,7 +517,7 @@ function AddJob() {
                 <hr />
                 <div className="d-flex justify-content-end">
                     <Button variant="danger" onClick={() => navigate("/manageJob")}>{t("business.manage.addJob.cancel")}</Button>
-                    <Button type="submit" className="ms-2">{t("business.manage.addJob.create")}</Button>
+                    <Button type="submit" className="ms-2">{saving ? <Spinner animation="border" /> : t("business.manage.addJob.create")}</Button>
                 </div>
             </Form>
         </div>

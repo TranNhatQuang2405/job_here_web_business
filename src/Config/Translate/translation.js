@@ -202,7 +202,15 @@ export const en = {
   "business.manage.addJob.error.experience.title": "Experience Error",
   "business.manage.addJob.error.jobType.title": "Job type Error",
   "business.manage.addJob.error.skill.title": "Skill Error",
-  "business.manage.addJob.create.title": "Create job"
+  "business.manage.addJob.create.title": "Create job",
+  "business.manage.company.table.delete": "Delete",
+  "business.modal.confirm.ok": "Yes",
+  "business.modal.confirm.no": "No",
+  "business.manage.company.delete.content": "Do you want to delete this company ?",
+  "business.manage.company.delete.title": "Delete company",
+  "business.manage.company.delete": "Delete company",
+  "business.manage.company.delete.fail": "Delete fail",
+  "business.page.developing.title": "Sorry! We are developing this feature"
 
 };
 
@@ -406,6 +414,13 @@ export const vn = {
   "business.manage.addJob.error.experience.title": "Lỗi chọn kinh nghiệm",
   "business.manage.addJob.error.jobType.title": "Lỗi chọn loại công việc",
   "business.manage.addJob.error.skill.title": "Lỗi chọn kỹ năng",
-  "business.manage.addJob.create.title": "Tạo công việc"
-
+  "business.manage.addJob.create.title": "Tạo công việc",
+  "business.manage.company.table.delete": "Xoá",
+  "business.modal.confirm.ok": "Đồng ý",
+  "business.modal.confirm.no": "Không",
+  "business.manage.company.delete.content": "Bạn có muốn xoá công ty này không",
+  "business.manage.company.delete.title": "Xoá công ty",
+  "business.manage.company.delete": "Xoá công ty",
+  "business.manage.company.delete.fail": "Xoá không thành công",
+  "business.page.developing.title": "Xin lỗi! Tính năng này đang được phát triển"
 };
