@@ -75,13 +75,17 @@ function JobInfoCommon({ data }) {
                                     <Icon url={work} width="40px" />
                                 </div>
                                 <div className="d-flex-column">
-                                    <div className="jobInfo__common-item-title">
+                                    <div className="jobInfo__common-item-title mb-1">
                                         {t("business.job.info.jobType")}
                                     </div>
                                     <div className="jobInfo__common-item-content">
-                                        {data.jobTypeNames.map((e, index) =>
-                                            <span key={index}>{e.jobTypeName + (index !== data.jobTypeNames.length - 1 ? ", " : ".")}</span>
-                                        )}
+                                        <div className="jobInfo__common-item-skill">
+                                            {data.jobTypeNames.map((e, index) =>
+                                                <div className="jobInfo__body-info-text-border" key={index}>
+                                                    {e.jobTypeName}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +139,6 @@ function JobInfoCommon({ data }) {
                                                 </div>
                                             )}
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -179,10 +182,6 @@ function JobInfoCommon({ data }) {
                         </Col>
 
                     </Row>
-                </div>
-
-                <div className="flex-grow-1">
-
                 </div>
             </div>
 
