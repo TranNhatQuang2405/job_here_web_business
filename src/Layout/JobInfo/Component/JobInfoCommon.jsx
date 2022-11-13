@@ -6,6 +6,8 @@ import level from "Assets/Icons/level.png"
 import gender from "Assets/Icons/gender.png"
 import group from "Assets/Icons/group.png"
 import work from "Assets/Icons/work.png"
+import map from "Assets/Icons/map.png"
+import suitcase from "Assets/Icons/suitcase.png"
 import { Icon } from 'Components/Image';
 import { useTranslation } from 'react-i18next';
 
@@ -122,13 +124,55 @@ function JobInfoCommon({ data }) {
                                     <Icon url={experience} width="40px" />
                                 </div>
                                 <div className="d-flex-column">
-                                    <div className="jobInfo__common-item-title">
+                                    <div className="jobInfo__common-item-title mb-1">
                                         {t("business.job.info.experience")}
                                     </div>
                                     <div className="jobInfo__common-item-content">
-                                        {data.experienceNames.map((e, index) =>
-                                            <span key={index}>{e.experienceName + (index !== data.experienceNames.length - 1 ? ", " : ".")}</span>
-                                        )}
+                                        <div className="jobInfo__common-item-skill">
+                                            {data.experienceNames.map((e, index) =>
+                                                <div className="jobInfo__body-info-text-border" key={index}>
+                                                    {e.experienceName}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+
+                    </Row>
+                    <Row>
+                        <Col lg={6} className="mb-3">
+                            <div className="jobInfo__common-item">
+                                <div>
+                                    <Icon url={suitcase} width="40px" />
+                                </div>
+                                <div className="d-flex-column">
+                                    <div className="jobInfo__common-item-title mb-1">
+                                        {t("business.job.info.skill")}
+                                    </div>
+                                    <div className="jobInfo__common-item-skill">
+                                        {data.jobSkills.map((e, index) =>
+                                            <div className="jobInfo__body-info-text-border" key={index}>
+                                                {e.skillName}
+                                            </div>)
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6} className="mb-3">
+                            <div className="jobInfo__common-item">
+                                <div>
+                                    <Icon url={map} width="40px" />
+                                </div>
+                                <div className="d-flex-column">
+                                    <div className="jobInfo__common-item-title mb-1">
+                                        {t("business.job.info.city")}
+                                    </div>
+                                    <div className="jobInfo__body-info-text-border">
+                                        {data.cityName}
                                     </div>
                                 </div>
                             </div>
@@ -138,26 +182,7 @@ function JobInfoCommon({ data }) {
                 </div>
 
                 <div className="flex-grow-1">
-                    <div className="mb-3">
-                        <div className="jobInfo__common-item-title mb-1">
-                            {t("business.job.info.skill")}
-                        </div>
-                        <div className="jobInfo__common-item-skill">
-                            {data.jobSkills.map((e, index) =>
-                                <div className="jobInfo__body-info-text-border" key={index}>
-                                    {e.skillName}
-                                </div>)
-                            }
-                        </div>
-                    </div>
-                    <div className="mb-3">
-                        <div className="jobInfo__common-item-title mb-1">
-                            {t("business.job.info.city")}
-                        </div>
-                        <div className="jobInfo__body-info-text-border">
-                            {data.cityName}
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

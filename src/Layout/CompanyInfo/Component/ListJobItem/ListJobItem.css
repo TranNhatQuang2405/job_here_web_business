@@ -9,10 +9,10 @@
     position: relative;
 }
 .ListJobItem__content{
-    margin-left: 16px;
     padding-top: 8px;
     padding-bottom: 8px;
-    flex-grow: 1;
+    margin-left: 8px;
+    width: calc(100% - 80px - 16px);
 }
 .ListJobItem__jobName{
     font-size: 15px;

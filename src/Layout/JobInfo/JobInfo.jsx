@@ -6,16 +6,17 @@ import "./JobInfo.css"
 import { LoadingPage } from 'Layout/Common';
 import { Avatar } from 'Components/Image';
 import { Clock } from 'react-bootstrap-icons';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import Moment from 'moment';
-import { JobInfoCommon, JobInfoDetail } from './Component';
+import { JobInfoCommon, JobInfoDetail, JobListApplication } from './Component';
 
 function JobInfo() {
     const { t } = useTranslation()
     const location = useLocation()
     const [loading, setLoading] = useState(true)
     const [jobInfo, setJobInfo] = useState({})
-
+    const [listApplication, setListApplication] = useState([])
     const formatDate = (date) => {
         let result = Moment(date).format("DD/MM/yyyy")
         return result
@@ -34,6 +35,7 @@ function JobInfo() {
             prepare.push(jobBusiness.GetJobInfo(jobId));
             prepare.push(dropdownBusiness.CityDropdown());
             prepare.push(dropdownBusiness.GenderDropdown());
+            prepare.push(jobBusiness.GetListApplicationOfJob(jobId));
             let results = await Promise.all(prepare)
             if (!results.find(x => x.data.httpCode !== 200)) {
                 let unit = results[0].data.objectData
@@ -43,6 +45,7 @@ function JobInfo() {
                 let city = results[5].data.objectData
                 let data = results[4].data.objectData
                 let gender = results[6].data.objectData
+                setListApplication(results[7].data.objectData)
                 // Gán unit
                 let u = unit.find(x => x.unit === data.unit)
                 if (u)
@@ -100,18 +103,31 @@ function JobInfo() {
                     </div>
                 </div>
             </div>
-            <div className="jobInfo__body">
-                <div className="companyInfo__body-title mb-3">
-                    <span className="jobInfo__body-title-line"></span>
-                    {t("business.job.info.about")}
-                </div>
-                <JobInfoCommon data={jobInfo} />
-                <div className="jobInfo__body-info-common mt-3">
-                    <div className="jobInfo__body-info-common-title">{t("business.job.info.address")}</div>
-                    <div className="mt-2">{`- ${jobInfo.address}`}</div>
-                </div>
-                <JobInfoDetail data={jobInfo} />
-            </div>
+            <Container fluid>
+                <Row>
+                    <Col lg={8} className="jobInfo__body mb-2">
+                        <div className="companyInfo__body-title mb-3">
+                            <span className="jobInfo__body-title-line"></span>
+                            {t("business.job.info.about")}
+                        </div>
+                        <JobInfoCommon data={jobInfo} />
+                        <div className="jobInfo__body-info-common mt-3">
+                            <div className="jobInfo__body-info-common-title">{t("business.job.info.address")}</div>
+                            <div className="mt-2">{`- ${jobInfo.address}`}</div>
+                        </div>
+                        <JobInfoDetail data={jobInfo} />
+                    </Col>
+                    <Col lg={4} className="jobInfo__body mb-2">
+                        <div className="companyInfo__body-title mb-3">
+                            <span className="jobInfo__body-title-line"></span>
+                            {t("business.job.info.listApllication")}
+                        </div>
+                        <JobListApplication data={listApplication} />
+                    </Col>
+                </Row>
+            </Container>
+
+
         </div>
     )
 }

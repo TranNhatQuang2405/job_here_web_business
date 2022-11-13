@@ -5,6 +5,10 @@ export const signInURL = "/auth/login";
 export const signUpURL = "/auth/register";
 export const authCodeURL = "/auth/authenticateCode";
 
+//User
+export const viewApplication = "/user/viewApplication";
+
+
 // Company
 export const getListCompanyOwner = "/user/company/getListCompanyOwner";
 export const getCompanyInfo = "/user/company/getCompanyInfo";
@@ -18,6 +22,7 @@ export const getJobInfo = "/job/getJobInfo";
 export const getListJobManageByCompanyId = "/job/getListJobManageByCompanyId";
 export const createJob = "/job/create";
 export const deleteJob = "/job/delete";
+export const getListApplicationOfJob = "/job/getListApplicationOfJob";
 
 //Dropdown
 export const genderDropdown = "/dropdown/gender";

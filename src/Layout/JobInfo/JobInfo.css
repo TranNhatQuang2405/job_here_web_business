@@ -34,7 +34,6 @@
 }
 
 .jobInfo__body{
-    width: 100%;
     border: 1px solid #ccc;
     padding: 16px;
     border-radius: 10px;
@@ -86,6 +85,8 @@
 .jobInfo__common-item-skill{
     display: flex;
     flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 8px;
 }
 
 .jobInfo__body-detail{
@@ -100,6 +101,30 @@
     text-align: justify;
 }
 
+.jobApplication__info{
+    width: 100%;
+}
+
+.jobApplication__note{
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.jobApplication__link{
+    cursor: pointer;
+    font-weight: 600;
+    font-style: italic;
+}
+.jobApplication__link:hover{
+    color: #E34C31;
+}
+.jobApplication__linkCv{
+    color: #E34C31;
+    text-decoration: none;
+    margin-left: 8px;
+    font-weight: 600;
+}
 
 @media screen and (width < 992px) {
     .jobInfo__body-info-common-body{
