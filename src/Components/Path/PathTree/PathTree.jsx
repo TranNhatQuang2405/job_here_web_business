@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { ChevronRight } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 import "./PathTree.css"
-function PathTree({ className, lastPath }) {
+function PathTree({ className, lastPath, activeCenter }) {
 
     const location = useLocation();
     const [paths, setPaths] = useState([])
@@ -26,8 +26,10 @@ function PathTree({ className, lastPath }) {
         setPaths(tmpPath)
     }, [lastPath, location.pathname])
 
-    const creatUrl = (child) => {
+    const creatUrl = (child, index) => {
         let url = ""
+        if (!activeCenter && index !== paths.length - 1 && index > 0)
+            return location.pathname;
         for (let i = 0; i < paths.length; i++) {
             if (paths[i] !== child) {
                 url += "/" + paths[i].pathId
@@ -45,7 +47,7 @@ function PathTree({ className, lastPath }) {
             {paths.map((ele, index) =>
                 <div key={index}>
                     {index !== 0 ? <ChevronRight className="path__sign"></ChevronRight> : <></>}
-                    <Link to={creatUrl(ele)} className="path__link-style">{t(ele.pathName)}</Link>
+                    <Link to={creatUrl(ele, index)} className={`path__link-style ${index === paths.length - 1 ? "active" : ""}`}>{t(ele.pathName)}</Link>
                 </div>)
             }
         </div>

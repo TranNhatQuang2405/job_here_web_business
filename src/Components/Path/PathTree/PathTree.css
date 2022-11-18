@@ -1,15 +1,19 @@
-.path__link-style{
+.path__link-style {
     font-size: larger;
     text-decoration: none;
     font-weight: 600;
     color: var(--bs-body-color);
 }
 
-.path__link-style:hover{
+.path__link-style.active {
     color: #E34C31;
 }
 
-.path__sign{
+.path__link-style:hover {
+    color: #E34C31;
+}
+
+.path__sign {
     display: inline-block;
     margin-left: 16px;
     margin-right: 16px;
@@ -17,7 +21,7 @@
     padding-bottom: 4px;
 }
 
-.path__bound{
+.path__bound {
     display: flex;
     align-items: center;
     flex-wrap: wrap;

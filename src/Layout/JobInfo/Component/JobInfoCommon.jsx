@@ -17,8 +17,11 @@ function JobInfoCommon({ data }) {
     const moneyCreate = () => {
         let max = data.salaryMax
         let min = data.salaryMin
-        if (max && min) {
+        if (max && min && max !== min) {
             return `${min} - ${max} ${data.unitName}`
+        }
+        else if (max && min) {
+            return `${max} ${data.unitName}`
         }
         else if (max && !min) {
             return `${t("business.job.unit.max")} ${max} ${data.unitName}`
