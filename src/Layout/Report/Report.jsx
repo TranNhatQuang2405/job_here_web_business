@@ -1,39 +1,22 @@
-import React from 'react'
-import { Row, Col, Tab, Tabs } from 'react-bootstrap';
-import { Line } from 'react-chartjs-2'
+import React from "react";
+import "./Report.css";
+import { Tab, Tabs } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import { ReportViewCompanyByMonth, ReportViewJobByMonth } from "./Components";
 
-function Report() {
-    const labels = [1, 2, 3, 4, 5, 6, 7]
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            fill: true,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        }]
-    };
-    return (
-        <Tabs
-            className="mb-3"
-        >
-            <Tab eventKey="home" title="Home">
-                <Row>
-                    <Col lg={6} xs={12}>
-                        <Line datasetIdKey='issssd'
-                            data={data} />
-                    </Col>
-                    <Col lg={6} xs={12}>
-                        <Line datasetIdKey='issssd'
-                            data={data} />
-                    </Col>
-                </Row>
-            </Tab>
-            <Tab eventKey="profile" title="Profile">
-            </Tab>
-        </Tabs>
-    )
-}
+const Report = () => {
+  const { t } = useTranslation();
 
-export default Report
+  return (
+    <Tabs className="mb-3">
+      <Tab eventKey="viewjob" title={t("business.report.viewjob.month")}>
+        <ReportViewJobByMonth />
+      </Tab>
+      <Tab eventKey="viewcompany" title={t("business.report.viewjob.month")}>
+        <ReportViewCompanyByMonth />
+      </Tab>
+    </Tabs>
+  );
+};
+
+export default Report;

@@ -1,4 +1,3 @@
-
 // Auth
 export const getSessionURL = "/user/getSession";
 export const signInURL = "/auth/login";
@@ -7,7 +6,6 @@ export const authCodeURL = "/auth/authenticateCode";
 
 //User
 export const viewApplication = "/user/viewApplication";
-
 
 // Company
 export const getListCompanyOwner = "/user/company/getListCompanyOwner";
@@ -34,6 +32,9 @@ export const jobtypeDropdown = "/dropdown/jobtype";
 export const cityDropdown = "/dropdown/city";
 export const unitDropdown = "/dropdown/unit";
 
+// Report
+export const getTotalViewJobByMonth = "/report/getTotalViewJobByMonth";
+export const getTotalViewCompanyByMonth = "/report/getTotalViewCompanyByMonth";
 
 //Upload
 export const uploadImage = "/user/upload/uploadImage";
