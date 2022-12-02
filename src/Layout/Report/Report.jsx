@@ -12,7 +12,7 @@ const Report = () => {
       <Tab eventKey="viewjob" title={t("business.report.viewjob.month")}>
         <ReportViewJobByMonth />
       </Tab>
-      <Tab eventKey="viewcompany" title={t("business.report.viewjob.month")}>
+      <Tab eventKey="viewcompany" title={t("business.report.viewcompany.month")}>
         <ReportViewCompanyByMonth />
       </Tab>
     </Tabs>
