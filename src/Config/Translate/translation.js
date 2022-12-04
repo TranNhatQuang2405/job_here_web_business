@@ -236,6 +236,7 @@ export const en = {
   "business.user.info.address": "Address",
   editJob: "Edit Job",
   "business.manage.editJob.title": "Edit Job",
+  "business.jobInfo.noApplication": "No Application",
 };
 
 export const vn = {
@@ -472,4 +473,5 @@ export const vn = {
   "business.user.info.address": "Địa chỉ",
   editJob: "Chỉnh sửa công việc",
   "business.manage.editJob.title": "Chỉnh sửa công việc",
+  "business.jobInfo.noApplication": "Chưa có ứng viên nào",
 };

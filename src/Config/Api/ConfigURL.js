@@ -6,6 +6,7 @@ export const authCodeURL = "/auth/authenticateCode";
 
 // User
 export const viewApplication = "/user/viewApplication";
+export const getUserInfo = "/user/getInfoById";
 
 // Company
 export const getListCompanyOwner = "/user/company/getListCompanyOwner";

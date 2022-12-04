@@ -95,7 +95,7 @@ const JobInfo = () => {
         <Button onClick={handleEdit}>
           <PencilSquare size="25" color="aliceblue" />
           <span className="manageCompany__buttonAdd-content">
-            {t("business.manage.job.edit")}
+            {t("business.manage.editJob.title")}
           </span>
         </Button>
       </div>
