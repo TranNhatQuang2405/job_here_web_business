@@ -36,7 +36,7 @@ const Header = (props) => {
             <Logo isDark />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse>
+          <Navbar.Collapse className='justify-content-end'>
             {userInfo ? (
               <>
                 <Nav className="me-auto">
