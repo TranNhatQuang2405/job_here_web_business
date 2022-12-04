@@ -4,7 +4,7 @@ import { ChevronRight } from "react-bootstrap-icons";
 import { useTranslation } from "react-i18next";
 import "./PathTree.css";
 
-const PathTree = ({ className, lastPath, activeCenter }) => {
+const PathTree = ({ className, lastPath, activeCenter, activeStart }) => {
   const location = useLocation();
   const [paths, setPaths] = useState([]);
   const { t } = useTranslation();
@@ -29,6 +29,8 @@ const PathTree = ({ className, lastPath, activeCenter }) => {
   const creatUrl = (child, index) => {
     let url = "";
     if (!activeCenter && index !== paths.length - 1 && index > 0)
+      return location.pathname;
+    if (!activeStart && index !== paths.length - 1 && index === 0)
       return location.pathname;
     for (let i = 0; i < paths.length; i++) {
       if (paths[i] !== child) {

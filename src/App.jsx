@@ -14,6 +14,7 @@ import {
   AddJob,
   Developing,
   Report,
+  UserInfo
 } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/manageJob/editJob/:id" element={<EditJob />}></Route>
             <Route path="/manageJob/jobInfo/:id" element={<JobInfo />}></Route>
             <Route path="/manageJob/addJob" element={<AddJob />}></Route>
+            <Route path="/userInfo/:id" element={<UserInfo />}></Route>
             <Route path="/report" element={<Report />}></Route>
             <Route path="*" element={<Navigate to="/manageCompany" />} />
           </Routes>
