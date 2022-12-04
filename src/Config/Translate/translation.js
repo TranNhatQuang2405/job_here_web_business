@@ -228,6 +228,15 @@ export const en = {
   "business.report.nodata": "No Data",
   "business.report.viewjob.month": "Total View Job By Month",
   "business.report.viewcompany.month": "Total View Company By Month",
+  userInfo: "User Info",
+  "business.user.info.about": "About User",
+  "business.user.info.dateofbirth": "Date of birth",
+  "business.user.info.gender": "Gender",
+  "business.user.info.phone": "Phone number",
+  "business.user.info.address": "Address",
+  editJob: "Edit Job",
+  "business.manage.editJob.title": "Edit Job",
+  "business.jobInfo.noApplication": "No Application",
 };
 
 export const vn = {
@@ -456,4 +465,13 @@ export const vn = {
   "business.report.nodata": "Không có dữ liệu",
   "business.report.viewjob.month": "Tổng số lượt xem công việc theo tháng",
   "business.report.viewcompany.month": "Tổng số lượt xem công ty theo tháng",
+  userInfo: "Thông tin ứng viên",
+  "business.user.info.about": "Chi tiết ứng viên",
+  "business.user.info.dateofbirth": "Ngày sinh",
+  "business.user.info.gender": "Giới tính",
+  "business.user.info.phone": "Số điện thoại",
+  "business.user.info.address": "Địa chỉ",
+  editJob: "Chỉnh sửa công việc",
+  "business.manage.editJob.title": "Chỉnh sửa công việc",
+  "business.jobInfo.noApplication": "Chưa có ứng viên nào",
 };

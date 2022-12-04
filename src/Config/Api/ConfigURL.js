@@ -4,8 +4,9 @@ export const signInURL = "/auth/login";
 export const signUpURL = "/auth/register";
 export const authCodeURL = "/auth/authenticateCode";
 
-//User
+// User
 export const viewApplication = "/user/viewApplication";
+export const getUserInfo = "/user/getInfoById";
 
 // Company
 export const getListCompanyOwner = "/user/company/getListCompanyOwner";
@@ -15,14 +16,15 @@ export const createCompany = "/user/company/createCompany";
 export const updateCompany = "/user/company/updateCompany";
 export const deleteCompany = "/user/company/delete";
 
-//Job
+// Job
 export const getJobInfo = "/job/getJobInfo";
 export const getListJobManageByCompanyId = "/job/getListJobManageByCompanyId";
 export const createJob = "/job/create";
 export const deleteJob = "/job/delete";
 export const getListApplicationOfJob = "/job/getListApplicationOfJob";
+export const updateJob = "/job/updateJob";
 
-//Dropdown
+// Dropdown
 export const genderDropdown = "/dropdown/gender";
 export const industryDropdown = "/dropdown/industry";
 export const skillDropdown = "/dropdown/skill";
@@ -36,6 +38,6 @@ export const unitDropdown = "/dropdown/unit";
 export const getTotalViewJobByMonth = "/report/getTotalViewJobByMonth";
 export const getTotalViewCompanyByMonth = "/report/getTotalViewCompanyByMonth";
 
-//Upload
+// Upload
 export const uploadImage = "/user/upload/uploadImage";
 export const uploadCV = "/user/upload/uploadCV";

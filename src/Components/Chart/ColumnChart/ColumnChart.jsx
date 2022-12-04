@@ -17,12 +17,12 @@ const ColumnChart = ({ data = [], loading = false, fieldLabel = {} }) => {
         opacity: 0.6,
       },
     },
-    xAxis: {
-      label: {
-        autoHide: true,
-        autoRotate: false,
-      },
-    },
+    // xAxis: {
+    //   label: {
+    //     // autoHide: true,
+    //     // autoRotate: false,
+    //   },
+    // },
     meta: {
       [fieldLabel.yField]: {
         alias: fieldLabel.yFieldAlias,

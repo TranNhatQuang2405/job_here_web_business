@@ -1,0 +1,71 @@
+.userInfo__header {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 16px 16px;
+  border: 1px solid #ccc;
+  height: fit-content;
+  width: 100%;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  display: flex;
+}
+.userInfo__header-content {
+  padding: 8px 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.userInfo__header-content-fullname {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--jh-primary-color) !important;
+}
+
+.userInfo__header-content-email {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.userInfo__body {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.userInfo__body-title {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.userInfo__body-title-line {
+  height: 30px;
+  width: 8px;
+  margin-right: 8px;
+  background-color: #e34c31;
+}
+
+.userInfo__body-info-common {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.userInfo__common-item {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.userInfo__common-item-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.userInfo__common-item-content {
+  font-size: 16px;
+}
