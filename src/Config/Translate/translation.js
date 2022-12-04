@@ -234,6 +234,8 @@ export const en = {
   "business.user.info.gender": "Gender",
   "business.user.info.phone": "Phone number",
   "business.user.info.address": "Address",
+  editJob: "Edit Job",
+  "business.manage.editJob.title": "Edit Job",
 };
 
 export const vn = {
@@ -468,4 +470,6 @@ export const vn = {
   "business.user.info.gender": "Giới tính",
   "business.user.info.phone": "Số điện thoại",
   "business.user.info.address": "Địa chỉ",
+  editJob: "Chỉnh sửa công việc",
+  "business.manage.editJob.title": "Chỉnh sửa công việc",
 };
