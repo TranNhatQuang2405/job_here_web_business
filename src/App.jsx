@@ -4,7 +4,6 @@ import i18n from "./Config/Translate/i18n.js";
 import PageTemplate from "Layout/Common/PageTemplate/PageTemplate";
 import { SignInPage } from "Layout/Authentication";
 import {
-  MainPage,
   ManageCompany,
   ManageJob,
   CompanyInfo,
@@ -12,7 +11,6 @@ import {
   EditCompany,
   EditJob,
   AddJob,
-  Developing,
   Report,
   UserInfo
 } from "Layout";

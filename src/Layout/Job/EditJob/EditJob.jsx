@@ -96,6 +96,7 @@ const Editjob = () => {
     return () => {
       isSubscribed = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   const handleCheck = (e, skill) => {
@@ -584,10 +585,10 @@ const Editjob = () => {
                   showEditContent === 1
                     ? jobInfo.description
                     : showEditContent === 2
-                    ? jobInfo.require
-                    : showEditContent === 3
-                    ? jobInfo.benefit
-                    : ""
+                      ? jobInfo.require
+                      : showEditContent === 3
+                        ? jobInfo.benefit
+                        : ""
                 }
                 title={t("business.company.edit.content.title")}
                 show={showEditContent === 0 ? false : true}
@@ -599,9 +600,8 @@ const Editjob = () => {
                   {t("business.manage.addJob.description.label")}
                 </Form.Label>
                 <div
-                  className={`addJob__inputContent ${
-                    jobInfo.description ? "" : "custom_placeholder"
-                  }`}
+                  className={`addJob__inputContent ${jobInfo.description ? "" : "custom_placeholder"
+                    }`}
                   onClick={() => setShowEditContent(1)}
                   dangerouslySetInnerHTML={{
                     __html:
@@ -614,9 +614,8 @@ const Editjob = () => {
                   {t("business.manage.addJob.require.label")}
                 </Form.Label>
                 <div
-                  className={`addJob__inputContent ${
-                    jobInfo.require ? "" : "custom_placeholder"
-                  }`}
+                  className={`addJob__inputContent ${jobInfo.require ? "" : "custom_placeholder"
+                    }`}
                   onClick={() => setShowEditContent(2)}
                   dangerouslySetInnerHTML={{
                     __html: jobInfo.require || t("business.manage.addJob.require"),
@@ -628,9 +627,8 @@ const Editjob = () => {
                   {t("business.manage.addJob.benefit.label")}
                 </Form.Label>
                 <div
-                  className={`addJob__inputContent ${
-                    jobInfo.benefit ? "" : "custom_placeholder"
-                  }`}
+                  className={`addJob__inputContent ${jobInfo.benefit ? "" : "custom_placeholder"
+                    }`}
                   onClick={() => setShowEditContent(3)}
                   dangerouslySetInnerHTML={{
                     __html: jobInfo.benefit || t("business.manage.addJob.benefit"),
