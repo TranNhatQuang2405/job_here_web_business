@@ -10,7 +10,6 @@ const MonthPicker = ({ getData }) => {
     if (dateString !== "Invalid Date") {
       getData(dateString);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeData]);
 
   const onChange = (date, dateString) => {

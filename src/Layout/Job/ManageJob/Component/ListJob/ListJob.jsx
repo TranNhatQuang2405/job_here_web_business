@@ -79,7 +79,6 @@ function ListJob({ companyId }) {
         return () => {
             isSubscribed = false;
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [companyId, reRender]);
     return (
         <div className="listJob__parent fix_scroll">

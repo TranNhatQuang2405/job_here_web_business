@@ -96,7 +96,6 @@ const Editjob = () => {
     return () => {
       isSubscribed = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   const handleCheck = (e, skill) => {
