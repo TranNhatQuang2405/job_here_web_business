@@ -9,12 +9,12 @@ export const viewApplication = "/user/viewApplication";
 export const getUserInfo = "/user/getInfoById";
 
 // Company
-export const getListCompanyOwner = "/user/company/getListCompanyOwner";
-export const getCompanyInfo = "/user/company/getCompanyInfo";
-export const getAllJobOfCompany = "/user/company/getAllJobOfCompany";
-export const createCompany = "/user/company/createCompany";
-export const updateCompany = "/user/company/updateCompany";
-export const deleteCompany = "/user/company/delete";
+export const getListCompanyOwner = "/company/getListCompanyOwner";
+export const getCompanyInfo = "/company/getCompanyInfo";
+export const getAllJobOfCompany = "/company/getAllJobOfCompany";
+export const createCompany = "/company/createCompany";
+export const updateCompany = "/company/updateCompany";
+export const deleteCompany = "/company/delete";
 
 // Job
 export const getJobInfo = "/job/getJobInfo";
