@@ -488,7 +488,7 @@ function AddJob() {
                             jobInfo.description : showEditContent === 2 ?
                                 jobInfo.require : showEditContent === 3 ?
                                     jobInfo.benefit : ""}
-                        title={t("business.company.edit.content.title")}
+                        title={t(`business.job.edit.content.title${showEditContent}`)}
                         show={showEditContent === 0 ? false : true}
                         handleDone={handleChangeText}
                         handleClose={() => setShowEditContent(0)} />

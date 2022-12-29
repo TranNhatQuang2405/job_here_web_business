@@ -4,7 +4,7 @@ import { ChevronRight } from "react-bootstrap-icons";
 import { useTranslation } from "react-i18next";
 import "./PathTree.css";
 
-const PathTree = ({ className, lastPath, activeCenter, activeStart }) => {
+const PathTree = ({ className, lastPath, activeCenter, activeStart = true }) => {
   const location = useLocation();
   const [paths, setPaths] = useState([]);
   const { t } = useTranslation();

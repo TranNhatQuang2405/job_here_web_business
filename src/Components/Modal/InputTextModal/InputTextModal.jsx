@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next';
+import QuillToolbar, { modules, formats } from "./HeaderEditText";
 import ReactQuill from 'react-quill';
 import "./InputTextModal.css"
 const InputText = ({ title, content, show, handleDone, handleClose }) => {
@@ -34,7 +35,13 @@ const InputText = ({ title, content, show, handleDone, handleClose }) => {
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <ReactQuill onChange={handleChange} theme="snow" value={htmlContent} />
+                <QuillToolbar />
+                <ReactQuill
+                    onChange={handleChange}
+                    theme="snow"
+                    value={htmlContent}
+                    modules={modules}
+                    formats={formats} />
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="danger" onClick={onClose}>{t("business.company.edit.close")}</Button>
