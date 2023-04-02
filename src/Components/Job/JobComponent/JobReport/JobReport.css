@@ -1,0 +1,16 @@
+.JobReport__container {
+  border: 1px solid var(--jh-primary-border-color);
+  color: var(--jh-primary-text-color);
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.JobReport__container > h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.JobReport__container p {
+  font-size: 14px;
+}

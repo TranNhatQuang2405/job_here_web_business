@@ -1,0 +1,51 @@
+.CompanyTop__bound {
+  border-radius: 10px;
+}
+
+.CompanyTop_all-company,
+.CompanyTop_all-company i {
+  color: var(--jh-primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.CompanyTop_all-company:hover,
+.CompanyTop_all-company i:hover {
+  color: var(--jh-primary-color-hover);
+}
+
+.CompanyTop__item {
+  overflow: hidden;
+  border: 1px solid var(--jh-secondary-border-color);
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 100%;
+}
+
+.CompanyTop__item:hover {
+  border-color: var(--jh-primary-color);
+  background: radial-gradient(circle, rgba(98, 174, 100, 0.1) 0%, rgba(148, 134, 123, 0.1) 100%);
+}
+
+.CompanyTop__title {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.CompanyTop__item-logo {
+  height: 100%;
+  text-align: center;
+}
+
+.CompanyTop__item-img {
+  margin: 0 auto;
+}
+
+.CompanyTop__item-text {
+  font-size: 16px;
+  margin: 0 8px;
+  font-weight: 600;
+  cursor: pointer;
+}

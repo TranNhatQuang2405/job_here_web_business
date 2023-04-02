@@ -1,0 +1,78 @@
+.CVItem__container {
+  box-shadow: -1px 1px 4px rgb(0 0 0 / 5%);
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid #777;
+  border-radius: 10px;
+  align-self: stretch;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.CVItem__iframe{
+  width: 100%;
+}
+
+.CVItem__iframe body{
+	overflow: hidden;
+}
+
+.CVItem__container:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.CVItem__cv-name {
+  font-size: 18px;
+  width: 100%;
+  font-weight: 500;
+  font-style: italic;
+  text-overflow: ellipsis;
+}
+
+.react-pdf__Page__canvas {
+    margin: 0 auto;
+    width: 100% !important;
+    height: 100% !important;
+	max-height: 300px !important;
+	border: 1px solid #666;
+}
+
+.CVItem__cv-name-href{
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CVItem__cv-name:hover {
+  color: var(--jh-primary-color);
+}
+
+.CVItem__cv-create-date {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CVItem__cv-type {
+  margin: 0;
+  color: green;
+  font-size: 14px;
+}
+
+
+.CVItem__cv-content{
+	margin-top: auto;
+}
+
+.CVItem__error{
+	background-color: #777;
+	width: 100%;
+	height: 300px;
+}

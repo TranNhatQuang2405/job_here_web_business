@@ -1,0 +1,49 @@
+.JobInfo__box-info,
+.JobInfo__box-address {
+  background: var(--jh-box-background);
+  border-radius: 3px;
+  margin-bottom: 8px;
+  padding: 16px;
+}
+
+.JobInfo__box-info > p,
+.JobInfo__box-address > p {
+  color: var(--jh-primary-text-color);
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-decoration-line: underline;
+}
+
+.JobInfo__box-main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+@media (max-width: 480px) {
+  .JobInfo__box-main {
+    grid-template-columns: 100%;
+  }
+}
+
+.JobInfo__box-item {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.JobInfo__box-item strong {
+  color: var(--jh-primary-text-color);
+}
+
+.JobInfo__job-data h3 {
+  color: var(--jh-black-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.JobInfo__job-data p {
+  font-size: 15px;
+}
+
+.JobInfo__html {
+  text-align: justify;
+}

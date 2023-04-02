@@ -32,7 +32,7 @@ function ListJob({ companyId }) {
     }
 
     const createUrl = (id) => {
-        return `/manageJob/jobInfo/${id}`
+        return `/manageJob/${id}`
     }
 
     const handleDelete = async () => {

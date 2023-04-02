@@ -1,0 +1,24 @@
+.Tab__bound {
+    display: flex;
+    margin-bottom: 16px;
+    padding: 12px;
+    padding-bottom: 0;
+    column-gap: 8px;
+}
+
+.Tab_child {
+    font-size: 18px;
+    padding: 0 16px;
+    min-width: 150px;
+    text-align: center;
+    padding-bottom: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555555;
+}
+
+.Tab_child.currentTab {
+    border-bottom: 3px solid var(--jh-primary-color);
+    font-weight: 600;
+    color: var(--jh-primary-color);
+}

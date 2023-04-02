@@ -1,0 +1,66 @@
+.jh-btn {
+  padding: 9px 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.jh-btn,
+.jh-btn i {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.jh-btn-primary {
+  display: inline-block;
+  margin-bottom: 0;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.jh-btn-primary:hover,
+.jh-btn-primary:hover i,
+.jh-btn-primary:hover a {
+  background-color: var(--jh-primary-color-hover);
+  color: var(--jh-white-color) !important;
+}
+
+.jh-btn-primary,
+.jh-btn-primary i,
+.jh-btn-primary a {
+  background-color: var(--jh-primary-color);
+  color: var(--jh-white-color) !important;
+}
+
+.jh-btn-secondary {
+  display: inline-block;
+  margin-bottom: 0;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid var(--jh-primary-color);
+  border-radius: 4px;
+}
+
+.jh-btn-secondary:hover,
+.jh-btn-secondary:hover i,
+.jh-btn-secondary:hover a {
+  background-color: rgba(229, 247, 237, 0.5);
+}
+
+.jh-btn-secondary,
+.jh-btn-secondary i,
+.jh-btn-secondary a {
+  background: var(--jh-white-background);
+  color: var(--jh-primary-color);
+}

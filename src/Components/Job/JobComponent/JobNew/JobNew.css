@@ -1,0 +1,33 @@
+.JobNew__container {
+	background-color: var(--jh-white-background);
+	border-radius: 10px;
+}
+
+.JobNew__container-title {
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.JobNew__container .slick-dots li button:before {
+	font-size: 10px !important;
+}
+
+.JobNew__container .slick-dots li button:hover:before {
+	color: var(--jh-primary-color);
+}
+
+.JobNew__container .slick-dots li.slick-active button:before {
+	color: var(--jh-primary-color) !important;
+}
+
+.JobNew__container .slick-prev:before,
+.JobNew__container .slick-next:before {
+	font-size: 30px !important;
+	color: var(--jh-dark-gray-color) !important;
+}
+
+.JobNew__item {
+	width: 95%;
+	margin: 0 auto;
+	border-radius: 10px;
+}

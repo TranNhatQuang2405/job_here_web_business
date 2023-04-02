@@ -1,0 +1,37 @@
+.SliderKeyword__container .slick-dots li button:before {
+  font-size: 10px !important;
+}
+
+.SliderKeyword__container .slick-dots li.slick-active button:before {
+  color: var(--jh-primary-color) !important;
+}
+
+.SliderKeyword__container .slick-prev:before,
+.SliderKeyword__container .slick-next:before {
+  font-size: 24px !important; 
+  color: var(--jh-dark-gray-color) !important
+}
+
+.sliderKeyword__bound .slick-list  > div > div {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.SliderKeyword__item-location {
+  background: #f4f4f4;
+  border: 1px solid var(--jh-primary-border-color);
+  border-radius: 20px;
+  color: var(--jh-dark-gray-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 12px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.SliderKeyword__item-location.active {
+  background: var(--jh-primary-color);
+  border: 1px solid var(--jh-primary-color);
+  color: #fff;
+}

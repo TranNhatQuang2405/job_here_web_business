@@ -640,7 +640,7 @@ const Editjob = () => {
 						<div className="d-flex justify-content-end">
 							<Button
 								variant="danger"
-								onClick={() => navigate(`/manageJob/jobInfo/${jobInfo.jobId}`)}
+								onClick={() => navigate(`/manageJob/${jobInfo.jobId}`)}
 							>
 								{t("business.manage.addJob.cancel")}
 							</Button>

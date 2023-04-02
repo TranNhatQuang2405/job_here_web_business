@@ -41,7 +41,7 @@ function ListJobItem(props) {
             <Avatar src={data.avatarUrl} width="80px" />
             <div className="ListJobItem__content">
                 <div className="ListJobItem__jobName">
-                    <Link to={`/manageJob/jobInfo/${data.jobId}`} className="ListJobItem__jobName-link">
+                    <Link to={`/manageJob/${data.jobId}`} className="ListJobItem__jobName-link">
                         {data.jobName}
                     </Link>
                 </div>

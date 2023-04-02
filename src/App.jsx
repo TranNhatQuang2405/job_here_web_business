@@ -6,8 +6,8 @@ import { SignInPage } from "Layout/Authentication";
 import {
   ManageCompany,
   ManageJob,
-  CompanyInfo,
-  JobInfo,
+  CompanyPage,
+  JobPage,
   EditCompany,
   EditJob,
   AddJob,
@@ -32,11 +32,11 @@ const App = () => {
             ></Route>
             <Route
               path="/manageCompany/companyInfo/:id"
-              element={<CompanyInfo />}
+              element={<CompanyPage />}
             ></Route>
             <Route path="/manageJob" element={<ManageJob />}></Route>
             <Route path="/manageJob/editJob/:id" element={<EditJob />}></Route>
-            <Route path="/manageJob/jobInfo/:id" element={<JobInfo />}></Route>
+            <Route path="/manageJob/:id" element={<JobPage />}></Route>
             <Route path="/manageJob/addJob" element={<AddJob />}></Route>
             <Route path="/userInfo/:id" element={<UserInfo />}></Route>
             <Route path="/report" element={<Report />}></Route>

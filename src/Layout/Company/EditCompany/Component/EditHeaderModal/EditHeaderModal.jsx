@@ -13,7 +13,7 @@ function EditHeaderModal({ companyInfoParent, show, handleClose }) {
         httpCode: 400
     })
     const init = () => {
-        let size = companyInfoParent.size
+        let size = companyInfoParent.size + ""
         let lsSize = size ? size.split('-') : []
         if (lsSize.length === 1) {
             companyInfoParent.minSize = lsSize[0] * 1

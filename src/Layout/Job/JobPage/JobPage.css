@@ -1,0 +1,66 @@
+.JobPage__text-highlight {
+  color: var(--jh-primary-color) !important;
+  text-decoration: none;
+}
+
+.JobPage__text-highlight:hover {
+  color: var(--jh-primary-color);
+}
+
+.JobPage__tab-company-nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.JobPage__tab-company-nav li {
+  margin-right: 50px;
+}
+
+.JobPage__tab-company-nav-active {
+  border-bottom: 2px solid var(--jh-primary-text-color);
+}
+
+.JobPage__tab-company-nav > .JobPage__tab-company-nav-active a {
+  color: var(--jh-primary-text-color) !important;
+  font-weight: 700;
+}
+
+.JobPage__tab-company-nav a {
+  color: #807f7f;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.JobPage__box-job-info {
+  padding: 16px;
+}
+
+.JobPage__job-info-title {
+  border-left: 7px solid var(--jh-primary-color);
+  color: var(--jh-primary-text-color);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  padding-left: 12px;
+}
+
+.JobPage__box-job-similar {
+  justify-content: space-between;
+  margin: 0 0 16px;
+  padding: 16px;
+}
+
+.JobPage__box-job-similar h2 {
+  border-left: 7px solid var(--jh-primary-color);
+  color: var(--jh-primary-text-color);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  padding-left: 12px;
+}

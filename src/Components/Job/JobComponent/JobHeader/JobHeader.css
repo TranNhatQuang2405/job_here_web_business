@@ -1,0 +1,40 @@
+.JobHeader_job-box-header {
+  padding: 16px;
+}
+
+.JobHeader_job-company-logo {
+  margin-right: 24px;
+}
+
+.JobHeader_box-company-logo {
+  border: 2px solid var(--jh-primary-border-color);
+  border-radius: 75px;
+  height: 110px;
+  overflow: hidden;
+  width: 110px;
+  background-color: var(--jh-white-background);
+}
+
+.JobHeader_box-company-logo img {
+  max-height: 100% !important;
+  max-width: 100%;
+  object-fit: contain;
+  width: 75%;
+}
+
+.JobHeader_box-info-job h1 {
+  font-size: 22px;
+  line-height: 29px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.JobHeader_company-title {
+  margin-bottom: 8px;
+}
+
+.JobHeader_company-title a {
+  color: var(--jh-primary-text-color);
+  font-size: 18px;
+  font-weight: 700;
+}

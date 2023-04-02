@@ -1,0 +1,14 @@
+.Keyword__item {
+  background-color: var(--jh-item-background);
+  border-radius: 5px;
+  border: 1px solid var(--jh-secondary-border-color);
+}
+
+.Keyword__item:hover {
+  background-color: var(--jh-primary-color);
+}
+
+.Keyword__item:hover h4,
+.Keyword__item:hover p {
+  color: var(--jh-white-color);
+}

@@ -1,0 +1,39 @@
+.CompanyRating__child {
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.CompanyRating__child-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.CompanyRating__child-start {
+    font-size: 20px;
+    margin-right: 16px;
+    align-self: center;
+    margin-top: 4px;
+}
+
+.CompanyRating__child-react {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444444;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.CompanyRating__child-like {
+    color: green;
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.CompanyRating__child-dislike {
+    color: red;
+    font-size: 20px;
+    margin-right: 6px;
+}

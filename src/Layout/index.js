@@ -9,3 +9,5 @@ export { default as ManageCompany } from "./Company/ManageCompany/ManageCompany"
 export { default as ManageJob } from "./Job/ManageJob/ManageJob";
 export { default as Report } from "./Report/Report";
 export { default as UserInfo } from "./UserInfo/UserInfo";
+export { default as CompanyPage } from "./Company/CompanyPage/CompanyPage"
+export { default as JobPage } from "./Job/JobPage/JobPage"

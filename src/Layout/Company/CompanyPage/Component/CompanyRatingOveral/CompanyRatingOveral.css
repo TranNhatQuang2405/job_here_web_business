@@ -1,0 +1,47 @@
+.CompanyPage_rating {
+    padding: 24px 24px 8px;
+    margin-bottom: 16px;
+}
+
+.CompanyPage_rating-start-box {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    column-gap: 16px;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.CompanyPage_rating-start {
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 8px;
+}
+
+.CompanyPage_rating-start div {
+    color: var(--jh-primary-color);
+}
+
+.CompanyPage_rating-number {
+    font-size: 32px;
+    font-weight: 600;
+    padding: 4px;
+    border: 2px solid var(--jh-primary-color);
+    border-radius: 50%;
+    width: 57px;
+    height: 57px;
+    text-align: center;
+}
+
+.CompanyPage_rating-recommend-box {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    width: 100%;
+}
+
+.CompanyPage_rating-btn {
+    margin: 0 auto;
+    display: block;
+}

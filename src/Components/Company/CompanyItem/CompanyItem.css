@@ -1,0 +1,46 @@
+.CompanyItem__container {
+  box-shadow: -1px 1px 4px rgb(0 0 0 / 5%);
+  max-height: 400px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.CompanyItem__container:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.07) !important;
+}
+
+.CompanyItem__banner {
+  height: 180px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.CompanyItem__banner-wrapper img {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.CompanyItem__info {
+  padding: 0 16px;
+}
+
+.CompanyItem__logo {
+  bottom: 0;
+  left: 16px;
+  position: absolute;
+}
+
+.CompanyItem__info h3 {
+  font-size: 16px;
+}
+
+.CompanyItem__info h3 a:hover {
+  color: var(--jh-primary-color);
+}
+
+.CompanyItem__description {
+  font-size: 14px;
+}

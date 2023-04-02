@@ -1,16 +1,17 @@
-import { Avatar } from "Components/Image";
 import { PathTree } from "Components/Path";
+import { CompanyLogo } from "Components/Company";
 import { Row, Col, Container, Form, Spinner, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import background from "Assets/Images/background.jpg"
-import "./EditCompany.css"
-import { Link45deg, Building, GeoAltFill, PencilSquare, Envelope, Check2, X } from "react-bootstrap-icons";
+import { PencilSquare, Check2, X } from "react-bootstrap-icons";
 import { useTranslation } from "react-i18next";
 import { companyBusiness, uploadBusiness } from "Business";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LoadingPage } from "Layout/Common";
 import { EditHeaderModal } from "./Component";
 import { InputTextModal, AlertModal } from "Components/Modal";
+import company_default_background from "Assets/Images/company_default_background.jpg";
+import "./EditCompany.css"
+
 function EditCompany() {
 
     const { t } = useTranslation();
@@ -186,55 +187,76 @@ function EditCompany() {
             </div>
             <EditHeaderModal companyInfoParent={companyInfo} show={showEditHeader} handleClose={handleCloseModalEditHeader} />
             <div className="companyInfo__header">
-                <div>
-                    <input type="file" className="d-none" id="background" name="background" onChange={handleChangeBackground} />
-                    <img src={companyInfo.backgroundUrl || `${background}`} alt="BACKGROUND" className="companyInfo__header-background">
-                    </img>
-                    <Form.Label htmlFor="background" className="editCompany__lableBackGround">
-                        <PencilSquare size="25" color="black" />
-                    </Form.Label>
-                </div>
-                <div className="companyInfo__header-content-bound">
-                    <input type="file" className="d-none" id="avatar" name="avatar" onChange={handleChangeAvatar} />
-                    <Avatar width="150px" url={companyInfo.avatarUrl} className="companyInfo__header-avatar" >
-                        <div>
-                            <Form.Label htmlFor="avatar" className="editCompany__lableAvatar">
-                                <PencilSquare size="25" color="black" />
-                            </Form.Label>
+
+                <div className="CompanyPage__header jh-container jh-box-item mb-3">
+                    <div className="CompanyPage__cover-wrapper">
+                        <input type="file" className="d-none" id="background" name="background" onChange={handleChangeBackground} />
+                        <Form.Label htmlFor="background" className="editCompany__lableBackGround">
+                            <PencilSquare size="25" color="black" />
+                        </Form.Label>
+                        <img
+                            src={companyInfo.backgroundUrl || company_default_background}
+                            alt=""
+                            width="100%"
+                            height="236px"
+                        />
+                    </div>
+                    <div className="CompanyPage__company-detail-overview">
+                        <div className="CompanyPage__company-logo">
+                            <input type="file" className="d-none" id="avatar" name="avatar" onChange={handleChangeAvatar} />
+                            <CompanyLogo
+                                src={companyInfo.avatarUrl}
+                                alt={companyInfo?.companyName || ""}
+                                size={130}
+                            >
+                                <div>
+                                    <Form.Label htmlFor="avatar" className="editCompany__lableAvatar">
+                                        <PencilSquare size="25" color="black" />
+                                    </Form.Label>
+                                </div>
+                                {
+                                    uploadPending.avatar ?
+                                        <div className="editCompany__loadingAvatar">
+                                            <Spinner animation="border" variant="light" className="editCompany__loadingAvatar-child" />
+                                        </div> : <></>
+                                }
+                            </CompanyLogo>
                         </div>
-                        {
-                            uploadPending.avatar ?
-                                <div className="editCompany__loadingAvatar">
-                                    <Spinner animation="border" variant="light" className="editCompany__loadingAvatar-child" />
-                                </div> : <></>
-                        }
-                    </Avatar>
-                    <Row className="companyInfo__header-content">
-                        <Col lg={12} className="companyInfo__header-companyName">{companyInfo.companyName}</Col>
-                        <Col lg={4} xs={12} className="companyInfo__header-text">
-                            <Link45deg size={20} className="me-2" />
-                            <span>{companyInfo.urlCompany || t("business.company.info.noUrl")}</span>
-                        </Col>
-                        <Col lg={4} xs={12} className="companyInfo__header-text">
-                            <Building size={20} className="me-2" />
-                            <span>{companyInfo.size || t("business.company.info.noSize")}</span>
-                        </Col>
-                        <Col lg={12} xs={12} className="companyInfo__header-text">
-                            <GeoAltFill size={20} className="me-2" />
-                            <span>{companyInfo.address || t("business.company.info.noAddress")}</span>
-                        </Col>
-                        <Col lg={12} xs={12} className="companyInfo__header-text">
-                            <Envelope size={20} className="me-2" />
-                            <span>{companyInfo.email || t("business.company.info.noAddress")}</span>
-                        </Col>
-                        <div>
-                            <div className="editCompany__editHeader" onClick={() => setShowEditHeader(true)}>
-                                <PencilSquare size="25" color="black" />
+                        <div className="CompanyPage__company-header-info flex-grow-1">
+                            <h1 className="CompanyPage__company-detail-name text-highlight">
+                                {companyInfo?.companyName || ""}
+                            </h1>
+                            <div className="d-flex">
+                                {!!companyInfo.urlCompany && (
+                                    <p className="CompanyPage__website">
+                                        <i className="bi bi-house-door-fill" />{" "}
+                                        <a
+                                            href={companyInfo.valid_urlCompany}
+                                            rel="noreferrer"
+                                        >
+                                            {companyInfo.urlCompany || t("business.company.info.noUrl")}
+                                        </a>
+                                    </p>
+                                )}
+                                {!!companyInfo.email && (
+                                    <p className="CompanyPage__company-size">
+                                        <i className="bi bi-envelope-fill" /> {companyInfo.email}
+                                    </p>
+                                )}
+                                {!!companyInfo.size && (
+                                    <p className="CompanyPage__company-size">
+                                        <i className="bi bi-people-fill" /> {companyInfo.size} {t("Employee")}
+                                    </p>
+                                )}
+                            </div>
+                            <div>
+                                <div className="editCompany__editHeader" onClick={() => setShowEditHeader(true)}>
+                                    <PencilSquare size="25" color="black" />
+                                </div>
                             </div>
                         </div>
-                    </Row>
+                    </div>
                 </div>
-
             </div>
             <InputTextModal
                 content={companyInfo.description}
