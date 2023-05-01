@@ -142,7 +142,7 @@ const CompanyPage = () => {
 								{currentTab === 0 ?
 									<CompanyAboutAndJob companyData={companyData} />
 									:
-									<CompanyRating />
+									<CompanyRating companyId={companyData.companyId} />
 								}
 							</Col>
 							<Col md={4}>

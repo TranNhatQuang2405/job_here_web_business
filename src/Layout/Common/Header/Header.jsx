@@ -32,11 +32,13 @@ const Header = (props) => {
     <Row className="sticky-nav">
       <Col className="bg-app-dark">
         <Navbar expand="lg" variant="dark" className="Header__layout">
-          <Navbar.Brand href="/" className="d-flex flex-row align-items-center">
-            <Logo isDark />
+          <Navbar.Brand className="d-flex flex-row align-items-center">
+            <NavLink to="/Home">
+              <Logo isDark />
+            </NavLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse className='justify-content-end'>
+          <Navbar.Collapse className="justify-content-end">
             {userInfo ? (
               <>
                 <Nav className="me-auto">

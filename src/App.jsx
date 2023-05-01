@@ -12,7 +12,8 @@ import {
   EditJob,
   AddJob,
   Report,
-  UserInfo
+  UserInfo,
+  HomePage,
 } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
@@ -23,23 +24,17 @@ const App = () => {
       <AuthProvider>
         <PageTemplate>
           <Routes>
-            <Route path="/SignIn" element={<SignInPage />}></Route>
-            {/* <Route path="/Home" element={<MainPage />}></Route> */}
-            <Route path="/manageCompany" element={<ManageCompany />}></Route>
-            <Route
-              path="/manageCompany/editCompany/:id"
-              element={<EditCompany />}
-            ></Route>
-            <Route
-              path="/manageCompany/companyInfo/:id"
-              element={<CompanyPage />}
-            ></Route>
-            <Route path="/manageJob" element={<ManageJob />}></Route>
-            <Route path="/manageJob/editJob/:id" element={<EditJob />}></Route>
-            <Route path="/manageJob/:id" element={<JobPage />}></Route>
-            <Route path="/manageJob/addJob" element={<AddJob />}></Route>
-            <Route path="/userInfo/:id" element={<UserInfo />}></Route>
-            <Route path="/report" element={<Report />}></Route>
+            <Route path="/SignIn" element={<SignInPage />} />
+            <Route path="/Home" element={<HomePage />} />
+            <Route path="/manageCompany" element={<ManageCompany />} />
+            <Route path="/manageCompany/editCompany/:id" element={<EditCompany />} />
+            <Route path="/manageCompany/companyInfo/:id" element={<CompanyPage />} />
+            <Route path="/manageJob" element={<ManageJob />} />
+            <Route path="/manageJob/editJob/:id" element={<EditJob />} />
+            <Route path="/manageJob/:id" element={<JobPage />} />
+            <Route path="/manageJob/addJob" element={<AddJob />} />
+            <Route path="/userInfo/:id" element={<UserInfo />} />
+            <Route path="/report" element={<Report />} />
             <Route path="*" element={<Navigate to="/manageCompany" />} />
           </Routes>
         </PageTemplate>
