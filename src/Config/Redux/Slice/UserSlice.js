@@ -19,9 +19,13 @@ export const UserSlice = createSlice({
     SetIsPending: (state) => {
       state.pending = true;
     },
+    SetCompany: (state, action) => {
+      state.sessionInfo.company = action.payload;
+      state.pending = false;
+    }
   },
 });
 
-export const { changeSession, LogOut, SetIsPending } = UserSlice.actions;
+export const { changeSession, LogOut, SetIsPending, SetCompany } = UserSlice.actions;
 
 export default UserSlice.reducer;

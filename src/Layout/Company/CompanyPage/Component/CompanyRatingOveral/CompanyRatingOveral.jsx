@@ -2,22 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Rate, Progress } from "antd";
 import { useTranslation } from 'react-i18next';
 import { ButtonPrimary } from 'Components/Button';
-import { useSelector, useDispatch } from 'react-redux';
 import { companyBusiness } from "Business";
-import { useLocation } from 'react-router-dom';
 import "./CompanyRatingOveral.css"
 
 function CompanyRating({ companyId, goToRating, currentTab }) {
-    const sessionInfo = useSelector((state) => state.User.sessionInfo);
     const { t } = useTranslation();
-    const [showAddComment, setShowAddComment] = useState(false)
     const [companyScore, setCompanyScore] = useState({
         score: 0,
         percent: 0
-    })
-
-    const location = useLocation();
-    const dispatch = useDispatch();
+    });
 
     const handleGoToRatingPage = () => {
         goToRating()
