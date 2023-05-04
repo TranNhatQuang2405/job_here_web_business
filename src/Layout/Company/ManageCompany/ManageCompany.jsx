@@ -25,10 +25,12 @@ const ManageCompany = () => {
       let _company = listCompany[0];
       navigate(`/manageCompany/companyInfo/${_company.companyId}`);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listCompany]);
 
   useEffect(() => {
     getCompany();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getCompany = async () => {
