@@ -1,0 +1,20 @@
+.ChatBody__box {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 8px;
+    background-color: rgba(200, 200, 200, 0.2);
+    height: 100%;
+}
+
+.ChatBody__listMessage {
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.ChatBody__loading {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+}

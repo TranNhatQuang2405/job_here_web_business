@@ -1,0 +1,50 @@
+.ChatMenuItem__box {
+    display: flex;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    column-gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ChatMenuItem__box.active,
+.ChatMenuItem__box:hover {
+    background-color: rgba(210, 210, 210, 0.6);
+}
+
+.ChatMenuItem__time {
+    text-align: right;
+    font-size: 10px;
+    font-weight: 500;
+    font-style: italic;
+    width: 100%;
+}
+
+.ChatMenuItem__name {
+    font-weight: 600;
+}
+
+.ChatMenuItem__img {
+    width: 60px !important;
+}
+
+.ChatMenuItem__content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ChatMenuItem__mainContent {
+    max-width: 75%;
+}
+
+.ChatMenuItem__hasNew {
+    width: 15px;
+    height: 15px;
+    background-color: var(--jh-primary-color);
+    border-radius: 50%;
+    align-self: center;
+    margin-left: auto;
+}

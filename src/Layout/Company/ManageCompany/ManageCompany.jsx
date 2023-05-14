@@ -3,54 +3,23 @@ import { AddCompany } from "./Component";
 import { useTranslation } from "react-i18next";
 import { PathTree } from "Components/Path";
 import { PlusCircleFill } from "react-bootstrap-icons";
-import { companyBusiness } from "Business";
 import "./ManageCompany.css";
 import { Button } from "react-bootstrap";
-import { LoadingSpinner } from "Components/Loading";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { SetCompany } from "Config/Redux/Slice/UserSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 const ManageCompany = () => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
-  const [listCompany, setListCompany] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const userInfo = useSelector((state) => state.User.sessionInfo);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const sessionInfo = useSelector((state) => state.User.sessionInfo);
 
   useEffect(() => {
-    if (listCompany.length > 0) {
-      let _company = listCompany[0];
-      navigate(`/manageCompany/companyInfo/${_company.companyId}`);
+    if (userInfo?.companyId) {
+      navigate(`/manageCompany/companyInfo/${userInfo.companyId}`);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [listCompany]);
-
-  useEffect(() => {
-    getCompany();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const getCompany = async () => {
-    setLoading(true);
-    if (sessionInfo.company) {
-      setListCompany([{ companyId: sessionInfo.company }]);
-    } else {
-      let result = await companyBusiness.GetListCompanyOwner();
-      if (result.data.httpCode === 200) {
-        let _company = result.data.objectData;
-        dispatch(SetCompany(_company.companyId));
-        setListCompany(_company);
-      } else {
-        setListCompany([]);
-      }
-    }
-    setLoading(false);
-  };
-
-  if (loading) return <LoadingSpinner />;
+  }, [userInfo]);
 
   return (
     <div>

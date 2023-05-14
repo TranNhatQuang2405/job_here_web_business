@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  sessionInfo: null,
+  sessionInfo: {},
   pending: false
 };
 
@@ -20,7 +20,7 @@ export const UserSlice = createSlice({
       state.pending = true;
     },
     SetCompany: (state, action) => {
-      state.sessionInfo.company = action.payload;
+      state.sessionInfo.companyId = action.payload;
       state.pending = false;
     }
   },

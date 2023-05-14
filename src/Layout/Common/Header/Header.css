@@ -1,22 +1,46 @@
+.Header__container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .sticky-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-.Header__layout{
+
+.Header__layout {
   padding: 8px 48px;
 }
 
-.Header__layout-text{
+.Header__layout-text {
   color: rgba(255, 255, 255, 0.55);
 }
 
 @media screen and (width < 768px) {
-  .Header__layout{
+  .Header__layout {
     padding: 8px 4px;
   }
 }
 
 .dropdown-toggle::after {
   display: none !important;
+}
+
+.dropdown-item a,
+.dropdown-item a.active {
+  color: #dee2e6;
+}
+
+.header__btn-language-smallSizeScreen {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.Header__icon-chat {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }

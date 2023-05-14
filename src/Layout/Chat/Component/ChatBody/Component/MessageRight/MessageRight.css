@@ -1,0 +1,14 @@
+.MessageRight__box {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: center;
+    column-gap: 8px;
+    margin: 8px 0;
+}
+
+.MessageRight__text {
+    background-color: #cdd6e8;
+    padding: 8px;
+    border-radius: 10px;
+}

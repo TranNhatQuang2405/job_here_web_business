@@ -43,3 +43,11 @@ export const getTotalViewCompanyByMonth = "/report/getTotalViewCompanyByMonth";
 // Upload
 export const uploadImage = "/user/upload/uploadImage";
 export const uploadCV = "/user/upload/uploadCV";
+
+// Message
+export const sendMessage = "/chat/send";
+export const getListChildMessage = "/chat";
+export const getListMessage = "/chat/company";
+export const viewAllMessage = "/chat/view/company";
+export const countMessageNoRead = "/chat/count/company";
+export const deleteMessage = "/chat/delete";

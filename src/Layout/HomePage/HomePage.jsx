@@ -1,15 +1,24 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./HomePage.css";
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const userInfo = useSelector((state) => state.User.sessionInfo);
 
   return (
     <div>
       <div className="HomePage-Dashboard row">
-        <NavLink to="/manageCompany" className="HomePage-Dashboard__item Item_1 col">
+        <NavLink
+          to={
+            userInfo.companyId
+              ? `/manageCompany/companyInfo/${userInfo.companyId}`
+              : "/manageCompany"
+          }
+          className="HomePage-Dashboard__item Item_1 col"
+        >
           <i className="bi bi-building" />
           <div>
             <p className="HomePage-Dashboard__number">{56}</p>

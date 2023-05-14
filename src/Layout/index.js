@@ -11,3 +11,4 @@ export { default as Report } from "./Report/Report";
 export { default as UserInfo } from "./UserInfo/UserInfo";
 export { default as CompanyPage } from "./Company/CompanyPage/CompanyPage";
 export { default as JobPage } from "./Job/JobPage/JobPage";
+export { default as Chat } from "./Chat/Chat";

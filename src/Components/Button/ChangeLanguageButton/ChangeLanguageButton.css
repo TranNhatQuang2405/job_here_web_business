@@ -1,0 +1,19 @@
+.btn_changeLanguage-bound {
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  width: 40px !important;
+  height: 40px !important;
+  aspect-ratio: 1/1;
+  height: min-content;
+  width: min-content;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.btn_changeLanguage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

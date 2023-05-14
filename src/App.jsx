@@ -14,6 +14,7 @@ import {
   Report,
   UserInfo,
   HomePage,
+  Chat
 } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
@@ -35,7 +36,8 @@ const App = () => {
             <Route path="/manageJob/addJob" element={<AddJob />} />
             <Route path="/userInfo/:id" element={<UserInfo />} />
             <Route path="/report" element={<Report />} />
-            <Route path="*" element={<Navigate to="/manageCompany" />} />
+            <Route path="/message" element={<Chat />} />
+            <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>
         </PageTemplate>
       </AuthProvider>
