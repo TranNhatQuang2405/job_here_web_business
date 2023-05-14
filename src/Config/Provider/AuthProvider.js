@@ -1,8 +1,13 @@
 import React, { useLayoutEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { authBusiness } from "Business";
-import { changeSession, LogOut, SetIsPending } from "Config/Redux/Slice/UserSlice";
+import { authBusiness, companyBusiness } from "Business";
+import {
+  changeSession,
+  LogOut,
+  SetIsPending,
+  SetCompany,
+} from "Config/Redux/Slice/UserSlice";
 import { LoadingPage } from "Layout/Common";
 
 const AuthProvider = ({ children }) => {
@@ -23,8 +28,15 @@ const AuthProvider = ({ children }) => {
         session.data.objectData.email
       ) {
         dispatch(changeSession(session.data.objectData));
+        let result = await companyBusiness.GetListCompanyOwner();
+        if (result.data.httpCode === 200) {
+          let _company = result.data.objectData;
+          if (_company.length > 0) {
+            dispatch(SetCompany(_company[0].companyId));
+          }
+        }
         let path = location.pathname;
-        if (listAuthPath.find((x) => x === path)) navigate("/manageCompany");
+        if (listAuthPath.find((x) => x === path)) navigate("/Home");
       } else {
         dispatch(LogOut());
         navigate("/SignIn");

@@ -1,0 +1,54 @@
+:root {
+  --margin-item: 10px;
+  --padding-item: 10px;
+}
+
+.HomePage-Dashboard {
+  text-align: center;
+}
+
+.HomePage-Dashboard__item {
+  padding: var(--padding-item);
+  margin: var(--margin-item);
+  border-radius: 10px;
+}
+
+a.HomePage-Dashboard__item:hover {
+  opacity: 0.8;
+}
+
+.HomePage-Dashboard__item.Item_1 {
+  background-color: #f4a000;
+}
+
+.HomePage-Dashboard__item.Item_2 {
+  background-color: #fe4039;
+}
+
+.HomePage-Dashboard__item.Item_3 {
+  background-color: #00ac6a;
+}
+
+.HomePage-Dashboard__item.Item_4 {
+  background-color: #3366ff;
+}
+
+.HomePage-Dashboard__item p {
+  margin-bottom: 0;
+}
+
+.HomePage-Dashboard__item i {
+  color: #ffffff;
+  font-size: xx-large;
+}
+
+.HomePage-Dashboard__item .HomePage-Dashboard__number {
+  font-size: xx-large;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.HomePage-Dashboard__item .HomePage-Dashboard__text {
+  font-weight: 700;
+  color: #ffffff;
+}

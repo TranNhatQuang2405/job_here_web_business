@@ -15,6 +15,8 @@ export const getAllJobOfCompany = "/company/getAllJobOfCompany";
 export const createCompany = "/company/createCompany";
 export const updateCompany = "/company/updateCompany";
 export const deleteCompany = "/company/delete";
+export const getCompanyScore = "/company/getCompanyScore";
+export const getListComment = "/company/getListComment";
 
 // Job
 export const getJobInfo = "/job/getJobInfo";
@@ -41,3 +43,11 @@ export const getTotalViewCompanyByMonth = "/report/getTotalViewCompanyByMonth";
 // Upload
 export const uploadImage = "/user/upload/uploadImage";
 export const uploadCV = "/user/upload/uploadCV";
+
+// Message
+export const sendMessage = "/chat/send";
+export const getListChildMessage = "/chat";
+export const getListMessage = "/chat/company";
+export const viewAllMessage = "/chat/view/company";
+export const countMessageNoRead = "/chat/count/company";
+export const deleteMessage = "/chat/delete";

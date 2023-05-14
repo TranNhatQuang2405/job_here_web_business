@@ -10,11 +10,19 @@
     font-weight: 600;
 }
 
+.CompanyRating__child-time {
+    font-size: 14px;
+    color: #999;
+    font-weight: 700;
+    font-style: italic;
+    margin-left: auto;
+}
+
 .CompanyRating__child-start {
-    font-size: 20px;
+    font-size: 24px;
     margin-right: 16px;
     align-self: center;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .CompanyRating__child-react {

@@ -13,8 +13,8 @@ import { changeCurrentPage } from "Config/Redux/Slice/CurrentPageSlice";
 import { LogOut } from "Config/Redux/Slice/UserSlice";
 import { changeToken } from "Config/Redux/Slice/HeaderRequestSlice";
 import { memo } from "react";
-import { NavLink } from "react-router-dom";
-import { BellFill } from "react-bootstrap-icons";
+import { NavLink, Link } from "react-router-dom";
+import { IconChat } from "Components/Icon";
 
 const Header = (props) => {
   const navigate = useNavigate();
@@ -32,15 +32,43 @@ const Header = (props) => {
     <Row className="sticky-nav">
       <Col className="bg-app-dark">
         <Navbar expand="lg" variant="dark" className="Header__layout">
-          <Navbar.Brand href="/" className="d-flex flex-row align-items-center">
-            <Logo isDark />
+          <Navbar.Brand className="d-flex flex-row align-items-center">
+            <NavLink to="/Home">
+              <Logo isDark />
+            </NavLink>
           </Navbar.Brand>
+
+          {userInfo && (
+            <>
+              <Nav className="d-lg-none d-block header__btn-language-smallSizeScreen">
+                <Nav.Link className="Header__icon-chat" as={Link} to="/message">
+                  <IconChat />
+                </Nav.Link>
+              </Nav>
+              <Nav className="d-block d-lg-none me-3">
+                <ChangeLanguageButton />
+              </Nav>
+            </>
+          )}
+
+          {!userInfo && (
+            <Nav className="d-block d-lg-none header__btn-language-smallSizeScreen">
+              <ChangeLanguageButton />
+            </Nav>
+          )}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse className='justify-content-end'>
+          <Navbar.Collapse className="justify-content-end">
             {userInfo ? (
               <>
                 <Nav className="me-auto">
-                  <NavLink className="nav-link" to="/manageCompany">
+                  <NavLink
+                    className="nav-link"
+                    to={
+                      userInfo.companyId
+                        ? `/manageCompany/companyInfo/${userInfo.companyId}`
+                        : "/manageCompany"
+                    }
+                  >
                     {t("business.nav.company")}
                   </NavLink>
                   <NavLink className="nav-link" to="/manageJob">
@@ -51,11 +79,11 @@ const Header = (props) => {
                   </NavLink>
                 </Nav>
                 <Nav className="justify-content-end">
-                  <BellFill
-                    size={30}
-                    className="align-self-center me-2 cur-pointer d-none d-lg-block"
-                    color="#fff"
-                  />
+                  <Nav.Item className="d-none d-lg-block">
+                    <Nav.Link className="Header__icon-chat" as={Link} to="/message">
+                      <IconChat />
+                    </Nav.Link>
+                  </Nav.Item>
                   <NavDropdown
                     title={
                       <div className="d-flex flex-row align-items-center">
@@ -82,7 +110,7 @@ const Header = (props) => {
               <></>
             )}
 
-            <Nav className="justify-content-end">
+            <Nav className="justify-content-end d-none d-lg-block">
               <ChangeLanguageButton />
             </Nav>
           </Navbar.Collapse>
