@@ -1,5 +1,9 @@
 import Service from "Config/Api/Service";
-import { getTotalViewJobByMonth, getTotalViewCompanyByMonth } from "Config/Api/ConfigURL";
+import {
+  getTotalViewJobByMonth,
+  getTotalViewCompanyByMonth,
+  getDashboard,
+} from "Config/Api/ConfigURL";
 
 class ReportBusiness extends Service {
   GetTotalViewJobByMonth = async (month) => {
@@ -9,6 +13,11 @@ class ReportBusiness extends Service {
 
   GetTotalViewCompanyByMonth = async (month) => {
     let result = await this.get(`${getTotalViewCompanyByMonth}/${month}`);
+    return result;
+  };
+
+  getDashboard = async () => {
+    let result = await this.get(getDashboard);
     return result;
   };
 }
