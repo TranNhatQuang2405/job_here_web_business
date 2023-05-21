@@ -14,7 +14,7 @@ import { LogOut } from "Config/Redux/Slice/UserSlice";
 import { changeToken } from "Config/Redux/Slice/HeaderRequestSlice";
 import { memo } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { IconChat } from "Components/Icon";
+import { IconChat, IconNotification } from "Components/Icon";
 
 const Header = (props) => {
   const navigate = useNavigate();
@@ -44,6 +44,11 @@ const Header = (props) => {
                 <Nav.Link className="Header__icon-chat" as={Link} to="/message">
                   <IconChat />
                 </Nav.Link>
+              </Nav>
+              <Nav className="d-lg-none d-block me-3">
+                <div className="Header__icon-chat cur-pointer">
+                  <IconNotification />
+                </div>
               </Nav>
               <Nav className="d-block d-lg-none me-3">
                 <ChangeLanguageButton />
@@ -83,6 +88,11 @@ const Header = (props) => {
                     <Nav.Link className="Header__icon-chat" as={Link} to="/message">
                       <IconChat />
                     </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item className="d-none d-lg-block mx-2">
+                    <div className="Header__icon-chat cur-pointer">
+                      <IconNotification />
+                    </div>
                   </Nav.Item>
                   <NavDropdown
                     title={
