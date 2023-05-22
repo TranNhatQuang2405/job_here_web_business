@@ -52,3 +52,9 @@ export const getListMessage = "/chat/company";
 export const viewAllMessage = "/chat/view/company";
 export const countMessageNoRead = "/chat/count/company";
 export const deleteMessage = "/chat/delete";
+
+// Notification
+export const countNotification = "/notification/company";
+export const getLastsNotificationOfCompany = "/notification/all/company";
+export const viewNotification = "/notification/view";
+export const viewNotificationOfCompany = "/notification/view/company";

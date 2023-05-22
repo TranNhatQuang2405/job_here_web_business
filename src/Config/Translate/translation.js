@@ -557,7 +557,7 @@ export const vn = {
   "time.day": "ngày trước",
   "alert.ok": "Ok",
   "alert.no": "Không",
-  "dashboard.active": "(Đang Kích Hoạt)",
+  "dashboard.active": "(Đang Hoạt Động)",
   "dashboard.noactive": "(Đang Bị Khoá)",
   "dashboard.totalJobs": "Tổng Số Việc Làm",
   "dashboard.totalAppliedToday": "Tổng số Lượt Ứng Tuyển Hôm Nay",
