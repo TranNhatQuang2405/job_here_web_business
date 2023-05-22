@@ -54,7 +54,7 @@ a.HomePage-Dashboard__item:hover {
 .HomePage-Dashboard__item .HomePage-Dashboard__company {
   font-weight: 700;
   color: #ffffff;
-  font-size: large;
+  font-size: 20px;
 }
 
 .HomePage-Dashboard__item .HomePage-Dashboard__text {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Image } from "react-bootstrap";
-import image from "Assets/Images/avatar_default.png";
+import image from "Assets/Images/user.png";
 import "./Avatar.css";
 
 const Avatar = (props) => {
