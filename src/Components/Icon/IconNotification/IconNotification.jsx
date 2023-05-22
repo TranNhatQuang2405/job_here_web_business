@@ -56,7 +56,7 @@ const IconNotification = () => {
     };
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasChange]);
+  }, [hasChange, sessionInfo.companyId]);
 
   return (
     <div className="IconChat__box" onClick={() => setShow((prev) => !prev)}>
