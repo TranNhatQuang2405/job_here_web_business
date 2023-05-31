@@ -42,16 +42,18 @@ const IconNotification = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let prepare = [];
-      prepare.push(notificationBusiness.countNotification(sessionInfo.companyId));
-      prepare.push(
-        notificationBusiness.getLastsNotificationOfCompany(sessionInfo.companyId)
-      );
-      let results = await Promise.all(prepare);
-      if (!results.find((x) => x.data.httpCode !== 200)) {
-        if (results[0].data.objectData * 1 > 9) setCount("9+");
-        else setCount(results[0].data.objectData);
-        setNotifications(results[1]?.data?.objectData || []);
+      if (sessionInfo.companyId) {
+        let prepare = [];
+        prepare.push(notificationBusiness.countNotification(sessionInfo.companyId));
+        prepare.push(
+          notificationBusiness.getLastsNotificationOfCompany(sessionInfo.companyId)
+        );
+        let results = await Promise.all(prepare);
+        if (!results.find((x) => x.data.httpCode !== 200)) {
+          if (results[0].data.objectData * 1 > 9) setCount("9+");
+          else setCount(results[0].data.objectData);
+          setNotifications(results[1]?.data?.objectData || []);
+        }
       }
     };
     fetchData();
