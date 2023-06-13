@@ -281,6 +281,14 @@ export const en = {
   "dashboard.totalJobs": "Total Jobs",
   "dashboard.totalAppliedToday": "Total Applied Today",
   "dashboard.totalVisitToday": "Total Visit Today",
+  processApplication: "Process Application",
+  "business.job.application.no": "No Application",
+  "business.job.application.view.cv": "View CV",
+  "business.job.application.view.note": "View Note",
+  "business.application.ACCEPTED": "ACCEPTED",
+  "business.application.DENIED": "DENIED",
+  "business.job.application.accept": "Accept",
+  "business.job.application.deny": "Deny",
 };
 
 export const vn = {
@@ -562,4 +570,12 @@ export const vn = {
   "dashboard.totalJobs": "Tổng Số Việc Làm",
   "dashboard.totalAppliedToday": "Tổng số Lượt Ứng Tuyển Hôm Nay",
   "dashboard.totalVisitToday": "Tổng số Lượt Truy Cập Hôm Nay",
+  processApplication: "Xử Lý Đơn Ứng Tuyển",
+  "business.job.application.no": "Không có đơn ứng tuyển nào!",
+  "business.job.application.view.cv": "Xem CV",
+  "business.job.application.view.note": "Xem ghi chú",
+  "business.application.ACCEPTED": "ĐÃ XÁC NHẬN",
+  "business.application.DENIED": "ĐÃ TỪ CHỐI",
+  "business.job.application.accept": "Xác nhận",
+  "business.job.application.deny": "Từ chối",
 };

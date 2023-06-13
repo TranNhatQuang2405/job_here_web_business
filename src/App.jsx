@@ -14,7 +14,8 @@ import {
   Report,
   UserInfo,
   HomePage,
-  Chat
+  Chat,
+  ProcessApplicationPage,
 } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/userInfo/:id" element={<UserInfo />} />
             <Route path="/report" element={<Report />} />
             <Route path="/message" element={<Chat />} />
+            <Route path="/processApplication/:id" element={<ProcessApplicationPage />} />
             <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>
         </PageTemplate>
