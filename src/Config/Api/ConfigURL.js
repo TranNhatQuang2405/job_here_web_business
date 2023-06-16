@@ -61,3 +61,8 @@ export const viewNotificationOfCompany = "/notification/view/company";
 
 // Application
 export const processApplication = "/application/processApplication";
+
+// Packet
+export const getAllPacket = "/packet/getAll";
+export const buyPacket = "/packet/buyPacket";
+export const getBoughtPacket = "/packet/boughtPackets";

@@ -16,6 +16,8 @@ import {
   HomePage,
   Chat,
   ProcessApplicationPage,
+  AllPacketPage,
+  BoughtPacketPage
 } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
@@ -39,6 +41,8 @@ const App = () => {
             <Route path="/report" element={<Report />} />
             <Route path="/message" element={<Chat />} />
             <Route path="/processApplication/:id" element={<ProcessApplicationPage />} />
+            <Route path="/allPacket" element={<AllPacketPage />} />
+            <Route path="/boughtPacket" element={<BoughtPacketPage />} />
             <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>
         </PageTemplate>

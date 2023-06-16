@@ -17,6 +17,11 @@
   /* Border Color */
   --jh-primary-border-color: #eeeeee;
   --jh-secondary-border-color: #ced4da;
+  /* Packet Color */
+  --jh-packet-basic: #60fa55;
+  --jh-packet-silver: #d3d3d3;
+  --jh-packet-gold: #fcba03;
+  --jh-packet-premium: #e0b780;
 
   --bs-sidebar-bg: #ffffff;
   --bs-sidebar-menu-item-color: #878a92;
@@ -276,16 +281,15 @@ a {
 }
 
 /* Pagination */
-.pagination .page-item>.page-link {
+.pagination .page-item > .page-link {
   color: var(--jh-primary-color) !important;
 }
 
-.pagination .page-item.active>.page-link {
+.pagination .page-item.active > .page-link {
   color: var(--jh-white-color) !important;
   background-color: var(--jh-primary-color) !important;
   border-color: var(--jh-primary-color) !important;
 }
-
 
 .lh-2 {
   line-height: 2 !important;
@@ -308,7 +312,6 @@ a {
 .bg-app-dark {
   background-color: #222831 !important;
 }
-
 
 /* Table */
 .table-custom {

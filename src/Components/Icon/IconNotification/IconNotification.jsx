@@ -25,6 +25,7 @@ const IconNotification = () => {
     });
     setNotifications(list);
     await notificationBusiness.viewNotificationOfCompany(sessionInfo.companyId);
+    setCount(0);
   };
 
   const viewNoti = async (notiId) => {
@@ -34,6 +35,7 @@ const IconNotification = () => {
     });
     setNotifications(list);
     await notificationBusiness.viewNotification(notiId);
+    setCount(count - 1);
   };
 
   const onMessageReceived = (msg) => {
@@ -50,8 +52,7 @@ const IconNotification = () => {
         );
         let results = await Promise.all(prepare);
         if (!results.find((x) => x.data.httpCode !== 200)) {
-          if (results[0].data.objectData * 1 > 9) setCount("9+");
-          else setCount(results[0].data.objectData);
+          setCount(results[0].data.objectData);
           setNotifications(results[1]?.data?.objectData || []);
         }
       }
@@ -69,7 +70,11 @@ const IconNotification = () => {
         debug={false}
       />
       <BellFill />
-      {count > 0 || count === "9+" ? <div className="IconChat__num">{count}</div> : <></>}
+      {count > 0 ? (
+        <div className="IconChat__num">{count > 9 ? "9+" : count}</div>
+      ) : (
+        <></>
+      )}
       {show && (
         <div
           className="IconNotification__notificationList fix_scroll"
