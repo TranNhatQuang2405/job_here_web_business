@@ -6,33 +6,6 @@ import { packetBusiness } from "Business";
 import _ from "underscore";
 import "./AllPacket.css";
 
-// [
-//         {
-//             "packetId": 1,
-//             "packetName": "Silver",
-//             "packetPrice": 1.0,
-//             "level": 1,
-//             "totalJob": 2,
-//             "totalDayEffect": 30
-//         },
-//         {
-//             "packetId": 2,
-//             "packetName": "Gold",
-//             "packetPrice": 5.0,
-//             "level": 2,
-//             "totalJob": 5,
-//             "totalDayEffect": 30
-//         },
-//         {
-//             "packetId": 3,
-//             "packetName": "Premium",
-//             "packetPrice": 7.99,
-//             "level": 3,
-//             "totalJob": 10,
-//             "totalDayEffect": 30
-//         }
-//     ]
-
 const AllPacket = () => {
   const { t } = useTranslation();
   const [packetData, setPacketData] = useState([]);

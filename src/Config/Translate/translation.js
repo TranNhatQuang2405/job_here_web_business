@@ -303,6 +303,11 @@ export const en = {
   "business.packet.info.day": "Days",
   "business.packet.info.endDate": "End Date",
   "business.packet.info.free": "Free",
+  PENDING: "PENDING",
+  SUCCESS: "SUCCESS",
+  FAILED: "FAILED",
+  "business.packet.info.boughtDate": "Bought Date",
+  "Bought Packet": "Bought Packet",
 };
 
 export const vn = {
@@ -606,4 +611,9 @@ export const vn = {
   "business.packet.info.day": "Ngày",
   "business.packet.info.endDate": "Ngày kết thúc",
   "business.packet.info.free": "Miễn phí",
+  PENDING: "ĐANG ĐỢI",
+  SUCCESS: "THÀNH CÔNG",
+  FAILED: "THẤT BẠI",
+  "business.packet.info.boughtDate": "Ngày mua",
+  "Bought Packet": "Các Gói Đã Mua",
 };

@@ -1,0 +1,25 @@
+.BoughtPacket__title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.BoughtPacket__item {
+  border: 1px solid var(--jh-secondary-border-color);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.BoughtPacket__item-status {
+  font-weight: 600;
+}
+
+.BoughtPacket__item-SUCCESS {
+  color: green;
+}
+
+.BoughtPacket__item-FAILED {
+  color: red;
+}
