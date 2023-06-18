@@ -1,1 +1,11 @@
 export { default as CVItem } from "./CVItem/CVItem";
+export { default as CVBody } from "./CVBody/CVBody"
+export { default as CVExperience } from "./CVExperience/CVExperience"
+export { default as CVContact } from "./CVContact/CVContact"
+export { default as CVSkill } from "./CVSkill/CVSkill"
+export { default as CVTitle } from "./CVTitle/CVTitle"
+export { default as CVImage } from "./CVImage/CVImage"
+export { default as CVEducation } from "./CVEducation/CVEducation"
+export { default as CVOverall } from "./CVOverall/CVOverall"
+export { default as CVHobby } from "./CVHobby/CVHobby"
+export { default as CVAward } from "./CVAward/CVAward"

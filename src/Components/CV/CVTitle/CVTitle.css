@@ -1,0 +1,16 @@
+.CVTitle__name {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.CVTitle__title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: -4px;
+    font-style: italic;
+}
+
+.CVTitle__box {
+    padding: 16px 8px;
+    margin-bottom: 16px;
+}

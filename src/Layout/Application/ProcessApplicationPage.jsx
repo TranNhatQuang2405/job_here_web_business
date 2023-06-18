@@ -143,7 +143,15 @@ const ProcessApplicationPage = () => {
                     <div>
                       {t("business.job.application.phone")} : <b>{application.phone}</b>
                     </div>
-                    <a target="_blank" href={application.cvUrl} rel="noreferrer">
+                    <a
+                      target="_blank"
+                      href={
+                        application.cvType === "UPLOADED"
+                          ? application.cvUrl
+                          : `/viewCV/${application.cvId}`
+                      }
+                      rel="noreferrer"
+                    >
                       {t("business.job.application.view.cv")}
                     </a>
                     {!!application.note && (

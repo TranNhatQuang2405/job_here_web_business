@@ -308,6 +308,13 @@ export const en = {
   FAILED: "FAILED",
   "business.packet.info.boughtDate": "Bought Date",
   "Bought Packet": "Bought Packet",
+  "cv.title.overall": "Objective",
+  "cv.title.skill": "Skill",
+  "cv.title.contact": "Contact Information",
+  "cv.title.experience": "Experience",
+  "cv.title.education": "Education",
+  "cv.title.hobby": "Hobby",
+  "cv.title.award": "Achivement",
 };
 
 export const vn = {
@@ -616,4 +623,11 @@ export const vn = {
   FAILED: "THẤT BẠI",
   "business.packet.info.boughtDate": "Ngày mua",
   "Bought Packet": "Các Gói Đã Mua",
+  "cv.title.overall": "Mục tiêu nghề nghiệp",
+  "cv.title.skill": "Kỹ năng",
+  "cv.title.contact": "Thông tin liên hệ",
+  "cv.title.experience": "Kinh nghiệm làm việc",
+  "cv.title.education": "Học vấn",
+  "cv.title.hobby": "Sở thích",
+  "cv.title.award": "Thành tựu",
 };

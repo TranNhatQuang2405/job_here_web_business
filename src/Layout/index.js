@@ -14,3 +14,4 @@ export { default as Chat } from "./Chat/Chat";
 export { default as ProcessApplicationPage } from "./Application/ProcessApplicationPage";
 export { default as AllPacketPage } from "./Packet/AllPacketPage";
 export { default as BoughtPacketPage } from "./Packet/BoughtPacketPage";
+export { default as ViewCVPage } from "./CV/ViewCVPage/ViewCVPage";

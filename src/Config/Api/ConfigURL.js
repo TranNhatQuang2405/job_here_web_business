@@ -66,3 +66,6 @@ export const processApplication = "/application/processApplication";
 export const getAllPacket = "/packet/getAll";
 export const buyPacket = "/packet/buyPacket";
 export const getBoughtPacket = "/packet/boughtPackets";
+
+// CV
+export const getCVContent = "/cv/getCVContent";

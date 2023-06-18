@@ -17,7 +17,8 @@ import {
   Chat,
   ProcessApplicationPage,
   AllPacketPage,
-  BoughtPacketPage
+  BoughtPacketPage,
+  ViewCVPage
 } from "Layout";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "Config/Provider";
@@ -43,6 +44,7 @@ const App = () => {
             <Route path="/processApplication/:id" element={<ProcessApplicationPage />} />
             <Route path="/allPacket" element={<AllPacketPage />} />
             <Route path="/boughtPacket" element={<BoughtPacketPage />} />
+            <Route path="/viewCV/:cvId" element={<ViewCVPage />} />
             <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>
         </PageTemplate>

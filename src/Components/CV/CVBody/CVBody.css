@@ -1,0 +1,80 @@
+.CVBody__box {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    margin-top: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    width: 21cm;
+    height: 29.7cm;
+    padding: 0;
+    transform-origin: top left;
+    font-size: 16px;
+}
+
+@media print {
+    .CVBody__box {
+        box-shadow: none;
+        margin: 0;
+    }
+}
+
+.CV__icon {
+    font-size: 18px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+}
+
+.CV__contentIcon {
+    display: contents;
+}
+
+.CV__title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.CV__content {
+    padding: 12px 8px;
+    text-align: justify;
+}
+
+.CVBody__row {
+    height: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.CVBody__left {
+    height: 100%;
+}
+
+.CVBody__right {
+    height: 100%;
+}
+
+
+/** CVTemplate-1 */
+.CVBody__left.CVTemplate-1 {
+    background-color: rgb(98, 98, 98);
+}
+
+.CVBody__left.CVTemplate-1 * {
+    color: aliceblue;
+}
+
+.CVBody__right.CVTemplate-1 {
+    font-weight: 450;
+}
+
+.CVBody__right.CVTemplate-1 .CV__title {
+    width: 100%;
+    border: 1px solid rgb(255 177 86 / 100%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.CVBody__right.CVTemplate-1 .CV__icon {
+    color: rgb(255 177 86 / 100%);
+}
