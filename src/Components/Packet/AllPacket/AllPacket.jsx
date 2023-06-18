@@ -22,6 +22,14 @@ const AllPacket = () => {
     getData();
   }, []);
 
+  const onBuyPacket = (packetId) => async () => {
+    setLoading(true);
+    let res = await packetBusiness.buyPacket(packetId);
+    if (res.data.httpCode === 200) {
+      window.location.replace(res.data.message);
+    } else setLoading(false);
+  };
+
   if (loading) return <LoadingSpinner />;
 
   return (
@@ -33,6 +41,7 @@ const AllPacket = () => {
             <Col
               key={packet.packetId}
               className={`AllPacket__item AllPacket__${packet.packetName} text-center cur-pointer`}
+              onClick={onBuyPacket(packet.packetId)}
             >
               <div className="AllPacket__item-img-wrapper">
                 <Image
