@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Col, Row, Image } from "react-bootstrap";
 import { LoadingSpinner } from "Components/Loading";
 import { useTranslation } from "react-i18next";
-import { packetBusiness } from "Business";
+import { packetBusiness, reportBusiness } from "Business";
 import _ from "underscore";
 import "./AllPacket.css";
 
@@ -10,6 +10,7 @@ const AllPacket = () => {
   const { t } = useTranslation();
   const [packetData, setPacketData] = useState([]);
   const [loading, setLoading] = useState(true);
+  let currentPrice = useRef(0);
 
   useEffect(() => {
     const getData = async () => {
@@ -17,17 +18,23 @@ const AllPacket = () => {
       if (res.data.httpCode === 200) {
         setPacketData(res.data?.objectData ?? []);
       }
+      let res2 = await reportBusiness.getDashboard();
+      if (res2.data.httpCode === 200) {
+        currentPrice.current = res2.data.objectData.packetPrice;
+      }
       setLoading(false);
     };
     getData();
   }, []);
 
-  const onBuyPacket = (packetId) => async () => {
-    setLoading(true);
-    let res = await packetBusiness.buyPacket(packetId);
-    if (res.data.httpCode === 200) {
-      window.location.replace(res.data.message);
-    } else setLoading(false);
+  const onBuyPacket = (packetId, packetPrice) => async () => {
+    if (packetPrice >= currentPrice.current) {
+      setLoading(true);
+      let res = await packetBusiness.buyPacket(packetId);
+      if (res.data.httpCode === 200) {
+        window.location.replace(res.data.message);
+      } else setLoading(false);
+    }
   };
 
   if (loading) return <LoadingSpinner />;
@@ -41,7 +48,7 @@ const AllPacket = () => {
             <Col
               key={packet.packetId}
               className={`AllPacket__item AllPacket__${packet.packetName} text-center cur-pointer`}
-              onClick={onBuyPacket(packet.packetId)}
+              onClick={onBuyPacket(packet.packetId, packet.packetPrice)}
             >
               <div className="AllPacket__item-img-wrapper">
                 <Image
