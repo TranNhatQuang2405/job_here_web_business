@@ -1,4 +1,3 @@
-export { default as JobCompanyInfo } from "./JobComponent/JobCompanyInfo/JobCompanyInfo";
 export { default as JobHeader } from "./JobComponent/JobHeader/JobHeader";
 export { default as JobInfo } from "./JobComponent/JobInfo/JobInfo";
 export { default as JobInteresting } from "./JobComponent/JobInteresting/JobInteresting";

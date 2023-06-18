@@ -4,47 +4,61 @@ import company_default_img from "Assets/Images/company_default_img.jpg";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Moment from "moment";
+import { ButtonPrimary } from "Components/Button";
+import { Calendar2Check } from "react-bootstrap-icons";
 
 const JobHeader = ({ jobData = {}, className }) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div className={"JobHeader__container jh-box-item" + (className ? " " + className : "")}>
-            <div className="JobHeader_job-box-header d-flex align-items-center">
-                <Link
-                    to={`/Company/${jobData?.companyId ?? ""}`}
-                    title={jobData?.companyName ?? ""}
-                    className="JobHeader_job-company-logo"
-                >
-                    <div className="JobHeader_box-company-logo d-flex align-items-center justify-content-center">
-                        <img
-                            src={jobData.avatar || company_default_img}
-                            alt={jobData?.companyName ?? ""}
-                            className="w-100"
-                        />
-                    </div>
-                </Link>
-                <div className="JobHeader_box-info-job flex-grow-1">
-                    <Link to={`/manageJob/${jobData?.jobId ?? ""}`}>
-                        <h1 className="JobHeader_job-title JobPage__text-highlight">
-                            {jobData?.jobName ?? "Job Name"}
-                        </h1>
-                    </Link>
-                    <div className="JobHeader_company-title">
-                        <Link to={`/Company/${jobData?.companyId ?? ""}`}>
-                            {jobData?.companyName ?? "Company Name"}
-                        </Link>
-                    </div>
+  return (
+    <div
+      className={"JobHeader__container jh-box-item" + (className ? " " + className : "")}
+    >
+      <div className="JobHeader_job-box-header d-flex align-items-center">
+        <Link
+          to={`/Company/${jobData?.companyId ?? ""}`}
+          title={jobData?.companyName ?? ""}
+          className="JobHeader_job-company-logo"
+        >
+          <div className="JobHeader_box-company-logo d-flex align-items-center justify-content-center">
+            <img
+              src={jobData.avatar || company_default_img}
+              alt={jobData?.companyName ?? ""}
+              className="w-100"
+            />
+          </div>
+        </Link>
+        <div className="JobHeader_box-info-job flex-grow-1">
+          <Link to={`/manageJob/${jobData?.jobId ?? ""}`}>
+            <h1 className="JobHeader_job-title JobPage__text-highlight">
+              {jobData?.jobName ?? "Job Name"}
+            </h1>
+          </Link>
+          <div className="JobHeader_company-title">
+            <Link to={`/Company/${jobData?.companyId ?? ""}`}>
+              {jobData?.companyName ?? "Company Name"}
+            </Link>
+          </div>
 
-                    <div className="JobHeader_job-deadline">
-                        <i className="bi bi-clock" /> {t("Deadline")}
-                        {": "}
-                        {Moment(jobData.endDate).format("DD/MM/yyyy")}
-                    </div>
-                </div>
-            </div>
+          <div className="JobHeader_job-deadline">
+            <i className="bi bi-clock" /> {t("Deadline")}
+            {": "}
+            {Moment(jobData.endDate).format("DD/MM/yyyy")}
+          </div>
         </div>
-    );
+      </div>
+      <div className="m-3">
+        <Link to={`/processApplication/${jobData?.jobId ?? ""}`}>
+          <ButtonPrimary className="fz-18 align-items-center">
+            <Calendar2Check size="18" color="aliceblue" />
+            <span className="manageCompany__buttonAdd-content">
+              {t("business.manage.jobPage.viewApplication")}
+            </span>
+          </ButtonPrimary>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default JobHeader;

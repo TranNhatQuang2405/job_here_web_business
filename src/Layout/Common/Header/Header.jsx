@@ -112,6 +112,12 @@ const Header = (props) => {
                     id="basic-nav-dropdown"
                     menuVariant="dark"
                   >
+                    <NavDropdown.Item as="div">
+                      <NavLink to="/boughtPacket">{t("Bought Packet")}</NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item as="div">
+                      <NavLink to="/allPacket">{t("business.packet.allPacket")}</NavLink>
+                    </NavDropdown.Item>
                     <NavDropdown.Item onClick={onLogout}>{t("Logout")}</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>

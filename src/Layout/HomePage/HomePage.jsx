@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { PacketInfo } from "Components/Packet";
+import { LoadingSpinner } from "Components/Loading";
 import { useSelector } from "react-redux";
 import { reportBusiness } from "Business";
 import "./HomePage.css";
@@ -10,6 +12,7 @@ const HomePage = () => {
   const { t } = useTranslation();
   const userInfo = useSelector((state) => state.User.sessionInfo);
   const [dashboardData, setDashboardData] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
@@ -17,12 +20,16 @@ const HomePage = () => {
       if (res.data.httpCode === 200) {
         setDashboardData(res.data.objectData);
       }
+      setLoading(false);
     };
     getData();
   }, []);
 
+  if (loading) return <LoadingSpinner />;
+
   return (
     <div>
+      <PacketInfo packetData={dashboardData} />
       <Row className="HomePage-Dashboard">
         <Col xs={12} md={6} lg={3} className="HomePage-Dashboard__item">
           <NavLink

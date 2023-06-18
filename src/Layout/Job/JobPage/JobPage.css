@@ -1,3 +1,9 @@
+.JobPage__header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .JobPage__text-highlight {
   color: var(--jh-primary-color) !important;
   text-decoration: none;

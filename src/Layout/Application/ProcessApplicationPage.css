@@ -1,0 +1,44 @@
+.ProcessApplicationPage__container a:hover,
+.ProcessApplicationPage__container .ProcessApplicationPage__note:hover {
+  color: var(--jh-primary-color);
+}
+
+.ProcessApplicationPage__container {
+  background-color: var(--jh-white-background);
+  border-radius: 10px;
+  padding-bottom: 5px;
+}
+
+.ProcessApplicationPage__filter {
+  max-width: 240px;
+}
+
+.ProcessApplicationPage__filter .ant-select {
+  border: none;
+  padding: 0;
+}
+
+.ProcessApplicationPage__item-container {
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid var(--jh-secondary-border-color);
+}
+
+.ProcessApplicationPage_item-status {
+  font-weight: 600;
+}
+
+.accept {
+  color: green;
+}
+
+.deny {
+  color: red;
+}
+
+.ProcessApplicationPage_item-btn {
+  max-width: 200px;
+  text-align: right;
+  align-self: flex-start;
+}

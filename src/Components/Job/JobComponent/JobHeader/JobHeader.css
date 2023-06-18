@@ -1,3 +1,10 @@
+.JobHeader__container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
 .JobHeader_job-box-header {
   padding: 16px;
 }

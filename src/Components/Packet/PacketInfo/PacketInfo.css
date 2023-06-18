@@ -1,0 +1,29 @@
+.PacketInfo__container {
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.PacketInfo__Basic {
+  background-color: var(--jh-packet-basic);
+}
+
+.PacketInfo__Silver {
+  background-color: var(--jh-packet-silver);
+}
+
+.PacketInfo__Gold {
+  background-color: var(--jh-packet-gold);
+}
+
+.PacketInfo__Premium {
+  background-color: var(--jh-packet-premium);
+}
+
+.PacketInfo__companyName {
+  font-size: 22px;
+}
+
+.PacketInfo__packetName {
+  font-size: 18px;
+}

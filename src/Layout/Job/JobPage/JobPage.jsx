@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./JobPage.css";
-import { Row, Col } from "react-bootstrap";
 import { JobHeader, JobInfo } from "Components/Job";
-import { JobListApplication } from "../JobInfo/Component";
 import { PathTree } from "Components/Path";
 import { LoadingSpinner } from "Components/Loading";
 import { useTranslation } from "react-i18next";
@@ -16,9 +14,8 @@ const JobPage = () => {
   const location = useLocation();
   const [jobData, setJobData] = useState({});
   const [loading, setLoading] = useState(true);
-  const [listApplication, setListApplication] = useState([]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleEdit = () => {
     navigate(`/manageJob/editJob/${jobData.jobId}`);
@@ -38,7 +35,6 @@ const JobPage = () => {
       prepare.push(jobBusiness.GetJobInfo(jobId));
       prepare.push(dropdownBusiness.CityDropdown());
       prepare.push(dropdownBusiness.GenderDropdown());
-      prepare.push(jobBusiness.GetListApplicationOfJob(jobId));
       let results = await Promise.all(prepare);
       if (!results.find((x) => x.data.httpCode !== 200)) {
         let unit = results[0].data.objectData;
@@ -48,7 +44,6 @@ const JobPage = () => {
         let city = results[5].data.objectData;
         let data = results[4].data.objectData;
         let gender = results[6].data.objectData;
-        setListApplication(results[7].data.objectData);
 
         let u = unit.find((x) => x.unit === data.unit);
         if (u) data.unitName = u.unitName;
@@ -106,20 +101,7 @@ const JobPage = () => {
           <div className="JobPage__job-info jh-container mt-3 mb-3">
             <div className="JobPage__box-job-info jh-box-item">
               <h2 className="JobPage__job-info-title">{t("Job detail")}</h2>
-              <Row>
-                <Col md={8}>
-                  <JobInfo jobData={jobData} />
-                </Col>
-                <Col md={4}>
-                  <div className="jh-box-item px-3">
-                    <div className="companyInfo__body-title mb-3">
-                      <span className="jobInfo__body-title-line"></span>
-                      {t("business.job.info.listApllication")}
-                    </div>
-                    <JobListApplication data={listApplication} />
-                  </div>
-                </Col>
-              </Row>
+              <JobInfo jobData={jobData} />
             </div>
           </div>
         </div>

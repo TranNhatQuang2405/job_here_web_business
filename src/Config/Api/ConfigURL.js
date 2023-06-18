@@ -58,3 +58,14 @@ export const countNotification = "/notification/company";
 export const getLastsNotificationOfCompany = "/notification/all/company";
 export const viewNotification = "/notification/view";
 export const viewNotificationOfCompany = "/notification/view/company";
+
+// Application
+export const processApplication = "/application/processApplication";
+
+// Packet
+export const getAllPacket = "/packet/getAll";
+export const buyPacket = "/packet/buyPacket";
+export const getBoughtPacket = "/packet/boughtPackets";
+
+// CV
+export const getCVContent = "/cv/getCVContent";

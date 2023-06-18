@@ -1,0 +1,27 @@
+.CVExperience__content-companyName {
+    display: contents;
+    margin-left: 100px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.CVExperience__content-title {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.CVExperience__content-description {
+    padding-left: 8px;
+}
+
+.CVExperience__content-time {
+    display: inline-block;
+    margin-left: 8px;
+    font-style: italic;
+}
+
+.CVExperience__content {
+    margin-bottom: 8px;
+}

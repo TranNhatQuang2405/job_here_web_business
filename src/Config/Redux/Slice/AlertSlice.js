@@ -37,7 +37,6 @@ export const AlertSlice = createSlice({
                 onConfirm: action.payload.onConfirm || (() => { }),
                 ...action.payload
             }
-            console.log('-------state.alertData',state.alertData)
         },
         warning: (state, action) => {
             state.alertData = {

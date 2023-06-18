@@ -1,0 +1,9 @@
+.CVContact__content {
+    margin-bottom: 8px;
+    font-size: 17px !important;
+}
+
+.CVContact__content-text {
+    display: contents;
+    margin-left: 8px;
+}
