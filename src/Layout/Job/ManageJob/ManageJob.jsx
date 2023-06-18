@@ -51,15 +51,6 @@ const ManageJob = () => {
         <PathTree className="d-none d-lg-block" />
 
         <div className="manageJob__buttonAdd-layout">
-          <div className="manageJob__dropdownCompany">
-            <Form.Select onChange={changeCompany} value={currentCompany}>
-              {listCompany.map((x, index) => (
-                <option key={index} value={x.companyId}>
-                  {x.companyName}
-                </option>
-              ))}
-            </Form.Select>
-          </div>
           <Button onClick={handleAddJob}>
             <PlusCircleFill size="25" color="aliceblue" />
             <span className="manageJob__buttonAdd-content">
