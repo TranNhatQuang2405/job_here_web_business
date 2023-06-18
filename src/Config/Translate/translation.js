@@ -295,7 +295,7 @@ export const en = {
   "business.packet.allPacket": "All Packet",
   "business.packet.info.month": "Month",
   "business.packet.info.totalJob": "Job",
-  "business.packet.info.dayEffect": "Day Effect",
+  "business.packet.info.dayEffect": "Days Effect",
   "business.packet.info.companyName": "Company Name",
   "business.packet.info.packetName": "Packet Name",
   "business.packet.info.price": "Price",
