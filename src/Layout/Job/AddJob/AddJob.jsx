@@ -8,6 +8,7 @@ import Moment from "moment";
 import { useTranslation } from "react-i18next";
 import "./AddJob.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const AddJob = () => {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ const AddJob = () => {
   const [saving, setSaving] = useState(false);
   const [master, setMaster] = useState({});
   const [showEditContent, setShowEditContent] = useState(0);
+  const userInfo = useSelector((state) => state.User.sessionInfo);
   const [jobInfo, setJobInfo] = useState({
     title: "",
     companyId: "",
@@ -130,8 +132,8 @@ const AddJob = () => {
         skillIds: skillSave,
         startDate: Moment(jobInfo.startDate).format("yyyy/MM/DD"),
         endDate: Moment(jobInfo.endDate).format("yyyy/MM/DD"),
+        companyId: userInfo.companyId,
       };
-      console.log(jobInfoCreate);
       let result = await jobBusiness.CreateJob(jobInfoCreate);
       if (result && result.data) {
         setAlert({
@@ -140,6 +142,9 @@ const AddJob = () => {
           show: true,
           httpCode: result.data.httpCode,
         });
+      }
+      if (result.data.httpCode === 200) {
+        navigate("/manageJob");
       }
     }
     setSaving(false);

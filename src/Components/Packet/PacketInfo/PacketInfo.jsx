@@ -25,9 +25,8 @@ const PacketInfo = ({ packetData }) => {
             <b>
               {packetData.packetPrice <= 0
                 ? t("business.packet.info.free")
-                : packetData.packetPrice}
-            </b>{" "}
-            $/{t("business.packet.info.month")}
+                : packetData.packetPrice + ` $/${t("business.packet.info.month")}`}
+            </b>
           </div>
         </div>
         <div className="flex-grow-1">

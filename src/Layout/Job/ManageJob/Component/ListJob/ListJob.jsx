@@ -117,7 +117,7 @@ const ListJob = ({ companyId }) => {
             <th className="text-center listJob__item-center">
               {t("business.manage.job.table.status")}
             </th>
-            <th className="text-center listCompany__item-center">
+            <th className="text-center listJob__item-center">
               {t("business.manage.job.table.delete")}
             </th>
           </tr>
@@ -149,7 +149,7 @@ const ListJob = ({ companyId }) => {
                 <td className="text-center listJob__item-center">
                   <FormCheck type="switch" checked={ele.isActive} disabled />
                 </td>
-                <td className="text-center listCompany__item-center">
+                <td className="text-center listJob__item-center">
                   <TrashFill
                     size={30}
                     className="cur-pointer"
