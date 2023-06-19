@@ -315,6 +315,8 @@ export const en = {
   "cv.title.education": "Education",
   "cv.title.hobby": "Hobby",
   "cv.title.award": "Achivement",
+  "business.manage.job.noCompany":
+    "You don't have company. Please add company to add job!",
 };
 
 export const vn = {
@@ -630,4 +632,6 @@ export const vn = {
   "cv.title.education": "Học vấn",
   "cv.title.hobby": "Sở thích",
   "cv.title.award": "Thành tựu",
+  "business.manage.job.noCompany":
+    "Bạn chưa có công ty. Vui lòng thêm công ty để thêm việc làm!",
 };
