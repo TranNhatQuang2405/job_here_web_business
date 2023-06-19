@@ -18,10 +18,10 @@
   --jh-primary-border-color: #eeeeee;
   --jh-secondary-border-color: #ced4da;
   /* Packet Color */
-  --jh-packet-basic: #60fa55;
-  --jh-packet-silver: #d3d3d3;
-  --jh-packet-gold: #fcba03;
-  --jh-packet-premium: #e0b780;
+  --jh-packet-basic: #b0e8ac;
+  --jh-packet-silver: #e6e3e3;
+  --jh-packet-gold: #ffd45e;
+  --jh-packet-premium: #f2dabb;
 
   --bs-sidebar-bg: #ffffff;
   --bs-sidebar-menu-item-color: #878a92;

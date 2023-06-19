@@ -2,11 +2,13 @@ import React from "react";
 import "./PacketInfo.css";
 import { useTranslation } from "react-i18next";
 import moment from "moment";
+import { useSelector } from "react-redux";
 
 const PacketInfo = ({ packetData }) => {
   const { t } = useTranslation();
+  const userInfo = useSelector((state) => state.User.sessionInfo);
 
-  if (!packetData.packetId) return null;
+  if (!userInfo.companyId) return null;
 
   return (
     <div className={`PacketInfo__container PacketInfo__${packetData.packetName}`}>
@@ -23,9 +25,8 @@ const PacketInfo = ({ packetData }) => {
             <b>
               {packetData.packetPrice <= 0
                 ? t("business.packet.info.free")
-                : packetData.packetPrice}
-            </b>{" "}
-            $/{t("business.packet.info.month")}
+                : packetData.packetPrice + ` $/${t("business.packet.info.month")}`}
+            </b>
           </div>
         </div>
         <div className="flex-grow-1">

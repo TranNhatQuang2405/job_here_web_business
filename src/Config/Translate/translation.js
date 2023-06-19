@@ -295,7 +295,7 @@ export const en = {
   "business.packet.allPacket": "All Packet",
   "business.packet.info.month": "Month",
   "business.packet.info.totalJob": "Job",
-  "business.packet.info.dayEffect": "Day Effect",
+  "business.packet.info.dayEffect": "Days Effect",
   "business.packet.info.companyName": "Company Name",
   "business.packet.info.packetName": "Packet Name",
   "business.packet.info.price": "Price",
@@ -315,6 +315,8 @@ export const en = {
   "cv.title.education": "Education",
   "cv.title.hobby": "Hobby",
   "cv.title.award": "Achivement",
+  "business.manage.job.noCompany":
+    "You don't have company. Please add company to add job!",
 };
 
 export const vn = {
@@ -630,4 +632,6 @@ export const vn = {
   "cv.title.education": "Học vấn",
   "cv.title.hobby": "Sở thích",
   "cv.title.award": "Thành tựu",
+  "business.manage.job.noCompany":
+    "Bạn chưa có công ty. Vui lòng thêm công ty để thêm việc làm!",
 };

@@ -9,11 +9,28 @@
 }
 
 .AllPacket__item {
-  margin: 10px;
-  border-radius: 10px;
+  margin: 20px;
+  border-radius: 5px;
   min-width: 300px;
   max-width: 300px;
-  padding: 20px;
+  border: 2px solid;
+  padding: 0;
+}
+
+.AllPacket__item-Silver {
+  border-color: var(--jh-packet-silver);
+}
+
+.AllPacket__item-Gold {
+  border-color: var(--jh-packet-gold);
+}
+
+.AllPacket__item-Premium {
+  border-color: var(--jh-packet-premium);
+}
+
+.AllPacket__item-current {
+  border-color: var(--jh-primary-color);
 }
 
 .AllPacket__Silver {

@@ -43,28 +43,40 @@ const AllPacket = () => {
     <div className="AllPacket__container">
       <div className="AllPacket__title">{t("business.packet.allPacket")}</div>
       <Row className="justify-content-center">
-        {_.map(packetData, (packet) => {
+        {_.map(packetData, (packet, index) => {
           return (
             <Col
               key={packet.packetId}
-              className={`AllPacket__item AllPacket__${packet.packetName} text-center cur-pointer`}
+              className={`AllPacket__item ${
+                packet.packetPrice === currentPrice.current
+                  ? "AllPacket__item-current"
+                  : ""
+              } AllPacket__item-${packet.packetName} text-center cur-pointer`}
               onClick={onBuyPacket(packet.packetId, packet.packetPrice)}
             >
-              <div className="AllPacket__item-img-wrapper">
+              <div
+                className={`AllPacket__item-img-wrapper ${
+                  index % 2 === 0 ? "" : `AllPacket__${packet.packetName}`
+                }`}
+              >
                 <Image
                   src={require(`Assets/Images/${packet.packetName}.svg`)}
                   className="AllPacket__item-img"
                 />
               </div>
-              <div className="AllPacket__item-packetName mt-2">{packet.packetName}</div>
-              <div>
-                <b>{packet.packetPrice}</b> $/{t("business.packet.info.month")}
-              </div>
-              <div>
-                <b>{packet.totalJob}</b> {t("business.packet.info.totalJob")}
-              </div>
-              <div>
-                <b>{packet.totalDayEffect}</b> {t("business.packet.info.dayEffect")}
+              <div
+                className={`${index % 2 !== 0 ? "" : `AllPacket__${packet.packetName}`} pt-1 pb-3`}
+              >
+                <div className="AllPacket__item-packetName mt-2">{packet.packetName}</div>
+                <div>
+                  <b>{packet.packetPrice}</b> $/{t("business.packet.info.month")}
+                </div>
+                <div>
+                  <b>{packet.totalJob}</b> {t("business.packet.info.totalJob")}
+                </div>
+                <div>
+                  <b>{packet.totalDayEffect}</b> {t("business.packet.info.dayEffect")}
+                </div>
               </div>
             </Col>
           );
