@@ -3,6 +3,7 @@ import {
   getTotalViewJobByMonth,
   getTotalViewCompanyByMonth,
   getDashboard,
+  getTotalJobByIndustry,
 } from "Config/Api/ConfigURL";
 
 class ReportBusiness extends Service {
@@ -18,6 +19,11 @@ class ReportBusiness extends Service {
 
   getDashboard = async () => {
     let result = await this.get(getDashboard);
+    return result;
+  };
+
+  getTotalJobByIndustry = async (limit) => {
+    let result = await this.get(`${getTotalJobByIndustry}?limit=${limit}`);
     return result;
   };
 }

@@ -317,6 +317,8 @@ export const en = {
   "cv.title.award": "Achivement",
   "business.manage.job.noCompany":
     "You don't have company. Please add company to add job!",
+  "business.report.total.job": "Total Job",
+  "business.report.totalJob.industry": "Total Job By Industry",
 };
 
 export const vn = {
@@ -634,4 +636,6 @@ export const vn = {
   "cv.title.award": "Thành tựu",
   "business.manage.job.noCompany":
     "Bạn chưa có công ty. Vui lòng thêm công ty để thêm việc làm!",
+  "business.report.total.job": "Tổng số việc làm",
+  "business.report.totalJob.industry": "Tổng số việc làm theo lĩnh vực",
 };

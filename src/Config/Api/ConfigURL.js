@@ -40,6 +40,7 @@ export const unitDropdown = "/dropdown/unit";
 export const getTotalViewJobByMonth = "/report/getTotalViewJobByMonth";
 export const getTotalViewCompanyByMonth = "/report/getTotalViewCompanyByMonth";
 export const getDashboard = "/report/getBusinessReportOverall";
+export const getTotalJobByIndustry = "/report/getTotalJobByIndustry";
 
 // Upload
 export const uploadImage = "/user/upload/uploadImage";
