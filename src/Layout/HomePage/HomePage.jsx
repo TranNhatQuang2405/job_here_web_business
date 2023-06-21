@@ -87,11 +87,9 @@ const HomePage = () => {
             <i className="bi bi-calendar-check" />
             <div>
               <p className="HomePage-Dashboard__number">
-                {dashboardData?.totalApplied ?? 0}
+                {dashboardData?.totalVisited ?? 0}
               </p>
-              <p className="HomePage-Dashboard__text">
-                {t("dashboard.totalAppliedToday")}
-              </p>
+              <p className="HomePage-Dashboard__text">{t("dashboard.totalVisitToday")}</p>
             </div>
           </div>
         </Col>
