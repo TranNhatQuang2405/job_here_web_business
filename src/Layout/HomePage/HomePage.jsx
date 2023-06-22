@@ -84,7 +84,7 @@ const HomePage = () => {
         </Col>
         <Col xs={12} md={6} lg={3} className="HomePage-Dashboard__item">
           <div className="HomePage-Dashboard__item-wrap Item_4">
-            <i className="bi bi-calendar-check" />
+            <i className="bi bi-list-check" />
             <div>
               <p className="HomePage-Dashboard__number">
                 {dashboardData?.totalVisited ?? 0}

@@ -8,7 +8,7 @@ import { TrashFill } from "react-bootstrap-icons";
 import { AlertModal, ConfirmModal } from "Components/Modal";
 import Moment from "moment";
 import "./ListJob.css";
-const ListJob = ({ companyId }) => {
+const ListJob = ({ companyId, enoughJob }) => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [listJob, setListJob] = useState([]);
@@ -95,6 +95,7 @@ const ListJob = ({ companyId }) => {
       />
       <AlertModal data={showAlert} onHide={handleCloseAlert} />
       <h2 className="text-center mt-3 mb-3">{t("business.manage.job.title")}</h2>
+      {enoughJob && <div className="text-danger mt-1 mb-1">{t("business.manage.job.enough")}</div>}
       <Table striped bordered hover size="lg" responsive="sm">
         <thead>
           <tr>

@@ -319,6 +319,8 @@ export const en = {
     "You don't have company. Please add company to add job!",
   "business.report.total.job": "Total Job",
   "business.report.totalJob.industry": "Total Job By Industry",
+  "business.manage.job.enough":
+    "There are enough jobs under the current packet subscription. Please delete existing jobs if you want to add more!",
 };
 
 export const vn = {
@@ -638,4 +640,6 @@ export const vn = {
     "Bạn chưa có công ty. Vui lòng thêm công ty để thêm việc làm!",
   "business.report.total.job": "Tổng số việc làm",
   "business.report.totalJob.industry": "Tổng số việc làm theo lĩnh vực",
+  "business.manage.job.enough":
+    "Đã đủ số lượng việc làm theo gói đăng ký hiện tại. Vui lòng xoá bớt việc làm hiện có nếu muốn thêm việc làm khác!",
 };
