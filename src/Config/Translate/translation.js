@@ -321,6 +321,11 @@ export const en = {
   "business.report.totalJob.industry": "Total Job By Industry",
   "business.manage.job.enough":
     "There are enough jobs under the current packet subscription. Please delete existing jobs if you want to add more!",
+  "business.job.application.process": "Process Application",
+  "business.job.application.process.choose.interviewDate": "Choose Interview Date",
+  "business.job.application.back": "Back",
+  "business.job.application.process.cancelContent": "Cancel Content",
+  "business.job.application.process.cancelPlaceholder": "Enter Cancel Content...",
 };
 
 export const vn = {
@@ -642,4 +647,9 @@ export const vn = {
   "business.report.totalJob.industry": "Tổng số việc làm theo lĩnh vực",
   "business.manage.job.enough":
     "Đã đủ số lượng việc làm theo gói đăng ký hiện tại. Vui lòng xoá bớt việc làm hiện có nếu muốn thêm việc làm khác!",
+  "business.job.application.process": "Xử lý đơn ứng tuyển",
+  "business.job.application.process.choose.interviewDate": "Chọn ngày phỏng vấn",
+  "business.job.application.back": "Quay lại",
+  "business.job.application.process.cancelContent": "Nội dung huỷ bỏ",
+  "business.job.application.process.cancelPlaceholder": "Nhập nội dung huỷ bỏ...",
 };

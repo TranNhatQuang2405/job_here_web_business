@@ -5,7 +5,7 @@ import { LoadingSpinner } from "Components/Loading";
 import { Avatar } from "Components/Image";
 import { useTranslation } from "react-i18next";
 import { useLocation, Link } from "react-router-dom";
-import { applicationBusiness, jobBusiness } from "Business";
+import { jobBusiness } from "Business";
 import _ from "underscore";
 import { convertToTimeString } from "Config/Support/TimeSupport";
 import { WarningModal } from "Components/Modal";
@@ -13,6 +13,7 @@ import { ButtonPrimary } from "Components/Button";
 import { success } from "Config/Redux/Slice/AlertSlice";
 import { useDispatch } from "react-redux";
 import { Select } from "antd";
+import ProcessApplicationModal from "Components/Modal/ProcessApplicationModal/ProcessApplicationModal";
 
 const ProcessApplicationPage = () => {
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ const ProcessApplicationPage = () => {
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
   const modalRef = useRef();
+  const processRef = useRef();
   const statusFilter = [
     {
       value: "",
@@ -73,16 +75,20 @@ const ProcessApplicationPage = () => {
   };
 
   const onProcessApplication = (applicationId, status) => async () => {
-    let res = await applicationBusiness.processApplication(applicationId, status);
-    if (res.data.httpCode === 200) {
+    processRef.current.onSetParams({ applicationId, status });
+    processRef.current.onToggleModal();
+  };
+
+  const onSuccess = async (mess) => {
+    if (mess) {
       dispatch(
         success({
-          message: res.data.message,
+          message: mess,
           title: t("processApplication"),
         })
       );
-      await getListApplication(jobData.jobId);
     }
+    await getListApplication(jobData.jobId);
   };
 
   const onChangeStatus = (_status) => {
@@ -100,6 +106,7 @@ const ProcessApplicationPage = () => {
   return (
     <div className="ProcessApplicationPage__container">
       <WarningModal ref={modalRef} title={t("business.job.application.about")} />
+      <ProcessApplicationModal ref={processRef} onSuccess={onSuccess} />
       <PathTree lastPath={jobData?.jobName || t("CV List")} className="ms-3 pt-2" />
       {loading ? (
         <LoadingSpinner />
