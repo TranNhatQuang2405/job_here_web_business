@@ -650,6 +650,6 @@ export const vn = {
   "business.job.application.process": "Xử lý đơn ứng tuyển",
   "business.job.application.process.choose.interviewDate": "Chọn ngày phỏng vấn",
   "business.job.application.back": "Quay lại",
-  "business.job.application.process.cancelContent": "Nội dung huỷ bỏ",
-  "business.job.application.process.cancelPlaceholder": "Nhập nội dung huỷ bỏ...",
+  "business.job.application.process.cancelContent": "Lý do từ chối",
+  "business.job.application.process.cancelPlaceholder": "Nhập lý do từ chối...",
 };
