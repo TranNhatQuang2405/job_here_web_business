@@ -2,13 +2,19 @@ import Service from "Config/Api/Service";
 import { processApplication } from "Config/Api/ConfigURL";
 
 class ApplicationBusiness extends Service {
-  processApplication = async (applicationId, applicationStatus) => {
+  processApplication = async ({
+    applicationId,
+    applicationStatus,
+    interviewDate,
+    cancelContent,
+  }) => {
     // 'ACCEPTED' - 'DENIED'
-    let params = {
+    let result = await this.post(processApplication, {
       applicationId,
       applicationStatus,
-    };
-    let result = await this.post(processApplication, params);
+      interviewDate,
+      cancelContent,
+    });
     return result;
   };
 }

@@ -42,3 +42,8 @@
   text-align: right;
   align-self: flex-start;
 }
+
+.WarningModal__header,
+.WarningModal__body {
+  background-color: white;
+}
