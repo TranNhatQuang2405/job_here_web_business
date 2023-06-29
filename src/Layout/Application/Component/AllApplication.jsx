@@ -1,36 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./ProcessApplicationPage.css";
-import { PathTree } from "Components/Path";
-import { LoadingSpinner } from "Components/Loading";
-import { Avatar } from "Components/Image";
 import { useTranslation } from "react-i18next";
 import { useLocation, Link } from "react-router-dom";
-import { jobBusiness } from "Business";
-import _ from "underscore";
-import { convertToTimeString } from "Config/Support/TimeSupport";
-import { WarningModal } from "Components/Modal";
-import { ButtonPrimary } from "Components/Button";
-import { success } from "Config/Redux/Slice/AlertSlice";
-import { useDispatch } from "react-redux";
-import { Select } from "antd";
-import ProcessApplicationModal from "Components/Modal/ProcessApplicationModal/ProcessApplicationModal";
-import { Tab } from "Components/Navigation";
 
-const ProcessApplicationPage = () => {
+const AllApplication = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const dispatch = useDispatch();
-  const [jobData, setJobData] = useState({});
-  const [listApplication, setListApplication] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
-  const modalRef = useRef();
-  const processRef = useRef();
-  const [currentTab, setCurrentTab] = useState(0);
-  const tabNames = [
-    t("business.application.allApplication"),
-    t("business.application.interview"),
-  ];
   const statusFilter = [
     {
       value: "",
@@ -50,53 +25,6 @@ const ProcessApplicationPage = () => {
     },
   ];
 
-  useEffect(() => {
-    getJobData();
-  }, []);
-
-  const getJobData = async () => {
-    let stringPath = location.pathname;
-    let tmpPath = stringPath.split("/");
-    let jobId = tmpPath && tmpPath.length > 0 ? tmpPath[tmpPath.length - 1] : 0;
-    let res = await jobBusiness.GetJobInfo(jobId);
-    if (res.data.httpCode === 200) {
-      setJobData(res.data.objectData);
-      let jobId = res.data.objectData.jobId;
-      await getListApplication(jobId);
-    }
-  };
-
-  const getListApplication = async (jobId) => {
-    if (!loading) setLoading(true);
-    let res = await jobBusiness.GetListApplicationOfJob(jobId);
-    if (res.data.httpCode === 200) {
-      setListApplication(res.data.objectData);
-    }
-    setLoading(false);
-  };
-
-  const onPressNote = (application) => () => {
-    modalRef.current.setMessage(application.note);
-    modalRef.current.onToggleModal();
-  };
-
-  const onProcessApplication = (applicationId, status) => async () => {
-    processRef.current.onSetParams({ applicationId, status });
-    processRef.current.onToggleModal();
-  };
-
-  const onSuccess = async (mess) => {
-    if (mess) {
-      dispatch(
-        success({
-          message: mess,
-          title: t("processApplication"),
-        })
-      );
-    }
-    await getListApplication(jobData.jobId);
-  };
-
   const onChangeStatus = (_status) => {
     setStatus(_status);
   };
@@ -110,14 +38,8 @@ const ProcessApplicationPage = () => {
       .localeCompare((optionB?.label ?? "").toLowerCase());
 
   return (
-    <div className="ProcessApplicationPage__container">
-      <WarningModal ref={modalRef} title={t("business.job.application.about")} />
-      <ProcessApplicationModal ref={processRef} onSuccess={onSuccess} />
-      <PathTree lastPath={jobData?.jobName || t("CV List")} className="ms-3 pt-2" />
-      <Tab data={tabNames} currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      {loading ? (
-        <LoadingSpinner />
-      ) : !listApplication.length ? (
+    <div>
+      {!listApplication.length ? (
         <div className="m-3">
           <p>{t("business.job.application.no")}</p>
         </div>
@@ -231,4 +153,4 @@ const ProcessApplicationPage = () => {
   );
 };
 
-export default ProcessApplicationPage;
+export default AllApplication;
