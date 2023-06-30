@@ -25,6 +25,13 @@
   border: 1px solid var(--jh-secondary-border-color);
 }
 
+.ProcessApplicationPage__avatar {
+  align-self: flex-start;
+  border: 1px solid var(--jh-secondary-border-color);
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
 .ProcessApplicationPage_item-status {
   font-weight: 600;
 }
@@ -46,4 +53,8 @@
 .WarningModal__header,
 .WarningModal__body {
   background-color: white;
+}
+
+.ProcessApplicationPage__container .Tab__bound {
+  border: none;
 }

@@ -5,7 +5,6 @@ import { LoadingSpinner } from "Components/Loading";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { jobBusiness } from "Business";
-import _ from "underscore";
 import { success } from "Config/Redux/Slice/AlertSlice";
 import { useDispatch } from "react-redux";
 import { Tab } from "Components/Navigation";
@@ -18,6 +17,7 @@ const ProcessApplicationPage = () => {
   const dispatch = useDispatch();
   const [jobData, setJobData] = useState({});
   const [listApplication, setListApplication] = useState([]);
+  const [listInterview, setListInterview] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentTab, setCurrentTab] = useState(0);
   const tabNames = [
@@ -38,6 +38,7 @@ const ProcessApplicationPage = () => {
       setJobData(res.data.objectData);
       let jobId = res.data.objectData.jobId;
       await getListApplication(jobId);
+      await getListInterviewByJob(jobId);
     }
   };
 
@@ -46,6 +47,15 @@ const ProcessApplicationPage = () => {
     let res = await jobBusiness.GetListApplicationOfJob(jobId);
     if (res.data.httpCode === 200) {
       setListApplication(res.data.objectData);
+    }
+    setLoading(false);
+  };
+
+  const getListInterviewByJob = async (jobId) => {
+    if (!loading) setLoading(true);
+    let res = await jobBusiness.getListInterviewByJob(jobId);
+    if (res.data.httpCode === 200) {
+      setListInterview(res.data.objectData);
     }
     setLoading(false);
   };
@@ -64,24 +74,14 @@ const ProcessApplicationPage = () => {
 
   return (
     <div className="ProcessApplicationPage__container">
-      <PathTree
-        lastPath={jobData?.jobName || t("CV List")}
-        className="ms-3 pt-2"
-      />
-      <Tab
-        data={tabNames}
-        currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
-      />
+      <PathTree lastPath={jobData?.jobName || t("CV List")} className="ms-3 pt-2" />
+      <Tab data={tabNames} currentTab={currentTab} setCurrentTab={setCurrentTab} />
       {loading ? (
         <LoadingSpinner />
       ) : currentTab === 0 ? (
-        <AllApplication
-          listApplication={listApplication}
-          onSuccess={onSuccess}
-        />
+        <AllApplication listApplication={listApplication} onSuccess={onSuccess} />
       ) : (
-        <ListInterview />
+        <ListInterview listInterview={listInterview} />
       )}
     </div>
   );

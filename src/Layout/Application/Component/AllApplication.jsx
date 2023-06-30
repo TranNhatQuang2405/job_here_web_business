@@ -3,6 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import _ from "underscore";
 import { convertToTimeString } from "Config/Support/TimeSupport";
+import { Avatar } from "Components/Image";
+import { ButtonPrimary } from "Components/Button";
+import { Select } from "antd";
 import { WarningModal } from "Components/Modal";
 import ProcessApplicationModal from "Components/Modal/ProcessApplicationModal/ProcessApplicationModal";
 
@@ -54,10 +57,7 @@ const AllApplication = ({ listApplication, onSuccess }) => {
 
   return (
     <div>
-      <WarningModal
-        ref={modalRef}
-        title={t("business.job.application.about")}
-      />
+      <WarningModal ref={modalRef} title={t("business.job.application.about")} />
       <ProcessApplicationModal ref={processRef} onSuccess={onSuccess} />
       {!listApplication.length ? (
         <div className="m-3">
@@ -79,36 +79,25 @@ const AllApplication = ({ listApplication, onSuccess }) => {
             />
           </div>
           {_.map(
-            listApplication.filter((app) =>
-              app.applicationStatus?.includes(status)
-            ),
+            listApplication.filter((app) => app.applicationStatus?.includes(status)),
             (application, index) => (
               <div
                 key={index}
                 className="ProcessApplicationPage__item-container d-flex align-items-center ms-3 me-3"
               >
-                <Avatar
-                  src={application.avatar}
-                  width="80px"
-                  className="me-2"
-                />
+                <Avatar src={application.avatar} width="80px" className="ProcessApplicationPage__avatar me-2" />
                 <div className="flex-grow-1">
                   <div>
-                    <Link
-                      to={`/userInfo/${application.userId}`}
-                      className="fz-20"
-                    >
+                    <Link to={`/userInfo/${application.userId}`} className="fz-20">
                       {application.fullName}
                     </Link>
                   </div>
                   <div>
                     <div>
-                      {t("business.job.application.email")} :{" "}
-                      <b>{application.email}</b>
+                      {t("business.job.application.email")} : <b>{application.email}</b>
                     </div>
                     <div>
-                      {t("business.job.application.phone")} :{" "}
-                      <b>{application.phone}</b>
+                      {t("business.job.application.phone")} : <b>{application.phone}</b>
                     </div>
                     <a
                       target="_blank"
@@ -161,9 +150,7 @@ const AllApplication = ({ listApplication, onSuccess }) => {
                   ) : (
                     <div
                       className={`ProcessApplicationPage_item-status ${
-                        application.applicationStatus === "ACCEPTED"
-                          ? "accept"
-                          : "deny"
+                        application.applicationStatus === "ACCEPTED" ? "accept" : "deny"
                       }`}
                     >
                       <i
@@ -173,9 +160,7 @@ const AllApplication = ({ listApplication, onSuccess }) => {
                             : "bi-x-circle-fill"
                         } me-1`}
                       />
-                      {t(
-                        `business.application.${application.applicationStatus}`
-                      )}
+                      {t(`business.application.${application.applicationStatus}`)}
                     </div>
                   )}
                 </div>
