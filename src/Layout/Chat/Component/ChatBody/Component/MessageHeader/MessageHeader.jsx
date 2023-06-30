@@ -6,6 +6,7 @@ import { messageBusiness } from "Business";
 import { useTranslation } from "react-i18next";
 import { confirm } from "Config/Redux/Slice/AlertSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const MessageHeader = ({ messageData, setCurrentMessage }) => {
   const dispatch = useDispatch();
@@ -28,11 +29,11 @@ const MessageHeader = ({ messageData, setCurrentMessage }) => {
 
   return (
     <div className="MessageHeader__box">
-      <div>
+      <Link to={`/userInfo/${messageData.userId}`}>
         <Avatar width="60px" url={messageData.userImageUrl} />
-      </div>
+      </Link>
       <div className="MessageHeader__name">
-        <div>{messageData.fullName}</div>
+        <Link to={`/userInfo/${messageData.userId}`}>{messageData.fullName}</Link>
       </div>
       <div className="MessageHeader__trash" onClick={confirmDelete}>
         <TrashFill />

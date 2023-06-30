@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import "./UserInfo.css";
 import { PathTree } from "Components/Path";
 import { Avatar } from "Components/Image";
@@ -11,11 +11,15 @@ import level from "Assets/Icons/level.png";
 import gender from "Assets/Icons/gender.png";
 import map from "Assets/Icons/map.png";
 import suitcase from "Assets/Icons/suitcase.png";
-import { userBusiness } from "Business";
+import { userBusiness, messageBusiness } from "Business";
 import { LoadingSpinner } from "Components/Loading";
+import { Messenger } from "react-bootstrap-icons";
+import { ButtonPrimary } from "Components/Button";
+import { useSelector } from "react-redux";
 
 const UserInfo = () => {
   const { t } = useTranslation();
+  const sessionInfo = useSelector((state) => state.User.sessionInfo);
   const location = useLocation();
   const [loading, setLoading] = useState(true);
   const [userInfo, setUserInfo] = useState({});
@@ -23,6 +27,7 @@ const UserInfo = () => {
     let result = Moment(date).format("DD/MM/yyyy");
     return result;
   };
+  const hadMessage = useRef(false);
 
   useEffect(() => {
     let isSubscribed = true;
@@ -34,6 +39,12 @@ const UserInfo = () => {
       if (result.data.httpCode === 200) {
         setUserInfo(result.data.objectData);
       }
+      let res = await messageBusiness.getListMessageCompany(sessionInfo.companyId);
+      if (res.data.httpCode === 200) {
+        // Check if have message
+        const _mess = res.data.objectData.find((mess) => mess.userId === userId);
+        hadMessage.current = _mess?.messageId ?? false;
+      }
       setLoading(false);
     };
     if (isSubscribed) first();
@@ -42,8 +53,16 @@ const UserInfo = () => {
     };
   }, [location.pathname]);
 
+  const handleOpenChat = () => {
+    if(hadMessage.current){
+
+    }else{
+      
+    }
+  };
+
   return (
-    <div>
+    <div className="UserInfo__container">
       <PathTree
         lastPath={userInfo.fullname || t("business.user.info.about")}
         activeStart={false}
@@ -59,6 +78,10 @@ const UserInfo = () => {
               <div className="userInfo__header-content-email">
                 <i className="bi bi-envelope-fill" /> {userInfo.email}
               </div>
+              <ButtonPrimary secondary={true} onClick={handleOpenChat}>
+                <Messenger className="userInfo__messageIcon" />
+                {t("companyPage.sendMessage")}
+              </ButtonPrimary>
             </div>
           </div>
           <div className="userInfo__body">
