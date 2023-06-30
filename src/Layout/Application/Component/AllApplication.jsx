@@ -1,11 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import _ from "underscore";
+import { convertToTimeString } from "Config/Support/TimeSupport";
+import { WarningModal } from "Components/Modal";
+import ProcessApplicationModal from "Components/Modal/ProcessApplicationModal/ProcessApplicationModal";
 
-const AllApplication = () => {
+const AllApplication = ({ listApplication, onSuccess }) => {
   const { t } = useTranslation();
-  const location = useLocation();
   const [status, setStatus] = useState("");
+  const modalRef = useRef();
+  const processRef = useRef();
   const statusFilter = [
     {
       value: "",
@@ -25,6 +30,16 @@ const AllApplication = () => {
     },
   ];
 
+  const onPressNote = (application) => () => {
+    modalRef.current.setMessage(application.note);
+    modalRef.current.onToggleModal();
+  };
+
+  const onProcessApplication = (applicationId, status) => async () => {
+    processRef.current.onSetParams({ applicationId, status });
+    processRef.current.onToggleModal();
+  };
+
   const onChangeStatus = (_status) => {
     setStatus(_status);
   };
@@ -39,6 +54,11 @@ const AllApplication = () => {
 
   return (
     <div>
+      <WarningModal
+        ref={modalRef}
+        title={t("business.job.application.about")}
+      />
+      <ProcessApplicationModal ref={processRef} onSuccess={onSuccess} />
       {!listApplication.length ? (
         <div className="m-3">
           <p>{t("business.job.application.no")}</p>
@@ -59,25 +79,36 @@ const AllApplication = () => {
             />
           </div>
           {_.map(
-            listApplication.filter((app) => app.applicationStatus?.includes(status)),
+            listApplication.filter((app) =>
+              app.applicationStatus?.includes(status)
+            ),
             (application, index) => (
               <div
                 key={index}
                 className="ProcessApplicationPage__item-container d-flex align-items-center ms-3 me-3"
               >
-                <Avatar src={application.avatar} width="80px" className="me-2" />
+                <Avatar
+                  src={application.avatar}
+                  width="80px"
+                  className="me-2"
+                />
                 <div className="flex-grow-1">
                   <div>
-                    <Link to={`/userInfo/${application.userId}`} className="fz-20">
+                    <Link
+                      to={`/userInfo/${application.userId}`}
+                      className="fz-20"
+                    >
                       {application.fullName}
                     </Link>
                   </div>
                   <div>
                     <div>
-                      {t("business.job.application.email")} : <b>{application.email}</b>
+                      {t("business.job.application.email")} :{" "}
+                      <b>{application.email}</b>
                     </div>
                     <div>
-                      {t("business.job.application.phone")} : <b>{application.phone}</b>
+                      {t("business.job.application.phone")} :{" "}
+                      <b>{application.phone}</b>
                     </div>
                     <a
                       target="_blank"
@@ -130,7 +161,9 @@ const AllApplication = () => {
                   ) : (
                     <div
                       className={`ProcessApplicationPage_item-status ${
-                        application.applicationStatus === "ACCEPTED" ? "accept" : "deny"
+                        application.applicationStatus === "ACCEPTED"
+                          ? "accept"
+                          : "deny"
                       }`}
                     >
                       <i
@@ -140,7 +173,9 @@ const AllApplication = () => {
                             : "bi-x-circle-fill"
                         } me-1`}
                       />
-                      {t(`business.application.${application.applicationStatus}`)}
+                      {t(
+                        `business.application.${application.applicationStatus}`
+                      )}
                     </div>
                   )}
                 </div>
