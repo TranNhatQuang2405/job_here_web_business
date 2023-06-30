@@ -25,6 +25,7 @@ export const createJob = "/job/create";
 export const deleteJob = "/job/delete";
 export const getListApplicationOfJob = "/job/getListApplicationOfJob";
 export const updateJob = "/job/updateJob";
+export const getListInterviewByJob = "/job/getListInterviewByJob";
 
 // Dropdown
 export const genderDropdown = "/dropdown/gender";

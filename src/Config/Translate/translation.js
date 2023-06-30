@@ -326,6 +326,10 @@ export const en = {
   "business.job.application.back": "Back",
   "business.job.application.process.cancelContent": "Cancel Content",
   "business.job.application.process.cancelPlaceholder": "Enter Cancel Content...",
+  "business.application.allApplication": "All Application",
+  "business.application.interview": "List Interview",
+  "business.job.application.interviewDate": "Interview Date",
+  "business.job.application.noInterview": "No Interview!",
 };
 
 export const vn = {
@@ -652,4 +656,8 @@ export const vn = {
   "business.job.application.back": "Quay lại",
   "business.job.application.process.cancelContent": "Lý do từ chối",
   "business.job.application.process.cancelPlaceholder": "Nhập lý do từ chối...",
+  "business.application.allApplication": "Tất cả đơn ứng tuyển",
+  "business.application.interview": "Danh sách phỏng vấn",
+  "business.job.application.interviewDate": "Ngày phỏng vấn",
+  "business.job.application.noInterview": "Không có lịch phỏng vấn!",
 };

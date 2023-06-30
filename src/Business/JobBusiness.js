@@ -6,6 +6,7 @@ import {
   deleteJob,
   getListApplicationOfJob,
   updateJob,
+  getListInterviewByJob,
 } from "Config/Api/ConfigURL";
 
 class JobBusiness extends Service {
@@ -78,6 +79,10 @@ class JobBusiness extends Service {
       amount,
     };
     let result = await this.post(updateJob, params);
+    return result;
+  };
+  getListInterviewByJob = async (jobId) => {
+    let result = await this.get(`${getListInterviewByJob}/${jobId}`);
     return result;
   };
 }
