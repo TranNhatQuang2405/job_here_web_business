@@ -8,6 +8,7 @@ import { messageBusiness } from "Business";
 import { useSelector } from "react-redux";
 import { TOPIC_MESSAGES_COMPANY } from "Config/Support/PathSupport";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 const Chat = () => {
   const { t } = useTranslation();
@@ -21,6 +22,8 @@ const Chat = () => {
   const topicMessages = `${TOPIC_MESSAGES_COMPANY}/${sessionInfo.companyId}`;
   const prevMessage = useRef(currentMessage);
   const currentSocket = useRef();
+  const location = useLocation();
+  const hadLoad = useRef(false);
 
   let onMessageReceived = (msg) => {
     setHasChange((prev) => !prev);
@@ -51,15 +54,26 @@ const Chat = () => {
       if (sessionInfo.companyId) {
         let result = await messageBusiness.getListMessageCompany(sessionInfo.companyId);
         if (result?.data?.httpCode === 200) {
-          setMessages(result?.data?.objectData || []);
+          const _messages = result?.data?.objectData || [];
+          setMessages(_messages);
+          if (!hadLoad.current) {
+            // Check if have messageId ==> setCurrentMessage
+            let stringPath = location.pathname;
+            let tmpPath = stringPath.split("/");
+            let messageId =
+              tmpPath && tmpPath.length > 0 ? tmpPath[tmpPath.length - 1] : "";
+            if (messageId) {
+              let _mess = _messages.find((mess) => mess.messageId === messageId);
+              setCurrentMessage(_mess);
+            }
+            hadLoad.current = true;
+          }
         }
       }
     };
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasChange, sessionInfo.companyId]);
-
-  // return null;
 
   return (
     <Row className="Chat__box ">
