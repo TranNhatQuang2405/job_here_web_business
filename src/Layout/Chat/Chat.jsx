@@ -36,19 +36,9 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    // Check if have messageId ==> setCurrentMessage
-    let stringPath = location.pathname;
-    let tmpPath = stringPath.split("/");
-    let messageId =
-      tmpPath && tmpPath.length > 0 ? tmpPath[tmpPath.length - 1] : "";
-  }, []);
-
-  useEffect(() => {
     const fetchData = async () => {
       if (currentMessage !== prevMessage.current) setPending(true);
-      let result = await messageBusiness.getListChildMessage(
-        currentMessage.messageId
-      );
+      let result = await messageBusiness.getListChildMessage(currentMessage.messageId);
       await messageBusiness.viewAllMessageCompany(currentMessage.messageId);
       if (result?.data?.httpCode === 200) {
         setChildMessages(result?.data?.objectData || []);
@@ -62,16 +52,21 @@ const Chat = () => {
   useEffect(() => {
     const fetchData = async () => {
       if (sessionInfo.companyId) {
-        let result = await messageBusiness.getListMessageCompany(
-          sessionInfo.companyId
-        );
+        let result = await messageBusiness.getListMessageCompany(sessionInfo.companyId);
         if (result?.data?.httpCode === 200) {
-          const _messages=result?.data?.objectData || []
+          const _messages = result?.data?.objectData || [];
           setMessages(_messages);
-          if(!hadLoad.current){
-            
-
-            hadLoad.current=true
+          if (!hadLoad.current) {
+            // Check if have messageId ==> setCurrentMessage
+            let stringPath = location.pathname;
+            let tmpPath = stringPath.split("/");
+            let messageId =
+              tmpPath && tmpPath.length > 0 ? tmpPath[tmpPath.length - 1] : "";
+            if (messageId) {
+              let _mess = _messages.find((mess) => mess.messageId === messageId);
+              setCurrentMessage(_mess);
+            }
+            hadLoad.current = true;
           }
         }
       }

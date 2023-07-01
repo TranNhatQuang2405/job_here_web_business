@@ -16,6 +16,7 @@ import { LoadingSpinner } from "Components/Loading";
 import { Messenger } from "react-bootstrap-icons";
 import { ButtonPrimary } from "Components/Button";
 import { IconSpinner } from "Components/Icon";
+import { Input } from "antd";
 import { useSelector } from "react-redux";
 
 const UserInfo = () => {
@@ -49,13 +50,13 @@ const UserInfo = () => {
 
   const checkMessage = async () => {
     const userId = getUserId();
-    let res = await messageBusiness.getListMessageCompany(
-      sessionInfo.companyId
-    );
+    let res = await messageBusiness.getListMessageCompany(sessionInfo.companyId);
     if (res.data.httpCode === 200) {
       // Check if have message
-      const _mess = res.data.objectData.find((mess) => mess.userId === userId);
-      hadMessage.current = _mess?.messageId ?? false;
+      const _mess = res.data.objectData.filter(
+        (mess) => mess.userId === parseInt(userId)
+      );
+      hadMessage.current = _mess?.[0]?.messageId ?? false;
     }
   };
 
@@ -70,7 +71,8 @@ const UserInfo = () => {
     return result;
   };
 
-  const handleOpenChat = () => {
+  const handleOpenChat = async () => {
+    if (!hadMessage.current) await checkMessage();
     if (hadMessage.current) {
       // Navigate to Message Screen
       navigate(`/message/${hadMessage.current}`);
@@ -93,7 +95,7 @@ const UserInfo = () => {
     if (chatMessage.trim() !== "") {
       setPendingSend(true);
       let params = {
-        userId: getUserId(),
+        userId: parseInt(getUserId()),
         companyId: sessionInfo.companyId,
         fromUser: false,
         content: chatMessage,
@@ -155,9 +157,7 @@ const UserInfo = () => {
           <div className="userInfo__header">
             <Avatar width="120px" url={userInfo.avatar} />
             <div className="userInfo__header-content">
-              <div className="userInfo__header-content-fullname">
-                {userInfo.fullname}
-              </div>
+              <div className="userInfo__header-content-fullname">{userInfo.fullname}</div>
               <div className="userInfo__header-content-email">
                 <i className="bi bi-envelope-fill" /> {userInfo.email}
               </div>
