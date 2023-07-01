@@ -41,6 +41,7 @@ const App = () => {
             <Route path="/userInfo/:id" element={<UserInfo />} />
             <Route path="/report" element={<Report />} />
             <Route path="/message" element={<Chat />} />
+            <Route path="/message/:id" element={<Chat />} />
             <Route path="/processApplication/:id" element={<ProcessApplicationPage />} />
             <Route path="/allPacket" element={<AllPacketPage />} />
             <Route path="/boughtPacket" element={<BoughtPacketPage />} />
