@@ -8,7 +8,6 @@ import {
   FormControl,
   FormLabel,
   FormGroup,
-  Button,
   Spinner,
 } from "react-bootstrap";
 import "./SignInPage.css";
@@ -19,6 +18,7 @@ import { SetIsPending } from "Config/Redux/Slice/UserSlice";
 import { useTranslation } from "react-i18next";
 import { authBusiness } from "Business";
 import { WarningModal } from "Components/Modal";
+import { ButtonPrimary } from "Components/Button";
 
 const SignInPage = () => {
   const navigate = useNavigate();
@@ -112,20 +112,29 @@ const SignInPage = () => {
 									/>
 								</Form.Group> */}
 
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="SignIn__btn-signin w-100"
-                >
+                <ButtonPrimary type="submit" className="w-100">
                   {loading ? (
                     <Spinner animation="border" variant="light" />
                   ) : (
                     t("Sign In")
                   )}
-                </Button>
+                </ButtonPrimary>
               </Form>
             </Card.Body>
           </Card>
+          <div className="SignIn__sign-up mt-3 text-center">
+            <p>
+              {t("Don't have an account?")}
+              <a
+                className="ms-1 text-primary cur-pointer"
+                href="https://jobhere.tech/SignUp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("Signup now")}
+              </a>
+            </p>
+          </div>
         </Col>
       </Row>
     </div>

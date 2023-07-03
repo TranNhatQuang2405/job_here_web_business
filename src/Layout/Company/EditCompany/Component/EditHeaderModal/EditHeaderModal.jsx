@@ -55,7 +55,7 @@ function EditHeaderModal({ companyInfoParent, show, handleClose }) {
                 show: true,
                 message: t("business.company.add.email.error")
             });
-        } else if (!(companyInfo.minSize <= companyInfo.maxSize)) {
+        } else if (!(companyInfo.minSize * 1 <= companyInfo.maxSize * 1)) {
             setShowAlert({
                 httpCode: 400,
                 show: true,
