@@ -40,6 +40,7 @@ const ManageJob = () => {
   };
 
   const enoughJob = stateData.current.jobLength >= stateData.current.totalJobEffect;
+  console.log('---------enoughJob',enoughJob)
 
   if (loading) return <LoadingSpinner />;
 
