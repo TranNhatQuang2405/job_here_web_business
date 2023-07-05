@@ -5,11 +5,9 @@ import validator from "validator";
 import { AlertModal, WarningModal } from "Components/Modal";
 import { companyBusiness } from "Business";
 import "./AddCompany.css";
-import { useNavigate } from "react-router-dom";
 
 const AddCompany = ({ show, onHide }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const modalRef = useRef();
   const [loading, setLoading] = useState(false);
   const [showAlert, setShowAlert] = useState({
