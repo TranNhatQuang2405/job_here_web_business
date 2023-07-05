@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect, useRef } from "react";
+import React, { memo, useState, useEffect } from "react";
 import { PathTree } from "Components/Path";
 import { Button } from "react-bootstrap";
 import { PlusCircleFill } from "react-bootstrap-icons";
@@ -15,20 +15,18 @@ const ManageJob = () => {
   const userInfo = useSelector((state) => state.User.sessionInfo);
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
-  const stateData = useRef({
-    jobLength: 0,
-    totalJobEffect: 0,
-  });
+  const [jobLength, setJobLength] = useState(0);
+  const [totalJobEffect, setTotalJobEffect] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
       let res = await reportBusiness.getDashboard();
       if (res.data.httpCode === 200) {
-        stateData.current.totalJobEffect = res.data.objectData.totalJobEffect;
+        setTotalJobEffect(res.data.objectData.totalJobEffect);
       }
       let result = await jobBusiness.GetListJobManageByCompanyId(userInfo.companyId);
       if (result.data.httpCode === 200) {
-        stateData.current.jobLength = result.data.objectData.length;
+        setJobLength(result.data.objectData.length);
       }
       setLoading(false);
     };
@@ -39,8 +37,7 @@ const ManageJob = () => {
     navigate("/manageJob/addJob");
   };
 
-  const enoughJob = stateData.current.jobLength >= stateData.current.totalJobEffect;
-  console.log('---------enoughJob',enoughJob)
+  const enoughJob = jobLength >= totalJobEffect;
 
   if (loading) return <LoadingSpinner />;
 

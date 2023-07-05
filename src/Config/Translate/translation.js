@@ -650,7 +650,7 @@ export const vn = {
   "business.report.total.job": "Tổng số việc làm",
   "business.report.totalJob.industry": "Tổng số việc làm theo lĩnh vực",
   "business.manage.job.enough":
-    "Đã đủ số lượng việc làm theo gói đăng ký hiện tại. Vui lòng xoá bớt việc làm hiện có nếu muốn thêm việc làm khác!",
+    "Đã đủ số lượng việc làm theo gói đăng ký hiện tại. Để thêm việc làm khác, vui lòng xoá bớt việc làm hiện có!",
   "business.job.application.process": "Xử lý đơn ứng tuyển",
   "business.job.application.process.choose.interviewDate": "Chọn ngày phỏng vấn",
   "business.job.application.back": "Quay lại",
