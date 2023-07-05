@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const JobShare = ({ path = "", company = false }) => {
   const { t } = useTranslation();
-  const host = window.location.host;
+  const host = "https://jobhere.tech";
   let url = host + path;
 
   const copyURLToClipboard = () => {
