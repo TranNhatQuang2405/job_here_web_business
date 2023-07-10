@@ -330,6 +330,7 @@ export const en = {
   "business.application.interview": "List Interview",
   "business.job.application.interviewDate": "Interview Date",
   "business.job.application.noInterview": "No Interview!",
+  "cvTemplate.btn.printCV": "Print CV",
 };
 
 export const vn = {
@@ -660,4 +661,5 @@ export const vn = {
   "business.application.interview": "Danh sách phỏng vấn",
   "business.job.application.interviewDate": "Ngày phỏng vấn",
   "business.job.application.noInterview": "Không có lịch phỏng vấn!",
+  "cvTemplate.btn.printCV": "In CV",
 };

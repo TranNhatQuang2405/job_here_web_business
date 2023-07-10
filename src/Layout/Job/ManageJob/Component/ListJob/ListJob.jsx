@@ -95,7 +95,9 @@ const ListJob = ({ companyId, enoughJob }) => {
       />
       <AlertModal data={showAlert} onHide={handleCloseAlert} />
       <h2 className="text-center mt-3 mb-3">{t("business.manage.job.title")}</h2>
-      {enoughJob && <div className="text-danger mt-1 mb-1">{t("business.manage.job.enough")}</div>}
+      {enoughJob && (
+        <div className="text-danger mt-1 mb-1">{t("business.manage.job.enough")}</div>
+      )}
       <Table striped bordered hover size="lg" responsive="sm">
         <thead>
           <tr>
@@ -145,7 +147,16 @@ const ListJob = ({ companyId, enoughJob }) => {
                   <div>{Moment(ele.endDate).format("DD/MM/YYYY")}</div>
                 </td>
                 <td className="text-center listJob__item-center">
-                  <div>{ele.totalApplicant}</div>
+                  {ele.totalApplicant ? (
+                    <Link
+                      to={`/processApplication/${ele.jobId}`}
+                      className="listJob__item-link"
+                    >
+                      {ele.totalApplicant}
+                    </Link>
+                  ) : (
+                    <div>{ele.totalApplicant}</div>
+                  )}
                 </td>
                 <td className="text-center listJob__item-center">
                   <FormCheck type="switch" checked={ele.isActive} disabled />

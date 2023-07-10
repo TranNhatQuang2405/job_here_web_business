@@ -11,4 +11,5 @@
     background-color: #cdd6e8;
     padding: 8px;
     border-radius: 10px;
+    max-width: calc(100% - 60px);
 }
